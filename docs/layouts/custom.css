@@ -144,7 +144,7 @@ body {
    ============================================================ */
 .home-hero {
   position: relative;
-  background: linear-gradient(150deg, #0d2a3a 0%, #1a4a62 40%, #2270a0 75%, #3b9cc4 100%);
+  background: linear-gradient(150deg, #87c4d8 0%, #a8d8e8 40%, #bde8f2 75%, #cdf0f8 100%);
   border-radius: var(--radius);
   padding: 3.5rem 2rem 4.5rem;
   text-align: center;
@@ -161,7 +161,7 @@ body {
   right: -60px;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(200,21,107,0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,21,107,0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -204,7 +204,7 @@ body {
 .home-hero h1 {
   font-size: 2.3rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #0d2a3a;
   margin-bottom: 0.85rem;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -214,7 +214,7 @@ body {
 
 .tagline {
   font-size: 1rem;
-  color: rgba(255,255,255,0.78);
+  color: #1a3d52;
   max-width: 560px;
   margin: 0 auto 1.5rem;
   line-height: 1.6;
@@ -226,9 +226,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.8);
+  color: #0d2a3a;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.35rem 0.9rem;
@@ -244,7 +244,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--blue-light);
+  background: var(--pink);
   flex-shrink: 0;
 }
 
