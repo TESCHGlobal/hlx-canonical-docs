@@ -3,7 +3,7 @@ layout: default
 title: "Formlary Drug_V1.0 Implementation Guide"
 ---
 
-![HLX Logo](assets/css/hlx_logo.png)
+![HLX Logo](assets/hlx_logo.png)
 
 # Formlary Drug_V1.0 Implementation Guide
 

@@ -3,7 +3,7 @@ layout: default
 title: "Insurance_V4.1 Implementation Guide"
 ---
 
-![HLX Logo](assets/css/hlx_logo.png)
+![HLX Logo](assets/hlx_logo.png)
 
 # Insurance_V4.1 Implementation Guide
 

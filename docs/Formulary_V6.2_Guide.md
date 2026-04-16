@@ -3,7 +3,7 @@ layout: default
 title: "Formulary_V6.2 Implementation Guide"
 ---
 
-![HLX Logo](assets/css/hlx_logo.png)
+![HLX Logo](assets/hlx_logo.png)
 
 # Formulary_V6.2 Implementation Guide
 

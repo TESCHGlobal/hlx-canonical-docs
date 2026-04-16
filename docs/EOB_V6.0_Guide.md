@@ -3,7 +3,7 @@ layout: default
 title: "EOB_V6.0 Implementation Guide"
 ---
 
-![HLX Logo](assets/css/hlx_logo.png)
+![HLX Logo](assets/hlx_logo.png)
 
 # EOB_V6.0 Implementation Guide
 

@@ -3,7 +3,7 @@ layout: default
 title: "Formulary Coverage Plan_V1.0 Implementation Guide"
 ---
 
-![HLX Logo](assets/css/hlx_logo.png)
+![HLX Logo](assets/hlx_logo.png)
 
 # Formulary Coverage Plan_V1.0 Implementation Guide
 

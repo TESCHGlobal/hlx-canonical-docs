@@ -3,7 +3,7 @@ layout: default
 title: "Roster_V6.2 Implementation Guide"
 ---
 
-![HLX Logo](assets/css/hlx_logo.png)
+![HLX Logo](assets/hlx_logo.png)
 
 # Roster_V6.2 Implementation Guide
 

@@ -3,7 +3,7 @@ layout: default
 title: "Insurance Plan_V4.2 Implementation Guide"
 ---
 
-![HLX Logo](assets/css/hlx_logo.png)
+![HLX Logo](assets/hlx_logo.png)
 
 # Insurance Plan_V4.2 Implementation Guide
 
