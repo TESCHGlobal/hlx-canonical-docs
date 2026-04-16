@@ -522,44 +522,34 @@ body {
    Tables — guide pages
    ============================================================ */
 .page-content table {
+  border-collapse: collapse;
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-bottom: 1.5rem;
+  margin: 1rem 0 1.5rem;
   font-size: 0.875rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  table-layout: fixed;
+  background: #ffffff;
 }
 
 .page-content th {
   background: var(--navy);
   color: #ffffff;
-  font-weight: 600;
-  padding: 0.65rem 0.9rem;
   text-align: left;
-  font-size: 0.8rem;
+  padding: 0.6rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.78rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  border-right: 1px solid rgba(255,255,255,0.1);
-  box-shadow: inset 0 -2px 0 var(--navy-mid);
-}
-
-.page-content th:last-child {
-  border-right: none;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .page-content td {
-  padding: 0.5rem 0.9rem;
-  border-bottom: 1px solid var(--border);
-  border-right: 1px solid #eef2f7;
+  padding: 0.45rem 0.75rem;
+  border: 1.5px solid #d8e2ec;
   vertical-align: top;
-  color: var(--text);
-}
-
-.page-content td:last-child {
-  border-right: none;
+  background: #ffffff;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .page-content td:first-child {
@@ -567,66 +557,48 @@ body {
   color: var(--navy);
 }
 
-.page-content tr:last-child td {
-  border-bottom: none;
-}
-
 .page-content tr:nth-child(even) td {
-  background: #f8fafc;
+  background: #f5f8fb;
 }
 
 /* ============================================================
-   heatMap override
-   border-collapse:separate + border-spacing:0 is required so
-   position:sticky on thead works correctly in all browsers.
+   heatMap — matches coco-canonical approach:
+   border-collapse:collapse + NO overflow on table so
+   position:sticky on thead works correctly.
    ============================================================ */
 .heatMap {
   text-align: left;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-bottom: 1.5rem;
-  font-size: 0.875rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  background: #ffffff;
+  table-layout: fixed;
 }
 
 .heatMap thead {
   position: sticky;
-  top: 62px; /* height of the fixed site nav */
-  z-index: 10;
+  top: 62px; /* exact height of our fixed site nav */
+  z-index: 5;
 }
 
 .heatMap th {
   background: var(--navy);
   color: #ffffff;
   font-weight: 600;
-  padding: 0.65rem 0.9rem;
+  padding: 0.6rem 0.75rem;
   text-align: left;
   font-size: 0.78rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   word-wrap: break-word;
-  /* use box-shadow instead of border so sticky doesn't bleed */
-  box-shadow: inset 0 -2px 0 var(--navy-mid);
-  border-right: 1px solid rgba(255,255,255,0.1);
-}
-
-.heatMap th:last-child {
-  border-right: none;
+  word-break: break-word;
+  border: none;
 }
 
 .heatMap td {
-  padding: 0.5rem 0.9rem;
+  border: 1.5px solid #d8e2ec;
+  background: #ffffff;
+  word-wrap: break-word;
+  word-break: break-word;
+  padding: 0.45rem 0.75rem;
   vertical-align: top;
-  border-bottom: 1px solid var(--border);
-  border-right: 1px solid #eef2f7;
-}
-
-.heatMap td:last-child {
-  border-right: none;
 }
 
 .heatMap td:first-child {
@@ -635,11 +607,7 @@ body {
 }
 
 .heatMap tr:nth-child(even) td {
-  background: #f8fafc;
-}
-
-.heatMap tr:last-child td {
-  border-bottom: none;
+  background: #f5f8fb;
 }
 
 /* ============================================================
