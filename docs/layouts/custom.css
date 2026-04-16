@@ -523,16 +523,18 @@ body {
    ============================================================ */
 .page-content table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-bottom: 1.5rem;
   font-size: 0.875rem;
+  border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
 }
 
 .page-content th {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  background: var(--navy);
   color: #ffffff;
   font-weight: 600;
   padding: 0.65rem 0.9rem;
@@ -540,7 +542,12 @@ body {
   font-size: 0.8rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  border: none;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  box-shadow: inset 0 -2px 0 var(--navy-mid);
+}
+
+.page-content th:last-child {
+  border-right: none;
 }
 
 .page-content td {
@@ -549,6 +556,10 @@ body {
   border-right: 1px solid #eef2f7;
   vertical-align: top;
   color: var(--text);
+}
+
+.page-content td:last-child {
+  border-right: none;
 }
 
 .page-content td:first-child {
@@ -565,26 +576,31 @@ body {
 }
 
 /* ============================================================
-   heatMap override (from assets/css/custom.css)
+   heatMap override
+   border-collapse:separate + border-spacing:0 is required so
+   position:sticky on thead works correctly in all browsers.
    ============================================================ */
 .heatMap {
   text-align: left;
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-bottom: 1.5rem;
   font-size: 0.875rem;
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .heatMap thead {
   position: sticky;
-  top: 60px;
+  top: 62px; /* height of the fixed site nav */
+  z-index: 10;
 }
 
 .heatMap th {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  background: var(--navy);
   color: #ffffff;
   font-weight: 600;
   padding: 0.65rem 0.9rem;
@@ -592,15 +608,25 @@ body {
   font-size: 0.78rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  border: none;
   word-wrap: break-word;
+  /* use box-shadow instead of border so sticky doesn't bleed */
+  box-shadow: inset 0 -2px 0 var(--navy-mid);
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.heatMap th:last-child {
+  border-right: none;
 }
 
 .heatMap td {
-  border-bottom: 1px solid var(--border);
-  border-right: 1px solid #eef2f7;
   padding: 0.5rem 0.9rem;
   vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid #eef2f7;
+}
+
+.heatMap td:last-child {
+  border-right: none;
 }
 
 .heatMap td:first-child {
