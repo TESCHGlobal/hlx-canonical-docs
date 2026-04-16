@@ -1,0 +1,423 @@
+/* ============================================================
+   Global reset & base
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1a1a2e;
+  background: #f4f8fb;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   Site header / nav  — white background matching HealthLX site
+   ============================================================ */
+.site-header {
+  background: #ffffff;
+  border-bottom: 3px solid #C8156B;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.site-nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  min-height: 56px;
+}
+
+.nav-home {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a2e40;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.nav-home:hover {
+  color: #C8156B;
+}
+
+.nav-logo {
+  height: 28px;
+}
+
+.nav-logo-tg {
+  height: 26px;
+  margin-left: 0.25rem;
+}
+
+.nav-divider {
+  color: #c0c8d0;
+  font-size: 1.2rem;
+  margin: 0 0.1rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.nav-links li a {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #2d4a60;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: #fde8f1;
+  color: #C8156B;
+}
+
+/* ============================================================
+   Page content
+   ============================================================ */
+.page-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ============================================================
+   Home hero  — sky-blue gradient matching HealthLX website
+   ============================================================ */
+.home-hero {
+  background: linear-gradient(135deg, #A8D5E2 0%, #BDE8F0 50%, #C5EBF2 100%);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.hero-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-logo-img {
+  height: 52px;
+  object-fit: contain;
+}
+
+.hero-logo-separator {
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+}
+
+.home-hero h1 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0d2a3a;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: #1a4055;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ============================================================
+   Guide list cards
+   ============================================================ */
+.guide-list {
+  margin-bottom: 2.5rem;
+}
+
+.guide-list h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0d2a3a;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #C8156B;
+  display: inline-block;
+}
+
+.guide-list ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.guide-list li {
+  background: #ffffff;
+  border: 1px solid #dde5ee;
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.guide-list li:hover {
+  box-shadow: 0 4px 16px rgba(200,21,107,0.12);
+  border-color: #C8156B;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  color: #C8156B;
+}
+
+.card-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #C8156B;
+}
+
+.guide-list a {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: #0d2a3a;
+  text-decoration: none;
+}
+
+.guide-list a:hover {
+  color: #C8156B;
+  text-decoration: underline;
+}
+
+.guide-desc {
+  font-size: 0.82rem;
+  color: #5a6e7e;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   About section
+   ============================================================ */
+.about {
+  background: #ffffff;
+  border: 1px solid #dde5ee;
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.about h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0d2a3a;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #C8156B;
+  display: inline-block;
+}
+
+.about p {
+  color: #3a4e5e;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.about a {
+  color: #C8156B;
+  text-decoration: none;
+}
+
+.about a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   Inner page (guide) layout
+   ============================================================ */
+.page-content h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #0d2a3a;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.page-content h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #e0e8ef;
+}
+
+.page-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-content p {
+  margin-bottom: 1rem;
+  color: #2a3e50;
+}
+
+.page-content a {
+  color: #C8156B;
+}
+
+.page-content a:hover {
+  text-decoration: underline;
+}
+
+.page-content ul,
+.page-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-content li {
+  margin-bottom: 0.3rem;
+}
+
+.page-content code {
+  background: #f0f4f8;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+  font-size: 0.88em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.page-content pre {
+  background: #f0f4f8;
+  border: 1px solid #dde5ee;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.page-content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.87em;
+}
+
+/* ============================================================
+   Tables (guide pages)
+   ============================================================ */
+.page-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.page-content th {
+  background: #A8D5E2;
+  color: #0d2a3a;
+  font-weight: 600;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border: 1px solid #c5dde8;
+}
+
+.page-content td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dde5ee;
+  vertical-align: top;
+}
+
+.page-content tr:nth-child(even) td {
+  background: #f4f8fb;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  background: #0d2a3a;
+  color: #8fa8ba;
+  text-align: center;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: #A8D5E2;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 700px) {
+  .home-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .guide-list ul {
+    grid-template-columns: 1fr;
+  }
+
+  .site-nav {
+    padding: 0.5rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .page-content {
+    padding: 1.5rem 1rem 3rem;
+  }
+}

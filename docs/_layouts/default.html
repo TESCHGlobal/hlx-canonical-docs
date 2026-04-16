@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="stylesheet" href="{{ "/layouts/custom.css" | relative_url }}" />
+  <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="nav-home" href="{{ "/" | relative_url }}">
+        <img src="{{ "/assets/hlx_logo.png" | relative_url }}" alt="HealthLX" class="nav-logo" />
+        <span class="nav-divider">|</span>
+        <img src="{{ "/assets/TG_logo.png" | relative_url }}" alt="TG" class="nav-logo-tg" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="{{ "Clinical_V4.2_Guide.html" | relative_url }}">Clinical</a></li>
+        <li><a href="{{ "EOB_V6.0_Guide.html" | relative_url }}">EOB</a></li>
+        <li><a href="{{ "FormlaryDrug_V1.0_Guide.html" | relative_url }}">Formulary Drug</a></li>
+        <li><a href="{{ "Formulary_V6.2_Guide.html" | relative_url }}">Formulary</a></li>
+        <li><a href="{{ "FormularyCoveragePlan_V1.0_Guide.html" | relative_url }}">Coverage Plan</a></li>
+        <li><a href="{{ "Insurance_V4.1_Guide.html" | relative_url }}">Insurance</a></li>
+        <li><a href="{{ "InsurancePlan_V4.2_Guide.html" | relative_url }}">Insurance Plan</a></li>
+        <li><a href="{{ "Provider_V4.1_Guide.html" | relative_url }}">Provider</a></li>
+        <li><a href="{{ "ProviderDirectory_V4.3_Guide.html" | relative_url }}">Provider Directory</a></li>
+        <li><a href="{{ "Roster_V6.2_Guide.html" | relative_url }}">Roster</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      &copy; {{ "now" | date: "%Y" }} <a href="https://healthlx.com" target="_blank" rel="noopener">HealthLX</a>
+      &mdash; Client Schema Documentation Portal
+    </p>
+  </footer>
+</body>
+</html>

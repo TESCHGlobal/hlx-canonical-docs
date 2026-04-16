@@ -1,0 +1,14 @@
+title: HealthLX Client Schema Documentation Portal
+description: >-
+  HealthLX canonical schema implementation guides for CMS compliance and FHIR interoperability.
+  Documentation for Clinical, EOB, Formulary, Insurance, Provider Directory, Roster, and more.
+baseurl: "/hlx-canonical-docs"
+url: "https://healthlx.github.io"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: true
+
+theme: null
