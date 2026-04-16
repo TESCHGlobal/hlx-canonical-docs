@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ "/layouts/custom.css" | relative_url }}" />
   <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}" />
 </head>
@@ -13,7 +16,7 @@
     <nav class="site-nav">
       <a class="nav-home" href="{{ "/" | relative_url }}">
         <img src="{{ "/assets/hlx_logo.png" | relative_url }}" alt="HealthLX" class="nav-logo" />
-        <span class="nav-divider">|</span>
+        <span class="nav-divider"></span>
         <img src="{{ "/assets/TG_logo.png" | relative_url }}" alt="TG" class="nav-logo-tg" />
       </a>
       <ul class="nav-links">
@@ -37,7 +40,8 @@
 
   <footer class="site-footer">
     <p>
-      &copy; {{ "now" | date: "%Y" }} <a href="https://healthlx.com" target="_blank" rel="noopener">HealthLX</a>
+      &copy; {{ "now" | date: "%Y" }}
+      <a href="https://healthlx.com" target="_blank" rel="noopener">HealthLX</a>
       &mdash; Client Schema Documentation Portal
     </p>
   </footer>
