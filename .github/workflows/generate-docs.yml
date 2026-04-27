@@ -13,12 +13,8 @@ on:
           - ''
           - 'Clinical_V4.2'
           - 'EOB_V6.0'
-          - 'FormlaryDrug_V1.0'
           - 'Formulary_V6.2'
-          - 'FormularyCoveragePlan_V1.0'
           - 'Insurance_V4.1'
-          - 'InsurancePlan_V4.2'
-          - 'Provider_V4.1'
           - 'ProviderDirectory_V4.3'
           - 'Roster_V6.2'
 

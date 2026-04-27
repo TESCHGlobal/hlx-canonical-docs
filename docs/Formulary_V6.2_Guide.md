@@ -11,7 +11,7 @@ title: "Formulary_V6.2 Implementation Guide"
 
 **Version 6.1**
 
-**April 16, 2026**
+**April 27, 2026**
 
 **Table of Contents**
 
@@ -49,7 +49,7 @@ This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability 
 
 | Version | Date |
 |---------|------|
-| 6.1 | April 16, 2026 |
+| manual | April 27, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
