@@ -24,8 +24,10 @@ class TocExtra:
 @dataclass(frozen=True)
 class GuideSupplementSection:
     id: str
+    title: str
     file: str
     inject_into: Optional[str] = None
+    after: Optional[str] = None
     before: Optional[str] = None
     body: str = ""
 
@@ -51,15 +53,15 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
 
     Returns:
         Dict with keys:
-          - toc_extras: list[TocExtra]
-          - interoperability_append: str
+          - toc_extras: list[dict]
+          - after_interoperability_sections: list[GuideSupplementSection]
           - before_required_elements_sections: list[GuideSupplementSection]
     """
     manifest_path = _manifest_path()
     if not manifest_path.exists():
         return {
             "toc_extras": [],
-            "interoperability_append": "",
+            "after_interoperability_sections": [],
             "before_required_elements_sections": [],
         }
 
@@ -82,7 +84,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
         toc_extras.append(TocExtra(title=str(title), anchor=str(anchor), before=str(before)))
 
     guides_dir = _supplements_dir()
-    interoperability_parts: List[str] = []
+    after_interoperability_sections: List[GuideSupplementSection] = []
     before_required_sections: List[GuideSupplementSection] = []
 
     for sec in sections_cfg:
@@ -91,7 +93,9 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
 
         sec_id = sec.get("id")
         file_rel = sec.get("file")
+        title = sec.get("title") or sec_id
         inject_into = sec.get("inject_into")
+        after = sec.get("after")
         before = sec.get("before")
 
         if not sec_id or not file_rel:
@@ -105,20 +109,39 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
         body = body_path.read_text(encoding="utf-8")
         section = GuideSupplementSection(
             id=str(sec_id),
+            title=str(title),
             file=str(file_rel),
             inject_into=str(inject_into) if inject_into else None,
+            after=str(after) if after else None,
             before=str(before) if before else None,
             body=body,
         )
 
-        if section.inject_into == "interoperability":
-            interoperability_parts.append(section.body)
+        if section.after == "interoperability":
+            after_interoperability_sections.append(section)
         elif section.before == "required-elements":
             before_required_sections.append(section)
 
+    toc_extras_out = [
+        {"title": t.title, "anchor": t.anchor, "before": t.before}
+        for t in toc_extras
+    ]
+    for section in after_interoperability_sections:
+        toc_extras_out.append({
+            "title": section.title,
+            "anchor": section.id,
+            "before": "change-log",
+        })
+    for section in before_required_sections:
+        toc_extras_out.append({
+            "title": section.title,
+            "anchor": section.id,
+            "before": "required-elements",
+        })
+
     return {
-        "toc_extras": [{"title": t.title, "anchor": t.anchor, "before": t.before} for t in toc_extras],
-        "interoperability_append": "\n\n".join([p.strip() for p in interoperability_parts if p.strip()]),
+        "toc_extras": toc_extras_out,
+        "after_interoperability_sections": after_interoperability_sections,
         "before_required_elements_sections": before_required_sections,
     }
 

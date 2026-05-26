@@ -1,5 +1,3 @@
-<h3 id="supported-profiles" style="color:#E60073">Supported Profiles</h3>
-
 Although there are twenty-seven US Core clinical profiles, HealthLX currently supports only the most common clinical data types likely to be held by payers. Those profiles are listed below...
 
 - US Core Patient Profile
@@ -19,4 +17,3 @@ Although there are twenty-seven US Core clinical profiles, HealthLX currently su
 - US Core Pediatric Head Occipital Frontal Circumference Percentile Profile
 - US Core Pediatric Weight for Height Observation Profile
 - US Core Provenance Profile
-

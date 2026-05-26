@@ -119,7 +119,9 @@ def generate_toc(schema_info: SchemaInfo, has_core_types=False, toc_extras=None)
             "title": f"All Elements of {schema_info.display_name} XSD",
             "anchor": f"#all-elements-of-{schema_anchor}-xsd",
         },
-        {"key": "practical-guidance", "title": "Practical Guidance", "anchor": "#practical-guidance"},
+        {"key": "submission-frequency", "title": "Submission Frequency", "anchor": "#submission-frequency"},
+        {"key": "adds-updates-and-deletes", "title": "Adds, Updates, and Deletes", "anchor": "#adds-updates-and-deletes"},
+        {"key": "member-identification", "title": "Member Identification", "anchor": "#member-identification"},
     ])
 
     extras_by_before: dict[str, list[dict]] = {}
@@ -179,21 +181,11 @@ def generate_encoding(schema_info: SchemaInfo):
     return output
 
 
-def generate_interoperability(schema_info: SchemaInfo, append_content: str = ""):
-    """Generate interoperability section with FHIR reference.
-
-    Args:
-        schema_info: Current schema metadata
-        append_content: Optional guide-specific markdown/HTML appended after the
-            FHIR R4 paragraph (for example, Clinical "Supported Profiles").
-    """
+def generate_interoperability(schema_info: SchemaInfo):
+    """Generate interoperability section with FHIR reference."""
     output = "<h2 id=\"interoperability\" style=\"color:#E60073\">Interoperability</h2>\n\n"
     output += "This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability Resources Release 4) standards. "
     output += "For more information about FHIR R4, visit: https://www.hl7.org/fhir/R4/\n\n"
-
-    append_content = (append_content or "").strip()
-    if append_content:
-        output += append_content + "\n\n"
 
     return output
 
@@ -231,18 +223,17 @@ def generate_change_log(schema_info: SchemaInfo, release_tag=None):
 
 
 def generate_practical_guidance(schema_info: SchemaInfo):
-    """Generate practical guidance section for submission frequency, adds/updates/deletes, member identification."""
-    output = "<h2 id=\"practical-guidance\" style=\"color:#E60073\">Practical Guidance</h2>\n\n"
-    output += "<h3 style=\"color:#E60073\">Submission Frequency</h3>\n\n"
+    """Generate submission frequency, adds/updates/deletes, and member identification sections."""
+    output = "<h2 id=\"submission-frequency\" style=\"color:#E60073\">Submission Frequency</h2>\n\n"
     output += f"{schema_info.display_name} files should be submitted according to the schedule agreed upon with HealthLX. "
     output += "Typical submission frequencies include daily, weekly, or monthly updates.\n\n"
 
-    output += "<h3 style=\"color:#E60073\">Adds, Updates, and Deletes</h3>\n\n"
+    output += "<h2 id=\"adds-updates-and-deletes\" style=\"color:#E60073\">Adds, Updates, and Deletes</h2>\n\n"
     output += "- **Adds**: Include new member records with all required fields populated\n"
     output += "- **Updates**: Submit complete member records with updated information\n"
     output += "- **Deletes**: Follow the agreed-upon process for member terminations or removals\n\n"
 
-    output += "<h3 style=\"color:#E60073\">Member Identification</h3>\n\n"
+    output += "<h2 id=\"member-identification\" style=\"color:#E60073\">Member Identification</h2>\n\n"
     output += "Each member must be uniquely identified using the appropriate identifier fields. "
     output += "Ensure consistency in member identifiers across all submissions to maintain data integrity.\n\n"
     

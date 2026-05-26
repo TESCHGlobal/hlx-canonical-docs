@@ -76,7 +76,7 @@ def generate_markdown(xsd_path, release_tag=None):
 
         supplements = load_guide_supplements(Path(xsd_path).stem)
         toc_extras = supplements.get("toc_extras", [])
-        interoperability_append = supplements.get("interoperability_append", "")
+        after_interoperability_sections = supplements.get("after_interoperability_sections", [])
         before_required_elements_sections = supplements.get("before_required_elements_sections", [])
 
         # Detect core model import and parse core types if present
@@ -119,7 +119,14 @@ def generate_markdown(xsd_path, release_tag=None):
             output += generate_encoding(schema_info)
             
             # Interoperability
-            output += generate_interoperability(schema_info, append_content=interoperability_append)
+            output += generate_interoperability(schema_info)
+
+            for section in after_interoperability_sections:
+                section_id = getattr(section, "id", None)
+                section_title = getattr(section, "title", None) or section_id
+                section_body = getattr(section, "body", None) or ""
+                if section_id:
+                    output += generate_supplement_section(section_id, section_title, section_body)
             
             # Change Log
             output += generate_change_log(schema_info, release_tag)
@@ -143,14 +150,12 @@ def generate_markdown(xsd_path, release_tag=None):
 
             # Guide supplements inserted before required elements
             if before_required_elements_sections:
-                toc_extras_by_anchor = {t.get("anchor"): t.get("title") for t in toc_extras if isinstance(t, dict)}
                 for section in before_required_elements_sections:
-                    section_id = getattr(section, "id", None) or section.get("id")
-                    section_body = getattr(section, "body", None) or section.get("body") or section.get("content") or ""
-                    if not section_id:
-                        continue
-                    title = toc_extras_by_anchor.get(section_id, section_id)
-                    output += generate_supplement_section(section_id, title, section_body)
+                    section_id = getattr(section, "id", None)
+                    section_title = getattr(section, "title", None) or section_id
+                    section_body = getattr(section, "body", None) or ""
+                    if section_id:
+                        output += generate_supplement_section(section_id, section_title, section_body)
             
             # Required Elements table
             required_elements = parse_required_elements(root, schema_info)

@@ -11,7 +11,7 @@ title: "Provider Directory_V4.3 Implementation Guide"
 
 **Version 4.1.1**
 
-**April 27, 2026**
+**May 26, 2026**
 
 **Table of Contents**
 
@@ -23,7 +23,9 @@ title: "Provider Directory_V4.3 Implementation Guide"
 6. [Complex Types](#complex-types)
 7. [Required Elements of Provider Directory_V4.3 XSD](#required-elements-of-provider-directory_v4.3-xsd)
 8. [All Elements of Provider Directory_V4.3 XSD](#all-elements-of-provider-directory_v4.3-xsd)
-9. [Practical Guidance](#practical-guidance)
+9. [Submission Frequency](#submission-frequency)
+10. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
+11. [Member Identification](#member-identification)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -49,7 +51,7 @@ This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability 
 
 | Version | Date |
 |---------|------|
-| manual | April 27, 2026 |
+| manual | May 26, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -612,19 +614,17 @@ This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability 
 
 
 
-<h2 id="practical-guidance" style="color:#E60073">Practical Guidance</h2>
-
-<h3 style="color:#E60073">Submission Frequency</h3>
+<h2 id="submission-frequency" style="color:#E60073">Submission Frequency</h2>
 
 Provider Directory_V4.3 files should be submitted according to the schedule agreed upon with HealthLX. Typical submission frequencies include daily, weekly, or monthly updates.
 
-<h3 style="color:#E60073">Adds, Updates, and Deletes</h3>
+<h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
 
 - **Adds**: Include new member records with all required fields populated
 - **Updates**: Submit complete member records with updated information
 - **Deletes**: Follow the agreed-upon process for member terminations or removals
 
-<h3 style="color:#E60073">Member Identification</h3>
+<h2 id="member-identification" style="color:#E60073">Member Identification</h2>
 
 Each member must be uniquely identified using the appropriate identifier fields. Ensure consistency in member identifiers across all submissions to maintain data integrity.
 

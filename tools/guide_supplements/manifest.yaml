@@ -1,9 +1,10 @@
 Clinical_V4.2:
   sections:
     - id: supported-profiles
-      inject_into: interoperability
+      title: Supported Profiles
+      after: interoperability
       file: Clinical_V4.2/supported_profiles.md
     - id: input-format-clarification
-      inject_into: interoperability
+      title: Clarification on Required Input Format & General Structure
+      after: interoperability
       file: Clinical_V4.2/input_format_clarification.md
-

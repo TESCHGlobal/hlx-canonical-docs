@@ -18,12 +18,16 @@ title: "Clinical_V4.2 Implementation Guide"
 1. [Overview](#overview)
 2. [Encoding](#encoding)
 3. [Interoperability](#interoperability)
-4. [Change Log](#change-log)
-5. [Simple Types](#simple-types)
-6. [Complex Types](#complex-types)
-7. [Required Elements of Clinical_V4.2 XSD](#required-elements-of-clinical_v4.2-xsd)
-8. [All Elements of Clinical_V4.2 XSD](#all-elements-of-clinical_v4.2-xsd)
-9. [Practical Guidance](#practical-guidance)
+4. [Supported Profiles](#supported-profiles)
+5. [Clarification on Required Input Format & General Structure](#input-format-clarification)
+6. [Change Log](#change-log)
+7. [Simple Types](#simple-types)
+8. [Complex Types](#complex-types)
+9. [Required Elements of Clinical_V4.2 XSD](#required-elements-of-clinical_v4.2-xsd)
+10. [All Elements of Clinical_V4.2 XSD](#all-elements-of-clinical_v4.2-xsd)
+11. [Submission Frequency](#submission-frequency)
+12. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
+13. [Member Identification](#member-identification)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -45,7 +49,7 @@ Payers need to send their files with utf-8 encoding as shown below:
 
 This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability Resources Release 4) standards. For more information about FHIR R4, visit: https://www.hl7.org/fhir/R4/
 
-<h3 id="supported-profiles" style="color:#E60073">Supported Profiles</h3>
+<h2 id="supported-profiles" style="color:#E60073">Supported Profiles</h2>
 
 Although there are twenty-seven US Core clinical profiles, HealthLX currently supports only the most common clinical data types likely to be held by payers. Those profiles are listed below...
 
@@ -67,7 +71,7 @@ Although there are twenty-seven US Core clinical profiles, HealthLX currently su
 - US Core Pediatric Weight for Height Observation Profile
 - US Core Provenance Profile
 
-<h3 id="input-format-clarification" style="color:#E60073">Clarification on Required Input Format & General Structure</h3>
+<h2 id="input-format-clarification" style="color:#E60073">Clarification on Required Input Format & General Structure</h2>
 
 **Option 1:** Customer provides data directly in XML format defined within this Implementation Guide:
 
@@ -2112,19 +2116,17 @@ The only requirement is that the source data and mapping must ultimately provide
 
 
 
-<h2 id="practical-guidance" style="color:#E60073">Practical Guidance</h2>
-
-<h3 style="color:#E60073">Submission Frequency</h3>
+<h2 id="submission-frequency" style="color:#E60073">Submission Frequency</h2>
 
 Clinical_V4.2 files should be submitted according to the schedule agreed upon with HealthLX. Typical submission frequencies include daily, weekly, or monthly updates.
 
-<h3 style="color:#E60073">Adds, Updates, and Deletes</h3>
+<h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
 
 - **Adds**: Include new member records with all required fields populated
 - **Updates**: Submit complete member records with updated information
 - **Deletes**: Follow the agreed-upon process for member terminations or removals
 
-<h3 style="color:#E60073">Member Identification</h3>
+<h2 id="member-identification" style="color:#E60073">Member Identification</h2>
 
 Each member must be uniquely identified using the appropriate identifier fields. Ensure consistency in member identifiers across all submissions to maintain data integrity.
 
