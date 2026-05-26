@@ -8,3 +8,14 @@ Clinical_V4.2:
       title: Clarification on Required Input Format & General Structure
       after: interoperability
       file: Clinical_V4.2/input_format_clarification.md
+
+Roster_V6.2:
+  sections:
+    - id: supplying-member-identification
+      title: Supplying Member Identification
+      replace: member-identification
+      file: Roster_V6.2/member_identification.md
+    - id: appendix-a-value-sets
+      title: Appendix A – Value Sets
+      after: member-identification
+      file: Roster_V6.2/appendix_value_sets.md

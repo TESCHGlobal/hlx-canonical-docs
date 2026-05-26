@@ -87,7 +87,7 @@ def generate_header(root, schema_info: SchemaInfo):
     return output
 
 
-def generate_toc(schema_info: SchemaInfo, has_core_types=False, toc_extras=None):
+def generate_toc(schema_info: SchemaInfo, has_core_types=False, toc_extras=None, member_identification_override=None):
     """Generate table of contents with section links matching PDF format."""
     # Create URL-safe anchor from schema name
     schema_anchor = schema_info.display_name.lower().replace(' ', '-')
@@ -124,14 +124,24 @@ def generate_toc(schema_info: SchemaInfo, has_core_types=False, toc_extras=None)
         {"key": "member-identification", "title": "Member Identification", "anchor": "#member-identification"},
     ])
 
+    if member_identification_override:
+        for item in fixed_items:
+            if item["key"] == "member-identification":
+                item["title"] = member_identification_override.title
+                item["anchor"] = f"#{member_identification_override.id}"
+                break
+
     extras_by_before: dict[str, list[dict]] = {}
+    extras_by_after: dict[str, list[dict]] = {}
     for extra in toc_extras:
         if not isinstance(extra, dict):
             continue
         before = extra.get("before")
-        if not before:
-            continue
-        extras_by_before.setdefault(str(before), []).append(extra)
+        after = extra.get("after")
+        if before:
+            extras_by_before.setdefault(str(before), []).append(extra)
+        if after:
+            extras_by_after.setdefault(str(after), []).append(extra)
 
     output = "**Table of Contents**\n\n"
     result_items: list[dict] = []
@@ -145,6 +155,13 @@ def generate_toc(schema_info: SchemaInfo, has_core_types=False, toc_extras=None)
                 result_items.append({"title": title, "anchor": f"#{anchor}"})
 
         result_items.append(item)
+
+        after_list = extras_by_after.get(item["key"], [])
+        for extra in after_list:
+            anchor = str(extra.get("anchor", "")).lstrip("#")
+            title = str(extra.get("title", anchor))
+            if anchor:
+                result_items.append({"title": title, "anchor": f"#{anchor}"})
 
     for idx, item in enumerate(result_items, start=1):
         output += f"{idx}. [{item['title']}]({item['anchor']})\n"
@@ -222,7 +239,7 @@ def generate_change_log(schema_info: SchemaInfo, release_tag=None):
     return output
 
 
-def generate_practical_guidance(schema_info: SchemaInfo):
+def generate_practical_guidance(schema_info: SchemaInfo, member_identification_override=None):
     """Generate submission frequency, adds/updates/deletes, and member identification sections."""
     output = "<h2 id=\"submission-frequency\" style=\"color:#E60073\">Submission Frequency</h2>\n\n"
     output += f"{schema_info.display_name} files should be submitted according to the schedule agreed upon with HealthLX. "
@@ -233,9 +250,17 @@ def generate_practical_guidance(schema_info: SchemaInfo):
     output += "- **Updates**: Submit complete member records with updated information\n"
     output += "- **Deletes**: Follow the agreed-upon process for member terminations or removals\n\n"
 
-    output += "<h2 id=\"member-identification\" style=\"color:#E60073\">Member Identification</h2>\n\n"
-    output += "Each member must be uniquely identified using the appropriate identifier fields. "
-    output += "Ensure consistency in member identifiers across all submissions to maintain data integrity.\n\n"
+    if member_identification_override:
+        section_id = member_identification_override.id
+        section_title = member_identification_override.title
+        section_body = (member_identification_override.body or "").strip()
+        output += f"<h2 id=\"{section_id}\" style=\"color:#E60073\">{section_title}</h2>\n\n"
+        if section_body:
+            output += section_body + "\n\n"
+    else:
+        output += "<h2 id=\"member-identification\" style=\"color:#E60073\">Member Identification</h2>\n\n"
+        output += "Each member must be uniquely identified using the appropriate identifier fields. "
+        output += "Ensure consistency in member identifiers across all submissions to maintain data integrity.\n\n"
     
     return output
 

@@ -78,6 +78,8 @@ def generate_markdown(xsd_path, release_tag=None):
         toc_extras = supplements.get("toc_extras", [])
         after_interoperability_sections = supplements.get("after_interoperability_sections", [])
         before_required_elements_sections = supplements.get("before_required_elements_sections", [])
+        member_identification_override = supplements.get("member_identification_override")
+        after_member_identification_sections = supplements.get("after_member_identification_sections", [])
 
         # Detect core model import and parse core types if present
         core_model_path = None
@@ -107,7 +109,12 @@ def generate_markdown(xsd_path, release_tag=None):
             output += generate_header(root, schema_info)
             
             # Table of contents (include core types section if present)
-            output += generate_toc(schema_info, has_core_types, toc_extras=toc_extras)
+            output += generate_toc(
+                schema_info,
+                has_core_types,
+                toc_extras=toc_extras,
+                member_identification_override=member_identification_override,
+            )
             
             # Disclaimer
             output += generate_disclaimer()
@@ -166,7 +173,17 @@ def generate_markdown(xsd_path, release_tag=None):
             output += generate_element_table_with_sections(f"All Elements of {schema_info.display_name} XSD", all_elements, schema_info)
             
             # Practical Guidance
-            output += generate_practical_guidance(schema_info)
+            output += generate_practical_guidance(
+                schema_info,
+                member_identification_override=member_identification_override,
+            )
+
+            for section in after_member_identification_sections:
+                section_id = getattr(section, "id", None)
+                section_title = getattr(section, "title", None) or section_id
+                section_body = getattr(section, "body", None) or ""
+                if section_id:
+                    output += generate_supplement_section(section_id, section_title, section_body)
         except Exception as e:
             logger.error(f"Error generating markdown content: {e}")
             raise SchemaValidationError(f"Failed to generate markdown: {e}")

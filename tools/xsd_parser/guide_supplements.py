@@ -27,6 +27,7 @@ class GuideSupplementSection:
     title: str
     file: str
     inject_into: Optional[str] = None
+    replace: Optional[str] = None
     after: Optional[str] = None
     before: Optional[str] = None
     body: str = ""
@@ -63,6 +64,8 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "toc_extras": [],
             "after_interoperability_sections": [],
             "before_required_elements_sections": [],
+            "member_identification_override": None,
+            "after_member_identification_sections": [],
         }
 
     with manifest_path.open("r", encoding="utf-8") as f:
@@ -86,6 +89,8 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
     guides_dir = _supplements_dir()
     after_interoperability_sections: List[GuideSupplementSection] = []
     before_required_sections: List[GuideSupplementSection] = []
+    member_identification_override: Optional[GuideSupplementSection] = None
+    after_member_identification_sections: List[GuideSupplementSection] = []
 
     for sec in sections_cfg:
         if not isinstance(sec, dict):
@@ -95,6 +100,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
         file_rel = sec.get("file")
         title = sec.get("title") or sec_id
         inject_into = sec.get("inject_into")
+        replace = sec.get("replace")
         after = sec.get("after")
         before = sec.get("before")
 
@@ -112,13 +118,18 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             title=str(title),
             file=str(file_rel),
             inject_into=str(inject_into) if inject_into else None,
+            replace=str(replace) if replace else None,
             after=str(after) if after else None,
             before=str(before) if before else None,
             body=body,
         )
 
-        if section.after == "interoperability":
+        if section.replace == "member-identification":
+            member_identification_override = section
+        elif section.after == "interoperability":
             after_interoperability_sections.append(section)
+        elif section.after == "member-identification":
+            after_member_identification_sections.append(section)
         elif section.before == "required-elements":
             before_required_sections.append(section)
 
@@ -138,10 +149,18 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "anchor": section.id,
             "before": "required-elements",
         })
+    for section in after_member_identification_sections:
+        toc_extras_out.append({
+            "title": section.title,
+            "anchor": section.id,
+            "after": "member-identification",
+        })
 
     return {
         "toc_extras": toc_extras_out,
         "after_interoperability_sections": after_interoperability_sections,
         "before_required_elements_sections": before_required_sections,
+        "member_identification_override": member_identification_override,
+        "after_member_identification_sections": after_member_identification_sections,
     }
 
