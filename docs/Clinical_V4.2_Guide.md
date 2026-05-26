@@ -28,6 +28,7 @@ title: "Clinical_V4.2 Implementation Guide"
 11. [Submission Frequency](#submission-frequency)
 12. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
 13. [Member Identification](#member-identification)
+14. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -2129,4 +2130,10 @@ Clinical_V4.2 files should be submitted according to the schedule agreed upon wi
 <h2 id="member-identification" style="color:#E60073">Member Identification</h2>
 
 Each member must be uniquely identified using the appropriate identifier fields. Ensure consistency in member identifiers across all submissions to maintain data integrity.
+
+<h2 id="appendix-overall-implementation" style="color:#E60073">Appendix Overall Implementation</h2>
+
+The following diagram depicts all data types and how they are integrated:
+
+<img src="assets/overall_implemntation_diagram.png" alt="Overall Implementation Diagram" class="overall-implementation-diagram" />
 

@@ -27,6 +27,7 @@ title: "Roster_V6.2 Implementation Guide"
 10. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
 11. [Supplying Member Identification](#supplying-member-identification)
 12. [Appendix A – Value Sets](#appendix-a-value-sets)
+13. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -596,4 +597,10 @@ The updated smoking status list can be found here: http://hl7.org/fhir/us/core/S
 | 428071000124103 | Current heavy tobacco smoker |
 | 428061000124105 | Current light tobacco smoker |
 {: .heatMap}
+
+<h2 id="appendix-overall-implementation" style="color:#E60073">Appendix Overall Implementation</h2>
+
+The following diagram depicts all data types and how they are integrated:
+
+<img src="assets/overall_implemntation_diagram.png" alt="Overall Implementation Diagram" class="overall-implementation-diagram" />
 

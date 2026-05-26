@@ -31,6 +31,7 @@ from .markdown_gen import (
     generate_supplement_section,
     generate_change_log,
     generate_practical_guidance,
+    generate_overall_implementation_appendix,
     generate_element_table,
     generate_element_table_with_sections,
     generate_data_type_definitions
@@ -75,6 +76,7 @@ __all__ = [
     'generate_supplement_section',
     'generate_change_log',
     'generate_practical_guidance',
+    'generate_overall_implementation_appendix',
     'generate_element_table',
     'generate_element_table_with_sections',
     'generate_data_type_definitions',

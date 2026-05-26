@@ -166,6 +166,7 @@ def generate_toc(schema_info: SchemaInfo, has_core_types=False, toc_extras=None,
     for idx, item in enumerate(result_items, start=1):
         output += f"{idx}. [{item['title']}]({item['anchor']})\n"
 
+    output += f"{len(result_items) + 1}. [Appendix Overall Implementation](#appendix-overall-implementation)\n"
     output += "\n"
     return output
 
@@ -262,6 +263,14 @@ def generate_practical_guidance(schema_info: SchemaInfo, member_identification_o
         output += "Each member must be uniquely identified using the appropriate identifier fields. "
         output += "Ensure consistency in member identifiers across all submissions to maintain data integrity.\n\n"
     
+    return output
+
+
+def generate_overall_implementation_appendix():
+    """Generate the shared overall implementation diagram appendix for all guides."""
+    output = "<h2 id=\"appendix-overall-implementation\" style=\"color:#E60073\">Appendix Overall Implementation</h2>\n\n"
+    output += "The following diagram depicts all data types and how they are integrated:\n\n"
+    output += "<img src=\"assets/overall_implemntation_diagram.png\" alt=\"Overall Implementation Diagram\" class=\"overall-implementation-diagram\" />\n\n"
     return output
 
 

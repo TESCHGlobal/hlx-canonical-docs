@@ -36,6 +36,7 @@ from xsd_parser import (
     generate_supplement_section,
     generate_change_log,
     generate_practical_guidance,
+    generate_overall_implementation_appendix,
     generate_element_table,
     generate_element_table_with_sections,
     to_md_table,
@@ -184,6 +185,8 @@ def generate_markdown(xsd_path, release_tag=None):
                 section_body = getattr(section, "body", None) or ""
                 if section_id:
                     output += generate_supplement_section(section_id, section_title, section_body)
+
+            output += generate_overall_implementation_appendix()
         except Exception as e:
             logger.error(f"Error generating markdown content: {e}")
             raise SchemaValidationError(f"Failed to generate markdown: {e}")

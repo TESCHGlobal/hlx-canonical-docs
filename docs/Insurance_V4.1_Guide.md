@@ -26,6 +26,7 @@ title: "Insurance_V4.1 Implementation Guide"
 9. [Submission Frequency](#submission-frequency)
 10. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
 11. [Member Identification](#member-identification)
+12. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -339,4 +340,10 @@ Insurance_V4.1 files should be submitted according to the schedule agreed upon w
 <h2 id="member-identification" style="color:#E60073">Member Identification</h2>
 
 Each member must be uniquely identified using the appropriate identifier fields. Ensure consistency in member identifiers across all submissions to maintain data integrity.
+
+<h2 id="appendix-overall-implementation" style="color:#E60073">Appendix Overall Implementation</h2>
+
+The following diagram depicts all data types and how they are integrated:
+
+<img src="assets/overall_implemntation_diagram.png" alt="Overall Implementation Diagram" class="overall-implementation-diagram" />
 
