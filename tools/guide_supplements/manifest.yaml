@@ -1,13 +1,9 @@
 Clinical_V4.2:
-  toc_extras:
-    - title: "Clarification on Required Input Format & General Structure"
-      anchor: input-format-clarification
-      before: required-elements
   sections:
     - id: supported-profiles
       inject_into: interoperability
       file: Clinical_V4.2/supported_profiles.md
     - id: input-format-clarification
-      before: required-elements
+      inject_into: interoperability
       file: Clinical_V4.2/input_format_clarification.md
 

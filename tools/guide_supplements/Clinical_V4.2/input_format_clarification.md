@@ -1,3 +1,5 @@
+<h3 id="input-format-clarification" style="color:#E60073">Clarification on Required Input Format & General Structure</h3>
+
 **Option 1:** Customer provides data directly in XML format defined within this Implementation Guide:
 
 ![Option 1 XML format](assets/Clinical_Option1.png)

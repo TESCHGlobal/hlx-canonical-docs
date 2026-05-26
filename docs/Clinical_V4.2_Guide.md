@@ -21,10 +21,9 @@ title: "Clinical_V4.2 Implementation Guide"
 4. [Change Log](#change-log)
 5. [Simple Types](#simple-types)
 6. [Complex Types](#complex-types)
-7. [Clarification on Required Input Format & General Structure](#input-format-clarification)
-8. [Required Elements of Clinical_V4.2 XSD](#required-elements-of-clinical_v4.2-xsd)
-9. [All Elements of Clinical_V4.2 XSD](#all-elements-of-clinical_v4.2-xsd)
-10. [Practical Guidance](#practical-guidance)
+7. [Required Elements of Clinical_V4.2 XSD](#required-elements-of-clinical_v4.2-xsd)
+8. [All Elements of Clinical_V4.2 XSD](#all-elements-of-clinical_v4.2-xsd)
+9. [Practical Guidance](#practical-guidance)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -67,6 +66,20 @@ Although there are twenty-seven US Core clinical profiles, HealthLX currently su
 - US Core Pediatric Head Occipital Frontal Circumference Percentile Profile
 - US Core Pediatric Weight for Height Observation Profile
 - US Core Provenance Profile
+
+<h3 id="input-format-clarification" style="color:#E60073">Clarification on Required Input Format & General Structure</h3>
+
+**Option 1:** Customer provides data directly in XML format defined within this Implementation Guide:
+
+![Option 1 XML format](assets/Clinical_Option1.png)
+
+**Option 2:** Customer provides data in arbitrary format for transformation by Customer, HealthLX, or a third party:
+
+![Option 2 arbitrary format](assets/Clinical_Option2.png)
+
+This Implementation Guide defines the required/allowable format for clinical data as it is ingested into the HealthLX platform, whether the source data is transformed into this format by the customer or with the assistance of other parties, such as HealthLX.
+
+The only requirement is that the source data and mapping must ultimately provide, at a minimum, all fields marked as required within this Implementation Guide.
 
 <h2 id="change-log" style="color:#E60073">Change Log</h2>
 
@@ -733,20 +746,6 @@ Although there are twenty-seven US Core clinical profiles, HealthLX currently su
 {: .heatMap}
 
 
-
-<h2 id="input-format-clarification" style="color:#E60073">Clarification on Required Input Format & General Structure</h2>
-
-**Option 1:** Customer provides data directly in XML format defined within this Implementation Guide:
-
-![Option 1 XML format](assets/Clinical_Option1.png)
-
-**Option 2:** Customer provides data in arbitrary format for transformation by Customer, HealthLX, or a third party:
-
-![Option 2 arbitrary format](assets/Clinical_Option2.png)
-
-This Implementation Guide defines the required/allowable format for clinical data as it is ingested into the HealthLX platform, whether the source data is transformed into this format by the customer or with the assistance of other parties, such as HealthLX.
-
-The only requirement is that the source data and mapping must ultimately provide, at a minimum, all fields marked as required within this Implementation Guide.
 
 <h2 id="required-elements-of-clinical_v4.2-xsd" style="color:#E60073">Required Elements of Clinical_V4.2 XSD</h2>
 
