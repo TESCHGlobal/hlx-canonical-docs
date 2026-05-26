@@ -481,6 +481,14 @@ body {
   color: #2a3e50;
 }
 
+.page-content img.clinical-option-diagram {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  margin: 1rem 0 1.5rem;
+}
+
 /* TOC block styling */
 .page-content > p + ol,
 .page-content > p + ul {
