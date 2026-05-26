@@ -87,31 +87,67 @@ def generate_header(root, schema_info: SchemaInfo):
     return output
 
 
-def generate_toc(schema_info: SchemaInfo, has_core_types=False):
+def generate_toc(schema_info: SchemaInfo, has_core_types=False, toc_extras=None):
     """Generate table of contents with section links matching PDF format."""
     # Create URL-safe anchor from schema name
     schema_anchor = schema_info.display_name.lower().replace(' ', '-')
-    
-    output = "**Table of Contents**\n\n"
-    output += "1. [Overview](#overview)\n"
-    output += "2. [Encoding](#encoding)\n"
-    output += "3. [Interoperability](#interoperability)\n"
-    output += "4. [Change Log](#change-log)\n"
-    output += "5. [Simple Types](#simple-types)\n"
-    
-    section_num = 6
+
+    toc_extras = toc_extras or []
+
+    fixed_items = [
+        {"key": "overview", "title": "Overview", "anchor": "#overview"},
+        {"key": "encoding", "title": "Encoding", "anchor": "#encoding"},
+        {"key": "interoperability", "title": "Interoperability", "anchor": "#interoperability"},
+        {"key": "change-log", "title": "Change Log", "anchor": "#change-log"},
+        {"key": "simple-types", "title": "Simple Types", "anchor": "#simple-types"},
+    ]
+
     if has_core_types:
-        output += f"{section_num}. [Core Model Types](#core-model-types)\n"
-        section_num += 1
-    
-    output += f"{section_num}. [Complex Types](#complex-types)\n"
-    section_num += 1
-    output += f"{section_num}. [Required Elements of {schema_info.display_name} XSD](#required-elements-of-{schema_anchor}-xsd)\n"
-    section_num += 1
-    output += f"{section_num}. [All Elements of {schema_info.display_name} XSD](#all-elements-of-{schema_anchor}-xsd)\n"
-    section_num += 1
-    output += f"{section_num}. [Practical Guidance](#practical-guidance)\n\n"
-    
+        fixed_items.append(
+            {"key": "core-model-types", "title": "Core Model Types", "anchor": "#core-model-types"}
+        )
+
+    fixed_items.extend([
+        {"key": "complex-types", "title": "Complex Types", "anchor": "#complex-types"},
+        {
+            "key": "required-elements",
+            "title": f"Required Elements of {schema_info.display_name} XSD",
+            "anchor": f"#required-elements-of-{schema_anchor}-xsd",
+        },
+        {
+            "key": "all-elements",
+            "title": f"All Elements of {schema_info.display_name} XSD",
+            "anchor": f"#all-elements-of-{schema_anchor}-xsd",
+        },
+        {"key": "practical-guidance", "title": "Practical Guidance", "anchor": "#practical-guidance"},
+    ])
+
+    extras_by_before: dict[str, list[dict]] = {}
+    for extra in toc_extras:
+        if not isinstance(extra, dict):
+            continue
+        before = extra.get("before")
+        if not before:
+            continue
+        extras_by_before.setdefault(str(before), []).append(extra)
+
+    output = "**Table of Contents**\n\n"
+    result_items: list[dict] = []
+
+    for item in fixed_items:
+        extra_list = extras_by_before.get(item["key"], [])
+        for extra in extra_list:
+            anchor = str(extra.get("anchor", "")).lstrip("#")
+            title = str(extra.get("title", anchor))
+            if anchor:
+                result_items.append({"title": title, "anchor": f"#{anchor}"})
+
+        result_items.append(item)
+
+    for idx, item in enumerate(result_items, start=1):
+        output += f"{idx}. [{item['title']}]({item['anchor']})\n"
+
+    output += "\n"
     return output
 
 
@@ -143,12 +179,31 @@ def generate_encoding(schema_info: SchemaInfo):
     return output
 
 
-def generate_interoperability():
-    """Generate interoperability section with FHIR reference."""
+def generate_interoperability(schema_info: SchemaInfo, append_content: str = ""):
+    """Generate interoperability section with FHIR reference.
+
+    Args:
+        schema_info: Current schema metadata
+        append_content: Optional guide-specific markdown/HTML appended after the
+            FHIR R4 paragraph (for example, Clinical "Supported Profiles").
+    """
     output = "<h2 id=\"interoperability\" style=\"color:#E60073\">Interoperability</h2>\n\n"
     output += "This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability Resources Release 4) standards. "
     output += "For more information about FHIR R4, visit: https://www.hl7.org/fhir/R4/\n\n"
-    
+
+    append_content = (append_content or "").strip()
+    if append_content:
+        output += append_content + "\n\n"
+
+    return output
+
+
+def generate_supplement_section(section_id: str, title: str, content: str) -> str:
+    """Generate a standalone h2 supplement block."""
+    output = f"<h2 id=\"{section_id}\" style=\"color:#E60073\">{title}</h2>\n\n"
+    content = (content or "").strip()
+    if content:
+        output += content + "\n\n"
     return output
 
 

@@ -28,12 +28,15 @@ from .markdown_gen import (
     generate_overview,
     generate_encoding,
     generate_interoperability,
+    generate_supplement_section,
     generate_change_log,
     generate_practical_guidance,
     generate_element_table,
     generate_element_table_with_sections,
     generate_data_type_definitions
 )
+
+from .guide_supplements import load_guide_supplements
 from .validation import (
     validate_xsd_file,
     validate_schema_structure,
@@ -69,11 +72,14 @@ __all__ = [
     'generate_overview',
     'generate_encoding',
     'generate_interoperability',
+    'generate_supplement_section',
     'generate_change_log',
     'generate_practical_guidance',
     'generate_element_table',
     'generate_element_table_with_sections',
     'generate_data_type_definitions',
+    # Guide supplements
+    'load_guide_supplements',
     # Validation
     'validate_xsd_file',
     'validate_schema_structure',

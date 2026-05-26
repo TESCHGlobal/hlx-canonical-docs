@@ -33,12 +33,14 @@ from xsd_parser import (
     generate_overview,
     generate_encoding,
     generate_interoperability,
+    generate_supplement_section,
     generate_change_log,
     generate_practical_guidance,
     generate_element_table,
     generate_element_table_with_sections,
     to_md_table,
     verify_schema_coverage,
+    load_guide_supplements,
 )
 from xsd_parser.constants import logger
 
@@ -72,6 +74,11 @@ def generate_markdown(xsd_path, release_tag=None):
         except Exception as e:
             raise SchemaValidationError(f"Failed to extract schema info: {e}")
 
+        supplements = load_guide_supplements(Path(xsd_path).stem)
+        toc_extras = supplements.get("toc_extras", [])
+        interoperability_append = supplements.get("interoperability_append", "")
+        before_required_elements_sections = supplements.get("before_required_elements_sections", [])
+
         # Detect core model import and parse core types if present
         core_model_path = None
         core_types_dict = {}
@@ -100,7 +107,7 @@ def generate_markdown(xsd_path, release_tag=None):
             output += generate_header(root, schema_info)
             
             # Table of contents (include core types section if present)
-            output += generate_toc(schema_info, has_core_types)
+            output += generate_toc(schema_info, has_core_types, toc_extras=toc_extras)
             
             # Disclaimer
             output += generate_disclaimer()
@@ -112,7 +119,7 @@ def generate_markdown(xsd_path, release_tag=None):
             output += generate_encoding(schema_info)
             
             # Interoperability
-            output += generate_interoperability()
+            output += generate_interoperability(schema_info, append_content=interoperability_append)
             
             # Change Log
             output += generate_change_log(schema_info, release_tag)
@@ -133,6 +140,17 @@ def generate_markdown(xsd_path, release_tag=None):
                 output += "<h2 id=\"complex-types\" style=\"color:#E60073\"> Complex Types</h2>\n\n"
                 for name, elements in complex_types.items():
                     output += generate_complex_type_table(name, elements)
+
+            # Guide supplements inserted before required elements
+            if before_required_elements_sections:
+                toc_extras_by_anchor = {t.get("anchor"): t.get("title") for t in toc_extras if isinstance(t, dict)}
+                for section in before_required_elements_sections:
+                    section_id = getattr(section, "id", None) or section.get("id")
+                    section_body = getattr(section, "body", None) or section.get("body") or section.get("content") or ""
+                    if not section_id:
+                        continue
+                    title = toc_extras_by_anchor.get(section_id, section_id)
+                    output += generate_supplement_section(section_id, title, section_body)
             
             # Required Elements table
             required_elements = parse_required_elements(root, schema_info)

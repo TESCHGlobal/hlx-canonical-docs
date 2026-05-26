@@ -11,7 +11,7 @@ title: "Clinical_V4.2 Implementation Guide"
 
 **Version 4.0**
 
-**April 27, 2026**
+**May 26, 2026**
 
 **Table of Contents**
 
@@ -21,9 +21,10 @@ title: "Clinical_V4.2 Implementation Guide"
 4. [Change Log](#change-log)
 5. [Simple Types](#simple-types)
 6. [Complex Types](#complex-types)
-7. [Required Elements of Clinical_V4.2 XSD](#required-elements-of-clinical_v4.2-xsd)
-8. [All Elements of Clinical_V4.2 XSD](#all-elements-of-clinical_v4.2-xsd)
-9. [Practical Guidance](#practical-guidance)
+7. [Clarification on Required Input Format & General Structure](#input-format-clarification)
+8. [Required Elements of Clinical_V4.2 XSD](#required-elements-of-clinical_v4.2-xsd)
+9. [All Elements of Clinical_V4.2 XSD](#all-elements-of-clinical_v4.2-xsd)
+10. [Practical Guidance](#practical-guidance)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -45,11 +46,33 @@ Payers need to send their files with utf-8 encoding as shown below:
 
 This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability Resources Release 4) standards. For more information about FHIR R4, visit: https://www.hl7.org/fhir/R4/
 
+<h3 id="supported-profiles" style="color:#E60073">Supported Profiles</h3>
+
+Although there are twenty-seven US Core clinical profiles, HealthLX currently supports only the most common clinical data types likely to be held by payers. Those profiles are listed below...
+
+- US Core Patient Profile
+- US Core Laboratory Result Observation Profile
+- US Core AllergyIntolerance Profile
+- US Core Conditions Profile
+- US Core Procedures Profile
+- US Core Vital Signs Profile
+- US Core MedicationRequest and Medication Profiles
+- US Core Care Teams Profile
+- US Core Locations Profile
+- US Core Practitioners Profile
+- US Core Immunizations Profile
+- US Core Goal Profile
+- US Core Implantable Device Profile
+- US Core Document Reference Profile
+- US Core Pediatric Head Occipital Frontal Circumference Percentile Profile
+- US Core Pediatric Weight for Height Observation Profile
+- US Core Provenance Profile
+
 <h2 id="change-log" style="color:#E60073">Change Log</h2>
 
 | Version | Date |
 |---------|------|
-| manual | April 27, 2026 |
+| manual | May 26, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -710,6 +733,20 @@ This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability 
 {: .heatMap}
 
 
+
+<h2 id="input-format-clarification" style="color:#E60073">Clarification on Required Input Format & General Structure</h2>
+
+**Option 1:** Customer provides data directly in XML format defined within this Implementation Guide:
+
+![Option 1 XML format](assets/Clinical_Option1.png)
+
+**Option 2:** Customer provides data in arbitrary format for transformation by Customer, HealthLX, or a third party:
+
+![Option 2 arbitrary format](assets/Clinical_Option2.png)
+
+This Implementation Guide defines the required/allowable format for clinical data as it is ingested into the HealthLX platform, whether the source data is transformed into this format by the customer or with the assistance of other parties, such as HealthLX.
+
+The only requirement is that the source data and mapping must ultimately provide, at a minimum, all fields marked as required within this Implementation Guide.
 
 <h2 id="required-elements-of-clinical_v4.2-xsd" style="color:#E60073">Required Elements of Clinical_V4.2 XSD</h2>
 
