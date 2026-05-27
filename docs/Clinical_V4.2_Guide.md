@@ -11,7 +11,7 @@ title: "Clinical_V4.2 Implementation Guide"
 
 **Version 4.0**
 
-**May 26, 2026**
+**May 27, 2026**
 
 **Table of Contents**
 
@@ -48,7 +48,13 @@ Payers need to send their files with utf-8 encoding as shown below:
 
 <h2 id="interoperability" style="color:#E60073">Interoperability</h2>
 
-This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability Resources Release 4) standards. For more information about FHIR R4, visit: https://www.hl7.org/fhir/R4/
+This implementation guide is based on constructs presented in FHIR R4 (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
+
+For more information regarding these underlying standards, please visit:
+
+- FHIR R4: https://www.hl7.org/fhir/R4/
+- Da Vinci Project: https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome
+- CARIN Alliance: https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides
 
 <h2 id="supported-profiles" style="color:#E60073">Supported Profiles</h2>
 
@@ -90,7 +96,7 @@ The only requirement is that the source data and mapping must ultimately provide
 
 | Version | Date |
 |---------|------|
-| manual | May 26, 2026 |
+| manual | May 27, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>

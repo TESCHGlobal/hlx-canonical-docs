@@ -202,8 +202,12 @@ def generate_encoding(schema_info: SchemaInfo):
 def generate_interoperability(schema_info: SchemaInfo):
     """Generate interoperability section with FHIR reference."""
     output = "<h2 id=\"interoperability\" style=\"color:#E60073\">Interoperability</h2>\n\n"
-    output += "This implementation guide is based on FHIR R4 (Fast Healthcare Interoperability Resources Release 4) standards. "
-    output += "For more information about FHIR R4, visit: https://www.hl7.org/fhir/R4/\n\n"
+    output += "This implementation guide is based on constructs presented in FHIR R4 (Fast Healthcare Interoperability Resources Release 4) "
+    output += "and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.\n\n"
+    output += "For more information regarding these underlying standards, please visit:\n\n"
+    output += "- FHIR R4: https://www.hl7.org/fhir/R4/\n"
+    output += "- Da Vinci Project: https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome\n"
+    output += "- CARIN Alliance: https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides\n\n"
 
     return output
 
