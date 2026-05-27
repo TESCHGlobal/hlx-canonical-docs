@@ -635,6 +635,8 @@ Provider Directory_V4.3 files should be submitted according to the schedule agre
 
 Each member must be uniquely identified using the appropriate identifier fields. Ensure consistency in member identifiers across all submissions to maintain data integrity.
 
+For more information on member identity, see the Member Identification section in the Roster documentation.
+
 <h2 id="appendix-overall-implementation" style="color:#E60073">Appendix Overall Implementation</h2>
 
 The following diagram depicts all data types and how they are integrated:

@@ -266,6 +266,7 @@ def generate_practical_guidance(schema_info: SchemaInfo, member_identification_o
         output += "<h2 id=\"member-identification\" style=\"color:#E60073\">Member Identification</h2>\n\n"
         output += "Each member must be uniquely identified using the appropriate identifier fields. "
         output += "Ensure consistency in member identifiers across all submissions to maintain data integrity.\n\n"
+        output += "For more information on member identity, see the Member Identification section in the Roster documentation.\n\n"
     
     return output
 
