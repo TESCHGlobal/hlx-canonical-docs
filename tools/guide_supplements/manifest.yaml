@@ -35,6 +35,10 @@ Clinical_V4.2:
 
 Roster_V6.2:
   sections:
+    - id: adds-updates-and-deletes
+      title: Adds, Updates, and Deletes
+      replace: adds-updates-and-deletes
+      file: Roster_V6.2/adds_updates_deletes.md
     - id: supplying-member-identification
       title: Supplying Member Identification
       replace: member-identification

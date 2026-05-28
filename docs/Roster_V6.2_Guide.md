@@ -11,7 +11,7 @@ title: "Roster_V6.2 Implementation Guide"
 
 **Version 6.1**
 
-**May 27, 2026**
+**May 28, 2026**
 
 **Table of Contents**
 
@@ -59,7 +59,7 @@ For more information regarding these underlying standards, please visit:
 
 | Version | Date |
 |---------|------|
-| manual | May 27, 2026 |
+| manual | May 28, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -433,9 +433,9 @@ Roster_V6.2 files should be submitted according to the schedule agreed upon with
 
 <h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
 
-- **Adds**: Include new member records with all required fields populated
-- **Updates**: Submit complete member records with updated information
-- **Deletes**: Follow the agreed-upon process for member terminations or removals
+Updates to existing Roster records will fully replace the previous Roster record, and therefore the entire record must be submitted for the original "Add" and for every "Update". Generally, a member should never be removed from a roster if they are a legitimate member. The exception to this is when the entry should never have been sent. If such a situation arises, please contact HealthLX.
+
+The roster/member/record_type element was formerly specified as required, but HealthLX does not use this information.
 
 <h2 id="supplying-member-identification" style="color:#E60073">Supplying Member Identification</h2>
 
