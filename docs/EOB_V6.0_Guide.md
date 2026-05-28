@@ -26,9 +26,11 @@ title: "EOB_V6.0 Implementation Guide"
 9. [Type/Sub-Type Dependencies](#type-subtype-dependencies)
 10. [All Elements of EOB_V6.0 XSD](#all-elements-of-eob_v6.0-xsd)
 11. [Submission Frequency](#submission-frequency)
-12. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
-13. [Member Identification](#member-identification)
-14. [Appendix Overall Implementation](#appendix-overall-implementation)
+12. [Customer Guidance](#customer-guidance)
+13. [Identification of a Patient](#identification-of-a-patient)
+14. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
+15. [Member Identification](#member-identification)
+16. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -1064,6 +1066,23 @@ The following table provides a summary of second level type/sub_type element dep
 <h2 id="submission-frequency" style="color:#E60073">Submission Frequency</h2>
 
 EOB_V6.0 files should be submitted according to the schedule agreed upon with HealthLX. Typical submission frequencies include daily, weekly, or monthly updates.
+
+<h2 id="customer-guidance" style="color:#E60073">Customer Guidance</h2>
+
+- The size of the XML file must not exceed 100MB
+- Customers must send an EOB only once in any file
+- The `eob_identifier` must be unique for each eob record.
+- Do not send empty tags.
+- If there is no data within child fields of optional tags, do not send the optional tags.
+- An Institutional "inpatient" or "outpatient" EOB must have adjudication at the item OR header level, but not both.
+
+<h2 id="identification-of-a-patient" style="color:#E60073">Identification of a Patient</h2>
+
+When HealthLX receives an EOB, it is associated with the most current Roster file. The sole field utilized to match an EOB record to the Roster is the `eob/patient/person/unique_person_id` value. If the `unique_person_id` value is not included, the EOB record will not be processed.
+
+Unique Identifiers are case sensitive and MUST match across file types.
+
+For example: If the `unique_person_id` = t9808041455 on the Roster file, using a lower-case "t", but T9808041455 on the EOB file with an upper-case "T", the EOB will not be tied to the correct Patient resource/member.
 
 <h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
 

@@ -46,6 +46,14 @@ Roster_V6.2:
 
 EOB_V6.0:
   sections:
+    - id: customer-guidance
+      title: Customer Guidance
+      after: submission-frequency
+      file: EOB_V6.0/customer_guidance.md
+    - id: identification-of-a-patient
+      title: Identification of a Patient
+      after: submission-frequency
+      file: EOB_V6.0/identification_of_a_patient.md
     - id: profile-based-required-data-elements
       title: Profile-Based Required Data Elements
       after: required-elements
