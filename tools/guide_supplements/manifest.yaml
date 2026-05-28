@@ -28,6 +28,10 @@ Clinical_V4.2:
       title: Empty Tags
       after: submission-frequency
       file: Clinical_V4.2/empty_tags.md
+    - id: adds-updates-and-deletes
+      title: Adds, Updates, and Deletes
+      replace: adds-updates-and-deletes
+      file: Clinical_V4.2/adds_updates_deletes.md
 
 Roster_V6.2:
   sections:

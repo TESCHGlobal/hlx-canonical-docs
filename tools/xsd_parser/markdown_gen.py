@@ -247,6 +247,7 @@ def generate_change_log(schema_info: SchemaInfo, release_tag=None):
 def generate_practical_guidance(
     schema_info: SchemaInfo,
     member_identification_override=None,
+    adds_updates_and_deletes_override=None,
     after_submission_frequency_sections=None,
 ):
     """Generate submission frequency, adds/updates/deletes, and member identification sections."""
@@ -262,9 +263,14 @@ def generate_practical_guidance(
             output += generate_supplement_section(section_id, section_title, section_body)
 
     output += "<h2 id=\"adds-updates-and-deletes\" style=\"color:#E60073\">Adds, Updates, and Deletes</h2>\n\n"
-    output += "- **Adds**: Include new member records with all required fields populated\n"
-    output += "- **Updates**: Submit complete member records with updated information\n"
-    output += "- **Deletes**: Follow the agreed-upon process for member terminations or removals\n\n"
+    if adds_updates_and_deletes_override:
+        section_body = (adds_updates_and_deletes_override.body or "").strip()
+        if section_body:
+            output += section_body + "\n\n"
+    else:
+        output += "- **Adds**: Include new member records with all required fields populated\n"
+        output += "- **Updates**: Submit complete member records with updated information\n"
+        output += "- **Deletes**: Follow the agreed-upon process for member terminations or removals\n\n"
 
     if member_identification_override:
         section_id = member_identification_override.id

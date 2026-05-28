@@ -80,6 +80,7 @@ def generate_markdown(xsd_path, release_tag=None):
         after_interoperability_sections = supplements.get("after_interoperability_sections", [])
         before_required_elements_sections = supplements.get("before_required_elements_sections", [])
         member_identification_override = supplements.get("member_identification_override")
+        adds_updates_and_deletes_override = supplements.get("adds_updates_and_deletes_override")
         after_member_identification_sections = supplements.get("after_member_identification_sections", [])
         after_submission_frequency_sections = supplements.get("after_submission_frequency_sections", [])
 
@@ -178,6 +179,7 @@ def generate_markdown(xsd_path, release_tag=None):
             output += generate_practical_guidance(
                 schema_info,
                 member_identification_override=member_identification_override,
+                adds_updates_and_deletes_override=adds_updates_and_deletes_override,
                 after_submission_frequency_sections=after_submission_frequency_sections,
             )
 

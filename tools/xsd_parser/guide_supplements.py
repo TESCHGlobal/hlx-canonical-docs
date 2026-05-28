@@ -65,6 +65,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "after_interoperability_sections": [],
             "before_required_elements_sections": [],
             "member_identification_override": None,
+            "adds_updates_and_deletes_override": None,
             "after_member_identification_sections": [],
             "after_submission_frequency_sections": [],
         }
@@ -91,6 +92,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
     after_interoperability_sections: List[GuideSupplementSection] = []
     before_required_sections: List[GuideSupplementSection] = []
     member_identification_override: Optional[GuideSupplementSection] = None
+    adds_updates_and_deletes_override: Optional[GuideSupplementSection] = None
     after_member_identification_sections: List[GuideSupplementSection] = []
     after_submission_frequency_sections: List[GuideSupplementSection] = []
 
@@ -128,6 +130,8 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
 
         if section.replace == "member-identification":
             member_identification_override = section
+        elif section.replace == "adds-updates-and-deletes":
+            adds_updates_and_deletes_override = section
         elif section.after == "interoperability":
             after_interoperability_sections.append(section)
         elif section.after == "member-identification":
@@ -171,6 +175,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
         "after_interoperability_sections": after_interoperability_sections,
         "before_required_elements_sections": before_required_sections,
         "member_identification_override": member_identification_override,
+        "adds_updates_and_deletes_override": adds_updates_and_deletes_override,
         "after_member_identification_sections": after_member_identification_sections,
         "after_submission_frequency_sections": after_submission_frequency_sections,
     }
