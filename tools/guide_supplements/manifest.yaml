@@ -5,9 +5,25 @@ Clinical_V4.2:
       after: interoperability
       file: Clinical_V4.2/supported_profiles.md
     - id: input-format-clarification
-      title: Clarification on Required Input Format & General Structure
+      title: Clarification on Required Input Format
       after: interoperability
       file: Clinical_V4.2/input_format_clarification.md
+    - id: general-structure-clinical-xsd
+      title: General Structure for Clinical XSD
+      after: interoperability
+      file: Clinical_V4.2/general_structure_clinical_xsd.md
+    - id: date-time-reported
+      title: date_time_reported
+      after: interoperability
+      file: Clinical_V4.2/date_time_reported.md
+    - id: date-time-reported-historical
+      title: date_time_reported (Historical Record Submittals)
+      after: interoperability
+      file: Clinical_V4.2/date_time_reported_historical.md
+    - id: clinical-file-data-elements
+      title: Clinical File Data Elements & Requirements
+      after: interoperability
+      file: Clinical_V4.2/clinical_file_data_elements.md
 
 Roster_V6.2:
   sections:
