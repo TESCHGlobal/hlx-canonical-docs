@@ -106,3 +106,10 @@ Formulary_V6.2:
       title: Appendix B – Architecture
       after: member-identification
       file: Formulary_V6.2/appendix_b_architecture.md
+
+ProviderDirectory_V4.3:
+  sections:
+    - id: adds-updates-and-deletes
+      title: Adds, Updates, and Deletes
+      replace: adds-updates-and-deletes
+      file: ProviderDirectory_V4.3/adds_updates_deletes.md

@@ -11,7 +11,7 @@ title: "Provider Directory_V4.3 Implementation Guide"
 
 **Version 4.1.1**
 
-**May 27, 2026**
+**May 28, 2026**
 
 **Table of Contents**
 
@@ -58,7 +58,7 @@ For more information regarding these underlying standards, please visit:
 
 | Version | Date |
 |---------|------|
-| manual | May 27, 2026 |
+| manual | May 28, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -626,6 +626,8 @@ For more information regarding these underlying standards, please visit:
 Provider Directory_V4.3 files should be submitted according to the schedule agreed upon with HealthLX. Typical submission frequencies include daily, weekly, or monthly updates.
 
 <h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
+
+When data in a Provider Directory file is changed after ingestion/processing by HealthLX, a full replacement file (including changes) must be sent.
 
 - **Adds**: Include new member records with all required fields populated
 - **Updates**: Submit complete member records with updated information
