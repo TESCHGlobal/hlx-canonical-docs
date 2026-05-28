@@ -24,6 +24,10 @@ Clinical_V4.2:
       title: Clinical File Data Elements & Requirements
       after: interoperability
       file: Clinical_V4.2/clinical_file_data_elements.md
+    - id: empty-tags
+      title: Empty Tags
+      after: submission-frequency
+      file: Clinical_V4.2/empty_tags.md
 
 Roster_V6.2:
   sections:

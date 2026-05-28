@@ -81,6 +81,7 @@ def generate_markdown(xsd_path, release_tag=None):
         before_required_elements_sections = supplements.get("before_required_elements_sections", [])
         member_identification_override = supplements.get("member_identification_override")
         after_member_identification_sections = supplements.get("after_member_identification_sections", [])
+        after_submission_frequency_sections = supplements.get("after_submission_frequency_sections", [])
 
         # Detect core model import and parse core types if present
         core_model_path = None
@@ -177,6 +178,7 @@ def generate_markdown(xsd_path, release_tag=None):
             output += generate_practical_guidance(
                 schema_info,
                 member_identification_override=member_identification_override,
+                after_submission_frequency_sections=after_submission_frequency_sections,
             )
 
             for section in after_member_identification_sections:

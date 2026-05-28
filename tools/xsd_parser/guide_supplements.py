@@ -66,6 +66,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "before_required_elements_sections": [],
             "member_identification_override": None,
             "after_member_identification_sections": [],
+            "after_submission_frequency_sections": [],
         }
 
     with manifest_path.open("r", encoding="utf-8") as f:
@@ -91,6 +92,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
     before_required_sections: List[GuideSupplementSection] = []
     member_identification_override: Optional[GuideSupplementSection] = None
     after_member_identification_sections: List[GuideSupplementSection] = []
+    after_submission_frequency_sections: List[GuideSupplementSection] = []
 
     for sec in sections_cfg:
         if not isinstance(sec, dict):
@@ -130,6 +132,8 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             after_interoperability_sections.append(section)
         elif section.after == "member-identification":
             after_member_identification_sections.append(section)
+        elif section.after == "submission-frequency":
+            after_submission_frequency_sections.append(section)
         elif section.before == "required-elements":
             before_required_sections.append(section)
 
@@ -155,6 +159,12 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "anchor": section.id,
             "after": "member-identification",
         })
+    for section in after_submission_frequency_sections:
+        toc_extras_out.append({
+            "title": section.title,
+            "anchor": section.id,
+            "after": "submission-frequency",
+        })
 
     return {
         "toc_extras": toc_extras_out,
@@ -162,5 +172,6 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
         "before_required_elements_sections": before_required_sections,
         "member_identification_override": member_identification_override,
         "after_member_identification_sections": after_member_identification_sections,
+        "after_submission_frequency_sections": after_submission_frequency_sections,
     }
 

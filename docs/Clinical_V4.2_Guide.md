@@ -30,9 +30,10 @@ title: "Clinical_V4.2 Implementation Guide"
 13. [Required Elements of Clinical_V4.2 XSD](#required-elements-of-clinical_v4.2-xsd)
 14. [All Elements of Clinical_V4.2 XSD](#all-elements-of-clinical_v4.2-xsd)
 15. [Submission Frequency](#submission-frequency)
-16. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
-17. [Member Identification](#member-identification)
-18. [Appendix Overall Implementation](#appendix-overall-implementation)
+16. [Empty Tags](#empty-tags)
+17. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
+18. [Member Identification](#member-identification)
+19. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -2181,6 +2182,12 @@ Elements and values required for compliance with HL7.FHIR standards are noted. A
 <h2 id="submission-frequency" style="color:#E60073">Submission Frequency</h2>
 
 Clinical_V4.2 files should be submitted according to the schedule agreed upon with HealthLX. Typical submission frequencies include daily, weekly, or monthly updates.
+
+<h2 id="empty-tags" style="color:#E60073">Empty Tags</h2>
+
+Do not send empty tags.
+
+An empty tag occurs when an optional field is supplied but no child fields have been populated. If there is no data for optional tags, do not send optional tags.
 
 <h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
 

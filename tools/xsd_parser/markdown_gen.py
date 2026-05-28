@@ -244,11 +244,22 @@ def generate_change_log(schema_info: SchemaInfo, release_tag=None):
     return output
 
 
-def generate_practical_guidance(schema_info: SchemaInfo, member_identification_override=None):
+def generate_practical_guidance(
+    schema_info: SchemaInfo,
+    member_identification_override=None,
+    after_submission_frequency_sections=None,
+):
     """Generate submission frequency, adds/updates/deletes, and member identification sections."""
     output = "<h2 id=\"submission-frequency\" style=\"color:#E60073\">Submission Frequency</h2>\n\n"
     output += f"{schema_info.display_name} files should be submitted according to the schedule agreed upon with HealthLX. "
     output += "Typical submission frequencies include daily, weekly, or monthly updates.\n\n"
+
+    for section in after_submission_frequency_sections or []:
+        section_id = getattr(section, "id", None)
+        section_title = getattr(section, "title", None) or section_id
+        section_body = getattr(section, "body", None) or ""
+        if section_id:
+            output += generate_supplement_section(section_id, section_title, section_body)
 
     output += "<h2 id=\"adds-updates-and-deletes\" style=\"color:#E60073\">Adds, Updates, and Deletes</h2>\n\n"
     output += "- **Adds**: Include new member records with all required fields populated\n"
