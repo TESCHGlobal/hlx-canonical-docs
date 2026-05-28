@@ -43,3 +43,14 @@ Roster_V6.2:
       title: Appendix A – Value Sets
       after: member-identification
       file: Roster_V6.2/appendix_value_sets.md
+
+EOB_V6.0:
+  sections:
+    - id: profile-based-required-data-elements
+      title: Profile-Based Required Data Elements
+      after: required-elements
+      file: EOB_V6.0/profile_based_required_data_elements.md
+    - id: type-subtype-dependencies
+      title: Type/Sub-Type Dependencies
+      after: required-elements
+      file: EOB_V6.0/type_subtype_dependencies.md

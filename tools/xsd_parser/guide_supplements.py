@@ -68,6 +68,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "adds_updates_and_deletes_override": None,
             "after_member_identification_sections": [],
             "after_submission_frequency_sections": [],
+            "after_required_elements_sections": [],
         }
 
     with manifest_path.open("r", encoding="utf-8") as f:
@@ -95,6 +96,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
     adds_updates_and_deletes_override: Optional[GuideSupplementSection] = None
     after_member_identification_sections: List[GuideSupplementSection] = []
     after_submission_frequency_sections: List[GuideSupplementSection] = []
+    after_required_elements_sections: List[GuideSupplementSection] = []
 
     for sec in sections_cfg:
         if not isinstance(sec, dict):
@@ -138,6 +140,8 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             after_member_identification_sections.append(section)
         elif section.after == "submission-frequency":
             after_submission_frequency_sections.append(section)
+        elif section.after == "required-elements":
+            after_required_elements_sections.append(section)
         elif section.before == "required-elements":
             before_required_sections.append(section)
 
@@ -169,6 +173,12 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "anchor": section.id,
             "after": "submission-frequency",
         })
+    for section in after_required_elements_sections:
+        toc_extras_out.append({
+            "title": section.title,
+            "anchor": section.id,
+            "after": "required-elements",
+        })
 
     return {
         "toc_extras": toc_extras_out,
@@ -178,5 +188,6 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
         "adds_updates_and_deletes_override": adds_updates_and_deletes_override,
         "after_member_identification_sections": after_member_identification_sections,
         "after_submission_frequency_sections": after_submission_frequency_sections,
+        "after_required_elements_sections": after_required_elements_sections,
     }
 

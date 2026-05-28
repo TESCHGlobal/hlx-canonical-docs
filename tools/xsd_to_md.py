@@ -83,6 +83,7 @@ def generate_markdown(xsd_path, release_tag=None):
         adds_updates_and_deletes_override = supplements.get("adds_updates_and_deletes_override")
         after_member_identification_sections = supplements.get("after_member_identification_sections", [])
         after_submission_frequency_sections = supplements.get("after_submission_frequency_sections", [])
+        after_required_elements_sections = supplements.get("after_required_elements_sections", [])
 
         # Detect core model import and parse core types if present
         core_model_path = None
@@ -170,6 +171,13 @@ def generate_markdown(xsd_path, release_tag=None):
             # Required Elements table
             required_elements = parse_required_elements(root, schema_info)
             output += generate_element_table(f"Required Elements of {schema_info.display_name} XSD", required_elements, schema_info)
+
+            for section in after_required_elements_sections:
+                section_id = getattr(section, "id", None)
+                section_title = getattr(section, "title", None) or section_id
+                section_body = getattr(section, "body", None) or ""
+                if section_id:
+                    output += generate_supplement_section(section_id, section_title, section_body)
             
             # All Elements table (with section headers)
             all_elements = parse_all_elements(root, schema_info)

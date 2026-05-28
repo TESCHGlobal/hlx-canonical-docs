@@ -11,7 +11,7 @@ title: "EOB_V6.0 Implementation Guide"
 
 **Version 6.0**
 
-**May 27, 2026**
+**May 28, 2026**
 
 **Table of Contents**
 
@@ -22,11 +22,13 @@ title: "EOB_V6.0 Implementation Guide"
 5. [Simple Types](#simple-types)
 6. [Complex Types](#complex-types)
 7. [Required Elements of EOB_V6.0 XSD](#required-elements-of-eob_v6.0-xsd)
-8. [All Elements of EOB_V6.0 XSD](#all-elements-of-eob_v6.0-xsd)
-9. [Submission Frequency](#submission-frequency)
-10. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
-11. [Member Identification](#member-identification)
-12. [Appendix Overall Implementation](#appendix-overall-implementation)
+8. [Profile-Based Required Data Elements](#profile-based-required-data-elements)
+9. [Type/Sub-Type Dependencies](#type-subtype-dependencies)
+10. [All Elements of EOB_V6.0 XSD](#all-elements-of-eob_v6.0-xsd)
+11. [Submission Frequency](#submission-frequency)
+12. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
+13. [Member Identification](#member-identification)
+14. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -58,7 +60,7 @@ For more information regarding these underlying standards, please visit:
 
 | Version | Date |
 |---------|------|
-| manual | May 27, 2026 |
+| manual | May 28, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -511,6 +513,46 @@ For more information regarding these underlying standards, please visit:
 {: .heatMap}
 
 
+
+<h2 id="profile-based-required-data-elements" style="color:#E60073">Profile-Based Required Data Elements</h2>
+
+Refer to the Type/Sub-Type Dependencies table below for the required data elements for each specific EOB profile.
+
+Profiles include:
+
+- Inpatient-Institutional
+- Outpatient-Institutional
+- Professional
+- Pharmacy
+
+<h2 id="type-subtype-dependencies" style="color:#E60073">Type/Sub-Type Dependencies</h2>
+
+The following table provides a summary of second level type/sub_type element dependencies and requirements for an EOB file.
+
+- "X" required field / "0" field must NOT be present
+
+**NOTE:** In the United States, vision claims bill using the "professional" type so the "vision" eob/type code should not be used. Additionally, the CARIN Blue Button IG does not currently provide a profile for "oral" (dental) claims, so that eob/type is not currently supported.
+
+| Element | Parent | Institutional / Inpatient | Institutional / Outpatient | Pharmacy | Professional |
+| --- | --- | --- | --- | --- | --- |
+| sub_type | eob | X | X | – | – |
+| billable_period | eob | X | X | – | – |
+| diagnoses | eob | X (1..1) | X (1..1) | – | X (1..1) |
+| diagnosis | diagnoses | X (1..*) | X (1..*) | – | X (1..*) |
+| type | diagnosis | X | X | – | X |
+| on_admission | diagnosis | X | – | – | – |
+| revenue | item | X | X | – | – |
+| serviced_period | serviced | – | – | 0 | 0 |
+| adjudication_amount_type | adjudication | – | – | X (1..*) | X (1..*) |
+| in_out_network | adjudication | – | – | – | X |
+| product_or_service | item | X | See Note_1 | X | X |
+| admission_period | supporting_info | X | – | – | – |
+| days_supply | supporting_info | – | – | X | – |
+| dawcode | supporting_info | – | – | X | – |
+| refill_num | supporting_info | – | – | X | – |
+{: .heatMap}
+
+**Note_1:** A CPT / HCPCS code may not be available for some (inpatient) institutional claims. For this subset of claims, It is recommended payers provide a data absent reason when a CPT / HCPCS code is not available.
 
 <h2 id="all-elements-of-eob_v6.0-xsd" style="color:#E60073">All Elements of EOB_V6.0 XSD</h2>
 
