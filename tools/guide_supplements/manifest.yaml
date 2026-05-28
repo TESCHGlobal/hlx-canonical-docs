@@ -62,3 +62,15 @@ EOB_V6.0:
       title: Type/Sub-Type Dependencies
       after: required-elements
       file: EOB_V6.0/type_subtype_dependencies.md
+    - id: appendix-a-value-sets
+      title: Appendix A – Value Sets
+      after: member-identification
+      file: EOB_V6.0/appendix_a_value_sets.md
+    - id: appendix-b-architecture
+      title: Appendix B – Architecture
+      after: member-identification
+      file: EOB_V6.0/appendix_b_architecture.md
+    - id: appendix-c-benefit-balances
+      title: Appendix C – Benefit Balances
+      after: member-identification
+      file: EOB_V6.0/appendix_c_benefit_balances.md

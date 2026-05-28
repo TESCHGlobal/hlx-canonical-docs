@@ -30,7 +30,10 @@ title: "EOB_V6.0 Implementation Guide"
 13. [Identification of a Patient](#identification-of-a-patient)
 14. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
 15. [Member Identification](#member-identification)
-16. [Appendix Overall Implementation](#appendix-overall-implementation)
+16. [Appendix A – Value Sets](#appendix-a-value-sets)
+17. [Appendix B – Architecture](#appendix-b-architecture)
+18. [Appendix C – Benefit Balances](#appendix-c-benefit-balances)
+19. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -1095,6 +1098,59 @@ For example: If the `unique_person_id` = t9808041455 on the Roster file, using a
 Each member must be uniquely identified using the appropriate identifier fields. Ensure consistency in member identifiers across all submissions to maintain data integrity.
 
 For more information on member identity, see the Member Identification section in the Roster documentation.
+
+<h2 id="appendix-a-value-sets" style="color:#E60073">Appendix A – Value Sets</h2>
+
+For a complete list of value sets, visit https://hl7.org/fhir/R4/index.html
+
+| Value Set | URL |
+| --- | --- |
+| core_race | http://hl7.org/fhir/us/core/ValueSet-detailed-race.html |
+| ethnicity | http://hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html |
+| relationship | https://hl7.org/fhir/R4/valueset-subscriber-relationship.html |
+| language | https://appmakers.dev/bcp-47-language-codes-list/ |
+| currency | https://hl7.org/fhir/R4/valueset-currencies.html |
+| adjudication_category | https://terminology.hl7.org/2.1.0/CodeSystem-adjudication.html |
+| marital_status | https://hl7.org/fhir/R4/valueset-marital-status.html |
+| location_role | https://www.hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html |
+| qualification | https://hl7.org/fhir/R4/valueset-provider-qualification.html |
+| diagnosis_on_admission | https://hl7.org/fhir/R4/valueset-ex-diagnosis-on-admission.html |
+| coverage_type and self_pay | https://hl7.org/fhir/R4/valueset-coverage-type.html |
+| benefit_classification | https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html |
+| place_of_service | https://hl7.org/fhir/R4/valueset-service-place.html |
+| benefit_category | https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html |
+{: .heatMap}
+
+**NOTE:** Language code will be set to en-US by default unless specified otherwise.
+
+<h2 id="appendix-b-architecture" style="color:#E60073">Appendix B – Architecture</h2>
+
+This implementation guide is based on the CARIN Blue Button Implementation Guide (v1.1.0: STU 1), which builds upon FHIR R4, a standard for health care data exchange published by HL7®. For more information, visit their website at:
+
+https://hl7.org/fhir/us/carin-bb/STU1.1/
+
+<h2 id="appendix-c-benefit-balances" style="color:#E60073">Appendix C – Benefit Balances</h2>
+
+Version 1.0.0 STU of the CARIN BB provides for the optional expression of benefit_balance within an EOB, such as deductible met to date or number of used/remaining for a particular type of benefit. While optional, such information may be useful to members.
+
+<h3 style="color:#E60073">Principal Concepts for Expressing benefit_balance Information</h3>
+
+For a given benefit_balance, these are the key fields:
+
+- `benefit.balance.category` is required. This details the general category of benefit being described (such as medical, dental, or vision).
+- Assuming one or more financials are provided, then `financial_type` is also required. This describes concepts such as deductible, visit, etc.
+- This element is allowed and used to convey concepts regarding the full extent of benefit as well as how much benefit has been consumed. These concepts may be expressed as money (e.g., a deductible), or allowable number of visits (integer).
+- This element allows for the expression of concepts such as "For this Health Benefit Plan Coverage (a benefit_balance.category), $2500 (financial type of used_money) of a $4000 deductible (a financial.type used_money) has been met as of the date of the EOB," or, similarly, "For this vision coverage (a benefit_balance category), the one exam (financial type of vision-exam, allowed_unsigned_int of 1) is all that is allowed for the year (used_unsigned_int of 1)."
+
+<h3 style="color:#E60073">Example Use of Benefit Balance</h3>
+
+**Scenario:**
+
+Subscriber has a family vision plan. Assuming in-network providers are used, the plan allows one exam per year per individual member on the plan (no co-pay, no deductible), and a $500 yearly benefit for frames after a $100 yearly deductible. One member of the family visits an optometrist for their annual exam and purchases glasses costing $400 dollars. The member pays the deductible at the time of the appointment. Insurance pays for the exam in full plus $300 as a glasses benefit ($400 cost of glasses minus $100 deductible). In the EOB to the member, we wish to convey that the one exam allowed per member per year has been used, that the deductible has been met, and that $300 of the $500 glasses benefit for the plan year has been used.
+
+Conceptually, the XML would be as on the following page:
+
+<img src="assets/appendix_c.png" alt="Appendix C benefit balance XML example" class="overall-implementation-diagram" />
 
 <h2 id="appendix-overall-implementation" style="color:#E60073">Appendix Overall Implementation</h2>
 
