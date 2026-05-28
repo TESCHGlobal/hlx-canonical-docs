@@ -1,0 +1,1 @@
+Each coverage plan must be uniquely identified using the plan_id, and each drug uniquely identified by its rx_norm_code. Ensure consistency in these identifiers across all submissions to maintain data integrity.

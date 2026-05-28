@@ -1,0 +1,1 @@
+When data in a formulary file is changed after it has already been ingested/processed by HealthLX, a full replacement file must be sent for any changes that may have been made. The new file will completely replace the original data. If a record must be deleted, please contact HealthLX for support.

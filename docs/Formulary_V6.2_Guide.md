@@ -11,7 +11,7 @@ title: "Formulary_V6.2 Implementation Guide"
 
 **Version 6.1**
 
-**May 27, 2026**
+**May 28, 2026**
 
 **Table of Contents**
 
@@ -25,7 +25,7 @@ title: "Formulary_V6.2 Implementation Guide"
 8. [All Elements of Formulary_V6.2 XSD](#all-elements-of-formulary_v6.2-xsd)
 9. [Submission Frequency](#submission-frequency)
 10. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
-11. [Member Identification](#member-identification)
+11. [Plan and Drug Identification](#plan-and-drug-identification)
 12. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
@@ -58,7 +58,7 @@ For more information regarding these underlying standards, please visit:
 
 | Version | Date |
 |---------|------|
-| manual | May 27, 2026 |
+| manual | May 28, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -286,15 +286,11 @@ Formulary_V6.2 files should be submitted according to the schedule agreed upon w
 
 <h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
 
-- **Adds**: Include new member records with all required fields populated
-- **Updates**: Submit complete member records with updated information
-- **Deletes**: Follow the agreed-upon process for member terminations or removals
+When data in a formulary file is changed after it has already been ingested/processed by HealthLX, a full replacement file must be sent for any changes that may have been made. The new file will completely replace the original data. If a record must be deleted, please contact HealthLX for support.
 
-<h2 id="member-identification" style="color:#E60073">Member Identification</h2>
+<h2 id="plan-and-drug-identification" style="color:#E60073">Plan and Drug Identification</h2>
 
-Each member must be uniquely identified using the appropriate identifier fields. Ensure consistency in member identifiers across all submissions to maintain data integrity.
-
-For more information on member identity, see the Member Identification section in the Roster documentation.
+Each coverage plan must be uniquely identified using the plan_id, and each drug uniquely identified by its rx_norm_code. Ensure consistency in these identifiers across all submissions to maintain data integrity.
 
 <h2 id="appendix-overall-implementation" style="color:#E60073">Appendix Overall Implementation</h2>
 

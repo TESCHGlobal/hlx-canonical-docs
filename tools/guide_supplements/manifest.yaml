@@ -83,3 +83,14 @@ EOB_V6.0:
           anchor: total-mathematical-illustration-medical-eob
         - title: "Total Mathematical Illustration: Pharmacy EOB"
           anchor: total-mathematical-illustration-pharmacy-eob
+
+Formulary_V6.2:
+  sections:
+    - id: adds-updates-and-deletes
+      title: Adds, Updates, and Deletes
+      replace: adds-updates-and-deletes
+      file: Formulary_V6.2/adds_updates_deletes.md
+    - id: plan-and-drug-identification
+      title: Plan and Drug Identification
+      replace: member-identification
+      file: Formulary_V6.2/plan_and_drug_identification.md
