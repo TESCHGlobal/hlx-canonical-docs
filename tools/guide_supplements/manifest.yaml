@@ -94,3 +94,11 @@ Formulary_V6.2:
       title: Plan and Drug Identification
       replace: member-identification
       file: Formulary_V6.2/plan_and_drug_identification.md
+    - id: appendix-a-value-sets
+      title: Appendix A – Value Sets
+      after: member-identification
+      file: Formulary_V6.2/appendix_a_value_sets.md
+    - id: appendix-b-architecture
+      title: Appendix B – Architecture
+      after: member-identification
+      file: Formulary_V6.2/appendix_b_architecture.md
