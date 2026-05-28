@@ -74,3 +74,12 @@ EOB_V6.0:
       title: Appendix C – Benefit Balances
       after: member-identification
       file: EOB_V6.0/appendix_c_benefit_balances.md
+    - id: appendix-d-representing-totals
+      title: Appendix D – Representing Totals
+      after: member-identification
+      file: EOB_V6.0/appendix_d_representing_totals.md
+      toc_subsections:
+        - title: "Total Mathematical Illustration: Medical EOB"
+          anchor: total-mathematical-illustration-medical-eob
+        - title: "Total Mathematical Illustration: Pharmacy EOB"
+          anchor: total-mathematical-illustration-pharmacy-eob

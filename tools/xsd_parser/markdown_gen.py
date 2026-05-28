@@ -143,30 +143,42 @@ def generate_toc(schema_info: SchemaInfo, has_core_types=False, toc_extras=None,
         if after:
             extras_by_after.setdefault(str(after), []).append(extra)
 
+    def append_toc_extra(result_items: list[dict], extra: dict) -> None:
+        anchor = str(extra.get("anchor", "")).lstrip("#")
+        title = str(extra.get("title", anchor))
+        if not anchor:
+            return
+        result_items.append({
+            "title": title,
+            "anchor": f"#{anchor}",
+            "indent": bool(extra.get("indent")),
+        })
+        for nested in extras_by_after.get(anchor, []):
+            append_toc_extra(result_items, nested)
+
     output = "**Table of Contents**\n\n"
     result_items: list[dict] = []
 
     for item in fixed_items:
         extra_list = extras_by_before.get(item["key"], [])
         for extra in extra_list:
-            anchor = str(extra.get("anchor", "")).lstrip("#")
-            title = str(extra.get("title", anchor))
-            if anchor:
-                result_items.append({"title": title, "anchor": f"#{anchor}"})
+            append_toc_extra(result_items, extra)
 
         result_items.append(item)
 
         after_list = extras_by_after.get(item["key"], [])
         for extra in after_list:
-            anchor = str(extra.get("anchor", "")).lstrip("#")
-            title = str(extra.get("title", anchor))
-            if anchor:
-                result_items.append({"title": title, "anchor": f"#{anchor}"})
+            append_toc_extra(result_items, extra)
 
-    for idx, item in enumerate(result_items, start=1):
-        output += f"{idx}. [{item['title']}]({item['anchor']})\n"
+    toc_number = 0
+    for item in result_items:
+        if item.get("indent"):
+            output += f"   - [{item['title']}]({item['anchor']})\n"
+        else:
+            toc_number += 1
+            output += f"{toc_number}. [{item['title']}]({item['anchor']})\n"
 
-    output += f"{len(result_items) + 1}. [Appendix Overall Implementation](#appendix-overall-implementation)\n"
+    output += f"{toc_number + 1}. [Appendix Overall Implementation](#appendix-overall-implementation)\n"
     output += "\n"
     return output
 

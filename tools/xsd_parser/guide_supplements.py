@@ -97,6 +97,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
     after_member_identification_sections: List[GuideSupplementSection] = []
     after_submission_frequency_sections: List[GuideSupplementSection] = []
     after_required_elements_sections: List[GuideSupplementSection] = []
+    toc_subsections_by_parent: dict[str, list[dict]] = {}
 
     for sec in sections_cfg:
         if not isinstance(sec, dict):
@@ -145,6 +146,17 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
         elif section.before == "required-elements":
             before_required_sections.append(section)
 
+        for sub in sec.get("toc_subsections") or []:
+            if not isinstance(sub, dict):
+                continue
+            sub_title = sub.get("title")
+            sub_anchor = sub.get("anchor")
+            if sub_title and sub_anchor:
+                toc_subsections_by_parent.setdefault(str(sec_id), []).append({
+                    "title": str(sub_title),
+                    "anchor": str(sub_anchor),
+                })
+
     toc_extras_out = [
         {"title": t.title, "anchor": t.anchor, "before": t.before}
         for t in toc_extras
@@ -167,6 +179,13 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "anchor": section.id,
             "after": "member-identification",
         })
+        for sub in toc_subsections_by_parent.get(section.id, []):
+            toc_extras_out.append({
+                "title": sub["title"],
+                "anchor": sub["anchor"],
+                "after": section.id,
+                "indent": True,
+            })
     for section in after_submission_frequency_sections:
         toc_extras_out.append({
             "title": section.title,
