@@ -1,9 +1,9 @@
 The overall architecture for implementation of the schema is based on the following two references:
 
 - [Da Vinci PDEX Formulary Client](https://davinci-pdex-formulary-client.logicahealth.org/)
-- [Da Vinci Drug Formulary IG](http://hl7.org/fhir/us/Davinci-drug-formulary/)
+- [http://hl7.org/fhir/us/Davinci-drug-formulary/](http://hl7.org/fhir/us/Davinci-drug-formulary/)
 
-The `CoveragePlan` profile of the [FHIR R4](https://www.hl7.org/fhir/R4/) `List` resource provides links to information about the plan and formulary, contact information, a description of the `drugTiers` and associated cost sharing models of the plan, and a list of `FormularyDrug` resources.
+The `CoveragePlan` profile of the [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) `List` resource provides links to information about the plan and formulary, contact information, a description of the `drugTiers` and associated cost sharing models of the plan, and a list of `FormularyDrug` resources.
 
 The `FormularyDrug` profile of the FHIR R4 `MedicationKnowledge` resource provides plan-specific information about a prescribable drug identified by an [RxNorm](https://www.nlm.nih.gov/research/umls/rxnorm/index.html) identifier. Cost sharing for the drug is described by reference to a drug tier defined as part of the coverage plan. Extensions to the `MedicationKnowledge` resource support important search use cases. Due to the immaturity of the `MedicationKnowledge` resource, it is expected that it will undergo changes, and those changes may require evolution of the `FormularyDrug` profile.
 

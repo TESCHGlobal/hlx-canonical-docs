@@ -1,4 +1,4 @@
-Version 1.0.0 STU of the [CARIN Blue Button IG](https://hl7.org/fhir/us/carin-bb/STU1.1/) provides for the optional expression of `benefit_balance` within an EOB, such as deductible met to date or number of used/remaining for a particular type of benefit. While optional, such information may be useful to members.
+Version 1.0.0 STU of the [https://hl7.org/fhir/us/carin-bb/STU1.1/](https://hl7.org/fhir/us/carin-bb/STU1.1/) provides for the optional expression of `benefit_balance` within an EOB, such as deductible met to date or number of used/remaining for a particular type of benefit. While optional, such information may be useful to members.
 
 <h3 style="color:#E60073">Principal Concepts for Expressing benefit_balance Information</h3>
 

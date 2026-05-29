@@ -1,4 +1,4 @@
-When representing totals in a [CARIN for Blue Button (C4BB)](https://hl7.org/fhir/us/carin-bb/STU1.1/) v.1.0.0 `ExplanationOfBenefit` (EOB) the total amounts must be provided within the EOB.
+When representing totals in a [https://hl7.org/fhir/us/carin-bb/STU1.1/](https://hl7.org/fhir/us/carin-bb/STU1.1/) v.1.0.0 `ExplanationOfBenefit` (EOB) the total amounts must be provided within the EOB.
 
 <img src="assets/appendix_d_1.png" alt="Totals element within an EOB" class="overall-implementation-diagram" />
 

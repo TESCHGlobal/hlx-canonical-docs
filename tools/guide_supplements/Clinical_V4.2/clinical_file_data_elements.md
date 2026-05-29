@@ -7,6 +7,6 @@ Each schema contains sections with tables noting all parent and child elements w
 - The `address.geolocations.geolocation` parent elements are noted as `address>geolocations`.
 - Longitude for the geolocation (`address.geolocations.geolocation.longitude`) has the parent elements of `address>geolocations>geolocation`.
 
-Elements and values required for compliance with [HL7 FHIR](https://www.hl7.org/fhir/R4/) standards are noted. All other elements and values listed within the tables are also supported. For maximum value and functionality, all elements in all tables are recommended. For details about data types and their requirements, please refer to Appendix B.
+Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) standards are noted. All other elements and values listed within the tables are also supported. For maximum value and functionality, all elements in all tables are recommended. For details about data types and their requirements, please refer to Appendix B.
 
 **NOTE:** In addition to the patient profile, at least one secondary profile must be present within the clinical document when provided by payers.

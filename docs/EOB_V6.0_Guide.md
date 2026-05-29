@@ -539,7 +539,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 
 - `"X"` required field / `"o"` field must NOT be present
 
-**NOTE:** In the United States, vision claims bill using the `"professional"` type so the `"vision"` `eob/type` code should not be used. Additionally, the [CARIN Blue Button IG](https://hl7.org/fhir/us/carin-bb/STU1.1/) does not currently provide a profile for `"oral"` (dental) claims, so that `eob/type` is not currently supported.
+**NOTE:** In the United States, vision claims bill using the `"professional"` type so the `"vision"` `eob/type` code should not be used. Additionally, the [https://hl7.org/fhir/us/carin-bb/STU1.1/](https://hl7.org/fhir/us/carin-bb/STU1.1/) does not currently provide a profile for `"oral"` (dental) claims, so that `eob/type` is not currently supported.
 
 | Element | Parent | institutional / inpatient | institutional / outpatient | pharmacy | professional |
 | --- | --- | --- | --- | --- | --- |
@@ -1104,37 +1104,37 @@ For more information on member identity, see the Member Identification section i
 
 <h2 id="appendix-a-value-sets" style="color:#E60073">Appendix A – Value Sets</h2>
 
-For a complete list of value sets, visit [FHIR R4 Terminologies](https://hl7.org/fhir/R4/index.html)
+For a complete list of value sets, visit [https://hl7.org/fhir/R4/index.html](https://hl7.org/fhir/R4/index.html)
 
 | Value Set | URL |
 | --- | --- |
-| core_race | [detailed-race](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) |
-| ethnicity | [detailed-ethnicity](http://hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html) |
-| relationship | [subscriber-relationship](https://hl7.org/fhir/R4/valueset-subscriber-relationship.html) |
+| core_race | [http://hl7.org/fhir/us/core/ValueSet-detailed-race.html](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) |
+| ethnicity | [http://hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html](http://hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html) |
+| relationship | [https://hl7.org/fhir/R4/valueset-subscriber-relationship.html](https://hl7.org/fhir/R4/valueset-subscriber-relationship.html) |
 | language | [BCP-47 language codes](https://appmakers.dev/bcp-47-language-codes-list/) |
-| currency | [currencies](https://hl7.org/fhir/R4/valueset-currencies.html) |
-| adjudication_category | [adjudication](https://terminology.hl7.org/2.1.0/CodeSystem-adjudication.html) |
-| marital_status | [marital-status](https://hl7.org/fhir/R4/valueset-marital-status.html) |
-| location_role | [ServiceDeliveryLocationRoleType](https://www.hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html) |
-| qualification | [provider-qualification](https://hl7.org/fhir/R4/valueset-provider-qualification.html) |
-| diagnosis_on_admission | [ex-diagnosis-on-admission](https://hl7.org/fhir/R4/valueset-ex-diagnosis-on-admission.html) |
-| coverage_type and self_pay | [coverage-type](https://hl7.org/fhir/R4/valueset-coverage-type.html) |
-| benefit_classification | [ex-benefitcategory](https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html) |
-| place_of_service | [service-place](https://hl7.org/fhir/R4/valueset-service-place.html) |
-| benefit_category | [ex-benefitcategory](https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html) |
+| currency | [https://hl7.org/fhir/R4/valueset-currencies.html](https://hl7.org/fhir/R4/valueset-currencies.html) |
+| adjudication_category | [https://terminology.hl7.org/2.1.0/CodeSystem-adjudication.html](https://terminology.hl7.org/2.1.0/CodeSystem-adjudication.html) |
+| marital_status | [https://hl7.org/fhir/R4/valueset-marital-status.html](https://hl7.org/fhir/R4/valueset-marital-status.html) |
+| location_role | [https://www.hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html](https://www.hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html) |
+| qualification | [https://hl7.org/fhir/R4/valueset-provider-qualification.html](https://hl7.org/fhir/R4/valueset-provider-qualification.html) |
+| diagnosis_on_admission | [https://hl7.org/fhir/R4/valueset-ex-diagnosis-on-admission.html](https://hl7.org/fhir/R4/valueset-ex-diagnosis-on-admission.html) |
+| coverage_type and self_pay | [https://hl7.org/fhir/R4/valueset-coverage-type.html](https://hl7.org/fhir/R4/valueset-coverage-type.html) |
+| benefit_classification | [https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html](https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html) |
+| place_of_service | [https://hl7.org/fhir/R4/valueset-service-place.html](https://hl7.org/fhir/R4/valueset-service-place.html) |
+| benefit_category | [https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html](https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html) |
 {: .heatMap}
 
 **NOTE:** Language code will be set to `en-US` by default unless specified otherwise.
 
 <h2 id="appendix-b-architecture" style="color:#E60073">Appendix B – Architecture</h2>
 
-This implementation guide is based on the [CARIN Blue Button Implementation Guide](https://hl7.org/fhir/us/carin-bb/STU1.1/) (v1.1.0: STU 1), which builds upon [FHIR R4](https://www.hl7.org/fhir/R4/), a standard for health care data exchange published by HL7®. For more information, visit their website at:
+This implementation guide is based on the [https://hl7.org/fhir/us/carin-bb/STU1.1/](https://hl7.org/fhir/us/carin-bb/STU1.1/) (v1.1.0: STU 1), which builds upon [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/), a standard for health care data exchange published by HL7®. For more information, visit their website at:
 
-[CARIN Blue Button IG (STU 1.1)](https://hl7.org/fhir/us/carin-bb/STU1.1/)
+[https://hl7.org/fhir/us/carin-bb/STU1.1/](https://hl7.org/fhir/us/carin-bb/STU1.1/)
 
 <h2 id="appendix-c-benefit-balances" style="color:#E60073">Appendix C – Benefit Balances</h2>
 
-Version 1.0.0 STU of the [CARIN Blue Button IG](https://hl7.org/fhir/us/carin-bb/STU1.1/) provides for the optional expression of `benefit_balance` within an EOB, such as deductible met to date or number of used/remaining for a particular type of benefit. While optional, such information may be useful to members.
+Version 1.0.0 STU of the [https://hl7.org/fhir/us/carin-bb/STU1.1/](https://hl7.org/fhir/us/carin-bb/STU1.1/) provides for the optional expression of `benefit_balance` within an EOB, such as deductible met to date or number of used/remaining for a particular type of benefit. While optional, such information may be useful to members.
 
 <h3 style="color:#E60073">Principal Concepts for Expressing benefit_balance Information</h3>
 
@@ -1157,7 +1157,7 @@ Conceptually, the XML would be as on the following page:
 
 <h2 id="appendix-d-representing-totals" style="color:#E60073">Appendix D – Representing Totals</h2>
 
-When representing totals in a [CARIN for Blue Button (C4BB)](https://hl7.org/fhir/us/carin-bb/STU1.1/) v.1.0.0 `ExplanationOfBenefit` (EOB) the total amounts must be provided within the EOB.
+When representing totals in a [https://hl7.org/fhir/us/carin-bb/STU1.1/](https://hl7.org/fhir/us/carin-bb/STU1.1/) v.1.0.0 `ExplanationOfBenefit` (EOB) the total amounts must be provided within the EOB.
 
 <img src="assets/appendix_d_1.png" alt="Totals element within an EOB" class="overall-implementation-diagram" />
 

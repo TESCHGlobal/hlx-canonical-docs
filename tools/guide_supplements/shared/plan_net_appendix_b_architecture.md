@@ -2,7 +2,7 @@
 
 The overall architecture used to define the data schema is based on the following reference:
 
-[Da Vinci PDEX Plan-Net Implementation Guide](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/)
+[https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/)
 
 <img src="assets/provider_diagram_1.png" alt="Plan-Net overall architecture diagram" class="overall-implementation-diagram" />
 

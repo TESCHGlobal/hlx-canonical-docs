@@ -1,8 +1,8 @@
-These value sets were updated July 23, 2020. For updated value sets, visit [FHIR R4](https://hl7.org/fhir/R4/index.html).
+These value sets were updated July 23, 2020. For updated value sets, visit [https://hl7.org/fhir/R4/index.html](https://hl7.org/fhir/R4/index.html).
 
 <h3 style="color:#E60073">DrugTierID Codes</h3>
 
-The following DrugTierID Codes can be found here: [usdf-DrugTierVS](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-DrugTierVS.html)
+The following DrugTierID Codes can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-DrugTierVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-DrugTierVS.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -19,7 +19,7 @@ The following DrugTierID Codes can be found here: [usdf-DrugTierVS](http://hl7.o
 
 <h3 style="color:#E60073">PharmacyType Codes</h3>
 
-The following PharmacyType Codes can be found here: [usdf-PharmacyTypeVS](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html)
+The following PharmacyType Codes can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -35,11 +35,11 @@ The following PharmacyType Codes can be found here: [usdf-PharmacyTypeVS](http:/
 
 <h3 style="color:#E60073">Currency Codes</h3>
 
-The currency codes list is too large to be included in this guide. An up-to-date version can be found here: [currencies](http://hl7.org/fhir/R4/valueset-currencies.html)
+The currency codes list is too large to be included in this guide. An up-to-date version can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html)
 
 <h3 style="color:#E60073">Copay Options Codes</h3>
 
-The following copay options codes can be found here: [usdf-CopayOptionVS](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html)
+The following copay options codes can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -51,7 +51,7 @@ The following copay options codes can be found here: [usdf-CopayOptionVS](http:/
 
 <h3 style="color:#E60073">Coinsurance Options</h3>
 
-The following Coinsurance options codes can be found here: [usdf-CoinsuranceOptionVS](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html)
+The following Coinsurance options codes can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -62,11 +62,11 @@ The following Coinsurance options codes can be found here: [usdf-CoinsuranceOpti
 
 <h3 style="color:#E60073">RxNorm Codes</h3>
 
-The RxNorm codes list is too large to be included in this guide. An up-to-date version can be found here: [us-core-medication-codes](http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html)
+The RxNorm codes list is too large to be included in this guide. An up-to-date version can be found here: [http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html](http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html)
 
 <h3 style="color:#E60073">Medication Knowledge Status Codes</h3>
 
-The following medication knowledge status codes can be found here: [medicationknowledge-status](http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html)
+The following medication knowledge status codes can be found here: [http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html](http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -77,7 +77,7 @@ The following medication knowledge status codes can be found here: [medicationkn
 
 <h3 style="color:#E60073">Organization Type Codes</h3>
 
-The following organization type codes can be found here: [organization-type](http://hl7.org/fhir/R4/valueset-organization-type.html)
+The following organization type codes can be found here: [http://hl7.org/fhir/R4/valueset-organization-type.html](http://hl7.org/fhir/R4/valueset-organization-type.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -97,11 +97,11 @@ The following organization type codes can be found here: [organization-type](htt
 
 <h3 style="color:#E60073">DoseForm Codes</h3>
 
-The DoseForm codes list is too large to be included in this guide. An up-to-date version can be found here: [medication-form-codes](http://hl7.org/fhir/R4/valueset-medication-form-codes.html)
+The DoseForm codes list is too large to be included in this guide. An up-to-date version can be found here: [http://hl7.org/fhir/R4/valueset-medication-form-codes.html](http://hl7.org/fhir/R4/valueset-medication-form-codes.html)
 
 <h3 style="color:#E60073">Substance Category Codes</h3>
 
-The following substance category codes can be found here: [substance-category](http://hl7.org/fhir/R4/valueset-substance-category.html)
+The following substance category codes can be found here: [http://hl7.org/fhir/R4/valueset-substance-category.html](http://hl7.org/fhir/R4/valueset-substance-category.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -116,4 +116,4 @@ The following substance category codes can be found here: [substance-category](h
 
 <h3 style="color:#E60073">Substance Codes</h3>
 
-The substance codes list is too large to be included in this guide. An up-to-date version can be found here: [substance-code](http://hl7.org/fhir/R4/valueset-substance-code.html)
+The substance codes list is too large to be included in this guide. An up-to-date version can be found here: [http://hl7.org/fhir/R4/valueset-substance-code.html](http://hl7.org/fhir/R4/valueset-substance-code.html)
