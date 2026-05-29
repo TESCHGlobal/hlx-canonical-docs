@@ -41,7 +41,7 @@ This document is provided by HealthLX for informational purposes only. Informati
 
 <h2 id="overview" style="color:#E60073">Overview</h2>
 
-This implementation guide provides field mappings and requirements for HealthLX Clinical_V4.2 data submissions in XML format based on FHIR R4 standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
+This implementation guide provides field mappings and requirements for HealthLX Clinical_V4.2 data submissions in XML format based on [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
 
 <h2 id="encoding" style="color:#E60073">Encoding</h2>
 
@@ -53,13 +53,13 @@ Payers need to send their files with utf-8 encoding as shown below:
 
 <h2 id="interoperability" style="color:#E60073">Interoperability</h2>
 
-This implementation guide is based on constructs presented in FHIR R4 (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
+This implementation guide is based on constructs presented in [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
 
 For more information regarding these underlying standards, please visit:
 
-- FHIR R4: https://www.hl7.org/fhir/R4/
-- Da Vinci Project: https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome
-- CARIN Alliance: https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides
+- [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/)
+- [https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome](https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome)
+- [https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides](https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides)
 
 <h2 id="supported-profiles" style="color:#E60073">Supported Profiles</h2>
 
@@ -186,7 +186,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| use | – | 0 | 1 | Use this element to describe the name. More information can be found here: http://hl7.org/fhir/R4/valueset-name-use.html |
+| use | – | 0 | 1 | Use this element to describe the name. More information can be found here: [http://hl7.org/fhir/R4/valueset-name-use.html](http://hl7.org/fhir/R4/valueset-name-use.html) |
 | text | string | 0 | 1 | Use this element to enter the entire name |
 | family | string | 1 | 1 | Family name (often called 'Surname') |
 | given | string | 1 | unbounded | Given names (not always 'first'). Includes middle names |
@@ -201,8 +201,8 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| use | – | 0 | 1 | The use of this address. More information can be found here: http://hl7.org/fhir/R4/valueset-address-use.html |
-| type | – | 0 | 1 | The type of address. More information can be found here: http://hl7.org/fhir/R4/valueset-address-type.html |
+| use | – | 0 | 1 | The use of this address. More information can be found here: [http://hl7.org/fhir/R4/valueset-address-use.html](http://hl7.org/fhir/R4/valueset-address-use.html) |
+| type | – | 0 | 1 | The type of address. More information can be found here: [http://hl7.org/fhir/R4/valueset-address-type.html](http://hl7.org/fhir/R4/valueset-address-type.html) |
 | text | string | 0 | 1 | Use this element to list the address in it's entirety (e.g. 123 Test Way City, State 12345) |
 | line | string | 1 | unbounded | – |
 | city | string | 1 | 1 | Name of city, town etc. |
@@ -219,9 +219,9 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| system | – | 1 | 1 | Use this element to describe the contact point. https://www.hl7.org/fhir/valueset-contact-point-system.html |
+| system | – | 1 | 1 | Use this element to describe the contact point. [https://www.hl7.org/fhir/valueset-contact-point-system.html](https://www.hl7.org/fhir/valueset-contact-point-system.html) |
 | value | string | 1 | 1 | The actual value of the contact point |
-| use | – | 0 | 1 | The use of the contact point. https://www.hl7.org/fhir/valueset-contact-point-use.html |
+| use | – | 0 | 1 | The use of the contact point. [https://www.hl7.org/fhir/valueset-contact-point-use.html](https://www.hl7.org/fhir/valueset-contact-point-use.html) |
 | rank | positiveInt | 0 | 1 | Specify preferred order of use (1 = highest) |
 | period | period | 0 | 1 | Time period when the contact point was/is in use |
 {: .heatMap}
@@ -345,7 +345,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -358,7 +358,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -371,7 +371,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -384,7 +384,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -397,7 +397,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -410,7 +410,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -423,7 +423,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -436,7 +436,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -449,7 +449,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -462,7 +462,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 1 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 1 | 1 | Unit representation (e.g. mcg) |
 | system | – | 1 | 1 | The URI of the system that defines the coded unit form |
 | code | – | 1 | 1 | Coded form of the unit |
@@ -487,7 +487,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 0 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 0 | 1 | Unit representation (e.g. mcg) |
 | system | string | 0 | 1 | The URI of the system that defines the coded unit form |
 | code | string | 0 | 1 | Coded form of the unit |
@@ -620,7 +620,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | --- | --- | --- | --- | --- |
 | unique_identifier | string | 1 | 1 | – |
 | care_plan_id | string | 0 | 1 | – |
-| condition_code | – | 1 | 1 | Identification of the condition, problem or diagnosis. A detailed list of codes can be found here http://hl7.org/fhir/us/core/ValueSet-us-core-condition-code.html |
+| condition_code | – | 1 | 1 | Identification of the condition, problem or diagnosis. A detailed list of codes can be found here [http://hl7.org/fhir/us/core/ValueSet-us-core-condition-code.html](http://hl7.org/fhir/us/core/ValueSet-us-core-condition-code.html) |
 | code | string | 0 | 1 | – |
 | system | – | 0 | 1 | – |
 | version | string | 0 | 1 | – |
@@ -692,7 +692,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | name | human_name | 1 | unbounded | – |
 | gender | – | 1 | 1 | Use this element for Gender (male, female, other or unknown) |
 | birth_date | xs:date | 1 | 1 | Birth date (1900-01-01) |
-| marital_status | – | 0 | 1 | Marital Status, more information can be found here: http://hl7.org/fhir/R4/valueset-marital-status.html |
+| marital_status | – | 0 | 1 | Marital Status, more information can be found here: [http://hl7.org/fhir/R4/valueset-marital-status.html](http://hl7.org/fhir/R4/valueset-marital-status.html) |
 | deceased | – | 0 | 1 | – |
 | is_deceased | boolean | 0 | 1 | – |
 | deceased_date_time | dateTime | 0 | 1 | – |
@@ -702,15 +702,15 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | address | address | 0 | unbounded | – |
 | communications | – | 0 | 1 | – |
 | communication | – | 0 | unbounded | – |
-| language_code | language | 1 | 1 | This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47). More information can be found here: http://hl7.org/fhir/R4/valueset-languages.html |
+| language_code | language | 1 | 1 | This value set includes common codes from BCP-47 ([http://tools.ietf.org/html/bcp47](http://tools.ietf.org/html/bcp47)). More information can be found here: [http://hl7.org/fhir/R4/valueset-languages.html](http://hl7.org/fhir/R4/valueset-languages.html) |
 | is_preferred | boolean | 0 | 1 | Is this language the preferred language (true/false) |
 | us_core_race | – | 0 | 1 | – |
-| omb_category_code | – | 0 | 5 | This element is for selecting 1 of the 5 OMB race category codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-race.html |
-| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional expansion codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-race.html |
+| omb_category_code | – | 0 | 5 | This element is for selecting 1 of the 5 OMB race category codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-detailed-race.html](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) |
+| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional expansion codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-detailed-race.html](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) |
 | text | string | 1 | 1 | Use this element for adding a text description |
 | us_core_ethnicity | – | 0 | 1 | – |
-| omb_category_code | – | 0 | 1 | This element is for selecting 1 of the OMB ethnicity category codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html |
-| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional ethnicity codes from the CDC that can be found here: https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html |
+| omb_category_code | – | 0 | 1 | This element is for selecting 1 of the OMB ethnicity category codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html](http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html) |
+| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional ethnicity codes from the CDC that can be found here: [https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html](https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html) |
 | text | string | 1 | 1 | Use this element for adding a text description if the ethnicity is not listed within the enumeration |
 | us_core_birth_sex | – | 0 | 1 | This element is used for selecting birth sex (M = Male, F = Female, UNK = Unknown) |
 {: .heatMap}
@@ -801,7 +801,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | effective_date_time | dateTime | 0 | 1 | Clinically relevant time/time-period for observation |
 | effective_period | period | 0 | 1 | – |
 | observation_value | result_value | 0 | 1 | Result of the observation |
-| data_absent_reason | – | 0 | 1 | Reason for missing data. Inputs can be found here: http://hl7.org/fhir/R4/valueset-data-absent-reason.html |
+| data_absent_reason | – | 0 | 1 | Reason for missing data. Inputs can be found here: [http://hl7.org/fhir/R4/valueset-data-absent-reason.html](http://hl7.org/fhir/R4/valueset-data-absent-reason.html) |
 | interpretation | string | 0 | unbounded | A categorical assessment of an observation value. For example, high, low, normal. |
 | reference_range | – | 0 | unbounded | Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an "OR". In other words, to represent two distinct target populations, two referenceRange elements would be used. |
 | low | simple_quantity | 0 | 1 | – |
@@ -857,7 +857,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | – | reported | – | One of: reported_boolean, reported_reference | – | choice |
 | – | reported_reference | – | One of: reported_patient, reported_practitioner, reported_organization | – | choice |
 | medication | medication_request | 1..1 | – | – | – |
-| medication_code | medication | 1..1 | A code (or set of codes) that specify this medication, or a textual description if no code is available. An example list can be found here https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-us-core-medication-codes.html. Due to the size of this list, no enumeration is provided. | – | – |
+| medication_code | medication | 1..1 | A code (or set of codes) that specify this medication, or a textual description if no code is available. An example list can be found here [https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-us-core-medication-codes.html](https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-us-core-medication-codes.html). Due to the size of this list, no enumeration is provided. | – | – |
 | – | medication_code | – | All of (any order): code, system, version, display, text | – | all |
 | code | medication_code | 1..1 | – | – | string |
 | system | medication_code | 1..1 | – | – | – |
@@ -872,7 +872,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | care_team | care_teams | 1..unbounded | – | – | – |
 | unique_identifier | care_team | 1..1 | – | – | string |
 | participant | care_team | 1..unbounded | – | – | – |
-| role | participant | 1..unbounded | Type of involvement Include all codes defined in http://nucc.org/provider-taxonomy Include codes from http://snomed.info/sct where concept is-a 223366009 (Healthcare professional) Include codes from http://snomed.info/sct where concept is-a 224930009 (Services) | – | – |
+| role | participant | 1..unbounded | Type of involvement Include all codes defined in [http://nucc.org/provider-taxonomy](http://nucc.org/provider-taxonomy) Include codes from [http://snomed.info/sct](http://snomed.info/sct) where concept is-a 223366009 (Healthcare professional) Include codes from [http://snomed.info/sct](http://snomed.info/sct) where concept is-a 224930009 (Services) | – | – |
 | code | role | 1..1 | – | – | string |
 | system | role | 1..1 | – | – | – |
 | member | participant | 1..1 | – | – | – |
@@ -1011,7 +1011,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | organization | practitioner_role | 1..1 | – | – | organization |
 | pregnancy_observation | pregnancy_observations | 1..unbounded | – | – | – |
 | – | pregnancy_observation | – | One of: status, intent | – | choice |
-| status | pregnancy_observation | 1..1 | Profile: https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-status.html | – | – |
+| status | pregnancy_observation | 1..1 | Profile: [https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-status.html](https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-status.html) | – | – |
 | unique_identifier | status | 1..1 | – | – | id |
 | observation_status | status | 1..1 | – | – | – |
 | coding | status | 1..1 | – | – | – |
@@ -1020,7 +1020,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | – | effective | – | One of: effective_date_time, effective_period | – | choice |
 | effective_date_time | effective | 1..1 | – | – | dateTime |
 | effective_period | effective | 1..1 | – | – | period |
-| intent | pregnancy_observation | 1..1 | Profile: https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-intent.html | – | – |
+| intent | pregnancy_observation | 1..1 | Profile: [https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-intent.html](https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-intent.html) | – | – |
 | unique_identifier | intent | 1..1 | – | – | id |
 | observation_status | intent | 1..1 | – | – | – |
 | coding | intent | 1..1 | – | – | – |
@@ -1029,11 +1029,11 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | – | effective | – | One of: effective_date_time, effective_period | – | choice |
 | effective_date_time | effective | 1..1 | – | – | dateTime |
 | effective_period | effective | 1..1 | – | – | period |
-| health_status_observation | health_status_observations | 1..unbounded | For SDOH,Disability, Functional, and Mental/Cognitive Profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation | – | – |
+| health_status_observation | health_status_observations | 1..unbounded | For SDOH,Disability, Functional, and Mental/Cognitive Profile: [http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation](http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation) | – | – |
 | unique_identifier | health_status_observation | 1..1 | – | – | id |
 | observation_status | health_status_observation | 1..1 | – | – | – |
 | category | health_status_observation | 1..1 | – | – | – |
-| code | category | 1..1 | Typse of Observation https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-simple-observation-category.html | – | – |
+| code | category | 1..1 | Typse of Observation [https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-simple-observation-category.html](https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-simple-observation-category.html) | – | – |
 | code | health_status_observation | 1..1 | – | – | codeable_concept |
 | – | effective | – | One of: effective_date_time, effective_period | – | choice |
 | effective_date_time | effective | 1..1 | – | – | dateTime |
@@ -1238,7 +1238,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | effective_period | observation_effective | 0..1 | – | – | period |
 | – | lab_observation | – | One of: observation_value, data_absent_reason | – | choice |
 | observation_value | lab_observation | 0..1 | Result of the observation | – | result_value |
-| data_absent_reason | lab_observation | 0..1 | Reason for missing data. Inputs can be found here: http://hl7.org/fhir/R4/valueset-data-absent-reason.html | – | – |
+| data_absent_reason | lab_observation | 0..1 | Reason for missing data. Inputs can be found here: [http://hl7.org/fhir/R4/valueset-data-absent-reason.html](http://hl7.org/fhir/R4/valueset-data-absent-reason.html) | – | – |
 | interpretation | lab_observation | 0..unbounded | A categorical assessment of an observation value. For example, high, low, normal. | – | string |
 | reference_range | lab_observation | 0..unbounded | Guidance on how to interpret the value by comparison to a normal or recommended range. Multiple reference ranges are interpreted as an "OR". In other words, to represent two distinct target populations, two referenceRange elements would be used. | – | – |
 | low | reference_range | 0..1 | – | – | simple_quantity |
@@ -1336,7 +1336,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | reported_practitioner | reported_reference | 0..1 | – | – | practitioner |
 | reported_organization | reported_reference | 0..1 | – | – | organization |
 | medication | medication_request | 1..1 | – | – | – |
-| medication_code | medication | 1..1 | A code (or set of codes) that specify this medication, or a textual description if no code is available. An example list can be found here https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-us-core-medication-codes.html. Due to the size of this list, no enumeration is provided. | – | – |
+| medication_code | medication | 1..1 | A code (or set of codes) that specify this medication, or a textual description if no code is available. An example list can be found here [https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-us-core-medication-codes.html](https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-us-core-medication-codes.html). Due to the size of this list, no enumeration is provided. | – | – |
 | – | medication_code | – | All of (any order): code, system, version, display, text | – | all |
 | code | medication_code | 1..1 | – | – | string |
 | system | medication_code | 1..1 | – | – | – |
@@ -1395,7 +1395,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | unique_identifier | care_team | 1..1 | – | – | string |
 | status | care_team | 0..1 | – | – | – |
 | participant | care_team | 1..unbounded | – | – | – |
-| role | participant | 1..unbounded | Type of involvement Include all codes defined in http://nucc.org/provider-taxonomy Include codes from http://snomed.info/sct where concept is-a 223366009 (Healthcare professional) Include codes from http://snomed.info/sct where concept is-a 224930009 (Services) | – | – |
+| role | participant | 1..unbounded | Type of involvement Include all codes defined in [http://nucc.org/provider-taxonomy](http://nucc.org/provider-taxonomy) Include codes from [http://snomed.info/sct](http://snomed.info/sct) where concept is-a 223366009 (Healthcare professional) Include codes from [http://snomed.info/sct](http://snomed.info/sct) where concept is-a 224930009 (Services) | – | – |
 | code | role | 1..1 | – | – | string |
 | system | role | 1..1 | – | – | – |
 | member | participant | 1..1 | – | – | – |
@@ -1707,7 +1707,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | unit | value_quantity | 1..1 | – | – | string |
 | system | value_quantity | 0..1 | – | – | string |
 | code | value_quantity | 0..1 | – | – | string |
-| comparator | value_quantity | 0..1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html | – | – |
+| comparator | value_quantity | 0..1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) | – | – |
 | data_absent_reason | pediatric_weight_for_height_observation | 0..1 | – | – | – |
 | code | data_absent_reason | 0..1 | – | – | – |
 | system | data_absent_reason | 0..1 | – | – | string |
@@ -1769,7 +1769,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | pregnancy_observations | health_status | 0..1 | – | – | – |
 | pregnancy_observation | pregnancy_observations | 1..unbounded | – | – | – |
 | – | pregnancy_observation | – | One of: status, intent | – | choice |
-| status | pregnancy_observation | 1..1 | Profile: https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-status.html | – | – |
+| status | pregnancy_observation | 1..1 | Profile: [https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-status.html](https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-status.html) | – | – |
 | unique_identifier | status | 1..1 | – | – | id |
 | observation_status | status | 1..1 | – | – | – |
 | coding | status | 1..1 | – | – | – |
@@ -1779,7 +1779,7 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | effective_date_time | effective | 1..1 | – | – | dateTime |
 | effective_period | effective | 1..1 | – | – | period |
 | record_type | status | 0..1 | This element describes the action for this Profile (A = Add, U = Update, D = Delete) | – | – |
-| intent | pregnancy_observation | 1..1 | Profile: https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-intent.html | – | – |
+| intent | pregnancy_observation | 1..1 | Profile: [https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-intent.html](https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-pregnancy-intent.html) | – | – |
 | unique_identifier | intent | 1..1 | – | – | id |
 | observation_status | intent | 1..1 | – | – | – |
 | coding | intent | 1..1 | – | – | – |
@@ -1794,12 +1794,12 @@ Elements and values required for compliance with [https://www.hl7.org/fhir/R4/](
 | effective_period | effective | 1..1 | – | – | period |
 | record_type | intent | 0..1 | This element describes the action for this Profile (A = Add, U = Update, D = Delete) | – | – |
 | health_status_observations | health_status | 0..1 | – | – | – |
-| health_status_observation | health_status_observations | 1..unbounded | For SDOH,Disability, Functional, and Mental/Cognitive Profile: http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation | – | – |
+| health_status_observation | health_status_observations | 1..unbounded | For SDOH,Disability, Functional, and Mental/Cognitive Profile: [http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation](http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation) | – | – |
 | unique_identifier | health_status_observation | 1..1 | – | – | id |
 | text | health_status_observation | 0..1 | Text summary of the resource, for human interpretation. Since values are not mandatory, this is here for additional notes upon observation | – | string |
 | observation_status | health_status_observation | 1..1 | – | – | – |
 | category | health_status_observation | 1..1 | – | – | – |
-| code | category | 1..1 | Typse of Observation https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-simple-observation-category.html | – | – |
+| code | category | 1..1 | Typse of Observation [https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-simple-observation-category.html](https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-simple-observation-category.html) | – | – |
 | display | category | 0..1 | – | – | string |
 | code | health_status_observation | 1..1 | – | – | codeable_concept |
 | effective | health_status_observation | 0..1 | – | – | – |

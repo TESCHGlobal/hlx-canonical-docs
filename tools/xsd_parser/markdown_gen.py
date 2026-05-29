@@ -2,6 +2,12 @@
 from datetime import datetime
 import re
 from .schema_info import SchemaInfo
+from .utils import linkify_urls
+
+
+FHIR_R4_URL = "https://www.hl7.org/fhir/R4/"
+DAVINCI_PROJECT_URL = "https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome"
+CARIN_ALLIANCE_URL = "https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides"
 
 
 def escape_markdown_table_cell(text):
@@ -24,7 +30,7 @@ def escape_markdown_table_cell(text):
     text = re.sub(r'(?<!\\)\|', r'\\|', text)
     # Replace newlines with spaces
     text = text.replace("\n", " ")
-    return text
+    return linkify_urls(text)
 
 def generate_front_matter(schema_info: SchemaInfo):
     """Generate Jekyll front matter so GitHub Pages applies the default layout."""
@@ -194,7 +200,11 @@ def generate_disclaimer():
 def generate_overview(schema_info: SchemaInfo):
     """Generate overview section explaining the guide's purpose and XML format matching PDF style."""
     output = "<h2 id=\"overview\" style=\"color:#E60073\">Overview</h2>\n\n"
-    output += f"This implementation guide provides field mappings and requirements for HealthLX {schema_info.display_name} data submissions in XML format based on FHIR R4 standards. "
+    output += (
+        f"This implementation guide provides field mappings and requirements for HealthLX "
+        f"{schema_info.display_name} data submissions in XML format based on "
+        f"[{FHIR_R4_URL}]({FHIR_R4_URL}) standards. "
+    )
     output += "XML format enables structured data exchange with built-in validation against the provided XSD schema.\n\n"
     
     return output
@@ -214,12 +224,15 @@ def generate_encoding(schema_info: SchemaInfo):
 def generate_interoperability(schema_info: SchemaInfo):
     """Generate interoperability section with FHIR reference."""
     output = "<h2 id=\"interoperability\" style=\"color:#E60073\">Interoperability</h2>\n\n"
-    output += "This implementation guide is based on constructs presented in FHIR R4 (Fast Healthcare Interoperability Resources Release 4) "
-    output += "and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.\n\n"
+    output += (
+        "This implementation guide is based on constructs presented in "
+        f"[{FHIR_R4_URL}]({FHIR_R4_URL}) (Fast Healthcare Interoperability Resources Release 4) "
+        "and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.\n\n"
+    )
     output += "For more information regarding these underlying standards, please visit:\n\n"
-    output += "- FHIR R4: https://www.hl7.org/fhir/R4/\n"
-    output += "- Da Vinci Project: https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome\n"
-    output += "- CARIN Alliance: https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides\n\n"
+    output += f"- [{FHIR_R4_URL}]({FHIR_R4_URL})\n"
+    output += f"- [{DAVINCI_PROJECT_URL}]({DAVINCI_PROJECT_URL})\n"
+    output += f"- [{CARIN_ALLIANCE_URL}]({CARIN_ALLIANCE_URL})\n\n"
 
     return output
 
@@ -229,7 +242,7 @@ def generate_supplement_section(section_id: str, title: str, content: str) -> st
     output = f"<h2 id=\"{section_id}\" style=\"color:#E60073\">{title}</h2>\n\n"
     content = (content or "").strip()
     if content:
-        output += content + "\n\n"
+        output += linkify_urls(content) + "\n\n"
     return output
 
 

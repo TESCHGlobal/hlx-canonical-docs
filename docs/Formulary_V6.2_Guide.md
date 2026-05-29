@@ -36,7 +36,7 @@ This document is provided by HealthLX for informational purposes only. Informati
 
 <h2 id="overview" style="color:#E60073">Overview</h2>
 
-This implementation guide provides field mappings and requirements for HealthLX Formulary_V6.2 data submissions in XML format based on FHIR R4 standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
+This implementation guide provides field mappings and requirements for HealthLX Formulary_V6.2 data submissions in XML format based on [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
 
 <h2 id="encoding" style="color:#E60073">Encoding</h2>
 
@@ -48,13 +48,13 @@ Payers need to send their files with utf-8 encoding as shown below:
 
 <h2 id="interoperability" style="color:#E60073">Interoperability</h2>
 
-This implementation guide is based on constructs presented in FHIR R4 (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
+This implementation guide is based on constructs presented in [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
 
 For more information regarding these underlying standards, please visit:
 
-- FHIR R4: https://www.hl7.org/fhir/R4/
-- Da Vinci Project: https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome
-- CARIN Alliance: https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides
+- [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/)
+- [https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome](https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome)
+- [https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides](https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides)
 
 <h2 id="change-log" style="color:#E60073">Change Log</h2>
 
@@ -84,7 +84,7 @@ For more information regarding these underlying standards, please visit:
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | value | decimal | 0 | 1 | – |
-| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: http://hl7.org/fhir/R4/valueset-quantity-comparator.html |
+| comparator | – | 0 | 1 | A list of Quantity Comparator's can be found here: [http://hl7.org/fhir/R4/valueset-quantity-comparator.html](http://hl7.org/fhir/R4/valueset-quantity-comparator.html) |
 | unit | string | 0 | 1 | Unit representation (e.g. mcg) |
 | system | string | 0 | 1 | The URI of the system that defines the coded unit form |
 | code | string | 0 | 1 | Coded form of the unit |
@@ -98,17 +98,17 @@ For more information regarding these underlying standards, please visit:
 | --- | --- | --- | --- | --- |
 | formulary_drug | – | 1 | unbounded | – |
 | id | string | 0 | 1 | – |
-| rx_norm_code | – | 1 | 1 | A list of RxNorm Codes can be found here: http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html |
+| rx_norm_code | – | 1 | 1 | A list of RxNorm Codes can be found here: [http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html](http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html) |
 | code | xs:string | 0 | 1 | – |
 | display | xs:string | 0 | 1 | – |
 | system | xs:string | 0 | 1 | – |
 | text | xs:string | 0 | 1 | – |
-| status | – | 0 | 1 | Status of medication. Status options can be found here: http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html |
+| status | – | 0 | 1 | Status of medication. Status options can be found here: [http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html](http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html) |
 | manufacturer | – | 0 | 1 | Manufacturer of the medication |
 | name | string | 1 | 1 | – |
 | alias | string | 0 | unbounded | – |
-| type | – | 0 | unbounded | Select the type of orginzation this is. A full list can be found here: http://hl7.org/fhir/R4/valueset-organization-type.html |
-| dose_form | – | 0 | 1 | Select the dose form. A full list can be found here: http://hl7.org/fhir/R4/valueset-medication-form-codes.html |
+| type | – | 0 | unbounded | Select the type of orginzation this is. A full list can be found here: [http://hl7.org/fhir/R4/valueset-organization-type.html](http://hl7.org/fhir/R4/valueset-organization-type.html) |
+| dose_form | – | 0 | 1 | Select the dose form. A full list can be found here: [http://hl7.org/fhir/R4/valueset-medication-form-codes.html](http://hl7.org/fhir/R4/valueset-medication-form-codes.html) |
 | code | – | 0 | 1 | – |
 | system | – | 0 | 1 | – |
 | display | string | 0 | 1 | – |
@@ -120,10 +120,10 @@ For more information regarding these underlying standards, please visit:
 | numerator | quantity | 0 | 1 | – |
 | denominator | quantity | 0 | 1 | – |
 | substance | – | 1 | 1 | – |
-| category | – | 0 | unbounded | Select the substance categories. A full list can be found here: http://hl7.org/fhir/R4/valueset-substance-category.html |
+| category | – | 0 | unbounded | Select the substance categories. A full list can be found here: [http://hl7.org/fhir/R4/valueset-substance-category.html](http://hl7.org/fhir/R4/valueset-substance-category.html) |
 | description | string | 1 | 1 | – |
 | code | – | 1 | 1 | – |
-| code | – | 1 | 1 | Select what substance this is. A full list can be found here: http://hl7.org/fhir/R4/valueset-substance-code.html |
+| code | – | 1 | 1 | Select what substance this is. A full list can be found here: [http://hl7.org/fhir/R4/valueset-substance-code.html](http://hl7.org/fhir/R4/valueset-substance-code.html) |
 | system | – | 0 | 1 | – |
 | intended_route | – | 0 | unbounded | – |
 | code | string | 0 | 1 | – |
@@ -143,7 +143,7 @@ For more information regarding these underlying standards, please visit:
 | source | string | 0 | 1 | The source or owner for the price information |
 | cost | – | 1 | 1 | The actual cost of the medication |
 | value | decimal | 0 | 1 | – |
-| currency | currency | 0 | 1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html |
+| currency | currency | 0 | 1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) |
 | plan_id | string | 1 | 1 | Plan IDs must be unique, even across different markets. |
 | prior_authorization | boolean | 0 | 1 | A Boolean indication of whether the coverage plan imposes a prior authorization requirement on this drug |
 | step_therapy | boolean | 0 | 1 | A Boolean indication of whether the coverage plan imposes a step therapy limit on this drug |
@@ -162,16 +162,16 @@ For more information regarding these underlying standards, please visit:
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | formulary_drugs_alternative | – | 0 | unbounded | – |
-| rx_norm_code | – | 1 | 1 | A list of RxNorm Codes can be found here: http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html |
+| rx_norm_code | – | 1 | 1 | A list of RxNorm Codes can be found here: [http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html](http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html) |
 | code | string | 1 | 1 | – |
 | display | string | 1 | 1 | – |
 | system | – | 1 | 1 | – |
-| status | – | 0 | 1 | Status of medication. Status options can be found here: http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html |
+| status | – | 0 | 1 | Status of medication. Status options can be found here: [http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html](http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html) |
 | manufacturer | – | 0 | 1 | Manufacturer of the medication |
 | name | string | 1 | 1 | – |
 | alias | string | 0 | unbounded | – |
-| type | – | 0 | unbounded | Select the type of orginzation this is. A full list can be found here: http://hl7.org/fhir/R4/valueset-organization-type.html |
-| dose_form | – | 0 | 1 | Select the dose form. A full list can be found here: http://hl7.org/fhir/R4/valueset-medication-form-codes.html |
+| type | – | 0 | unbounded | Select the type of orginzation this is. A full list can be found here: [http://hl7.org/fhir/R4/valueset-organization-type.html](http://hl7.org/fhir/R4/valueset-organization-type.html) |
+| dose_form | – | 0 | 1 | Select the dose form. A full list can be found here: [http://hl7.org/fhir/R4/valueset-medication-form-codes.html](http://hl7.org/fhir/R4/valueset-medication-form-codes.html) |
 | code | – | 0 | 1 | – |
 | system | – | 0 | 1 | – |
 | ingredients | – | 0 | 1 | – |
@@ -181,10 +181,10 @@ For more information regarding these underlying standards, please visit:
 | numerator | quantity | 0 | 1 | – |
 | denominator | quantity | 0 | 1 | – |
 | substance | – | 1 | 1 | – |
-| category | – | 0 | unbounded | Select the substance categories. A full list can be found here: http://hl7.org/fhir/R4/valueset-substance-category.html |
+| category | – | 0 | unbounded | Select the substance categories. A full list can be found here: [http://hl7.org/fhir/R4/valueset-substance-category.html](http://hl7.org/fhir/R4/valueset-substance-category.html) |
 | description | string | 1 | 1 | – |
 | code | – | 1 | 1 | – |
-| code | – | 1 | 1 | Select what substance this is. A full list can be found here: http://hl7.org/fhir/R4/valueset-substance-code.html |
+| code | – | 1 | 1 | Select what substance this is. A full list can be found here: [http://hl7.org/fhir/R4/valueset-substance-code.html](http://hl7.org/fhir/R4/valueset-substance-code.html) |
 | system | – | 0 | 1 | – |
 | monitoring_programs | – | 0 | 1 | – |
 | monitoring_program | – | 0 | unbounded | Program under which a medication is reviewed |
@@ -199,7 +199,7 @@ For more information regarding these underlying standards, please visit:
 | source | string | 0 | 1 | The source or owner for the price information |
 | cost | – | 1 | 1 | The actual cost of the medication |
 | value | decimal | 0 | 1 | – |
-| currency | currency | 0 | 1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html |
+| currency | currency | 0 | 1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) |
 | plan_id | string | 1 | 1 | Plan IDs must be unique, even across different markets |
 | prior_authorization | boolean | 0 | 1 | A Boolean indication of whether the coverage plan imposes a prior authorization requirement on this drug |
 | step_therapy | boolean | 0 | 1 | A Boolean indication of whether the coverage plan imposes a step therapy limit on this drug |
@@ -224,17 +224,17 @@ For more information regarding these underlying standards, please visit:
 | plan_id | coverage_plan | 1..1 | – | – | string |
 | plan_id_type | coverage_plan | 1..1 | Type of Plan ID. For all Marketplace plans this should be: HIOS-PLAN-ID. Other recommended values: commercial, QHP, Medicare Advantage, Medicaid, Dental Plan, vision, Indian Health Service etc | – | string |
 | title | coverage_plan | 1..1 | – | – | string |
-| status | coverage_plan | 1..1 | The CoveragePlan Status (current, retired, entered-in-error). More details can be found here: http://hl7.org/fhir/R4/valueset-list-status.html | – | – |
-| mode | coverage_plan | 1..1 | The CoveragePlan Mode (working, snapshot, changes). More details can be found here: http://hl7.org/fhir/R4/valueset-list-mode.html | – | – |
+| status | coverage_plan | 1..1 | The CoveragePlan Status (current, retired, entered-in-error). More details can be found here: [http://hl7.org/fhir/R4/valueset-list-status.html](http://hl7.org/fhir/R4/valueset-list-status.html) | – | – |
+| mode | coverage_plan | 1..1 | The CoveragePlan Mode (working, snapshot, changes). More details can be found here: [http://hl7.org/fhir/R4/valueset-list-mode.html](http://hl7.org/fhir/R4/valueset-list-mode.html) | – | – |
 | drug_tiers | coverage_plan | 1..1 | A description of the drug tiers used by the formulary and how those tiers implement copay and coinsurance amounts. Drug tiers do not have any inherent meaning that is consistent across all formularies. Rather, each tier is defined using this element. | – | – |
 | drug_tier | drug_tiers | 1..unbounded | The drug tier of a particular medication in a health plan. Base set are examples. Each plan may have its own controlled vocabulary. | – | – |
 | drug_tier_id | drug_tier | 1..1 | – | – | – |
 | mail_order | drug_tier | 1..1 | – | – | boolean |
-| pharmacy_type | cost_sharing | 1..1 | Types of Pharmacies. Each payer will have its own controlled vocabulary. More inoformation can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html | – | – |
+| pharmacy_type | cost_sharing | 1..1 | Types of Pharmacies. Each payer will have its own controlled vocabulary. More inoformation can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html) | – | – |
 | copay_amount | cost_sharing | 1..1 | – | – | – |
-| copay_option | cost_sharing | 1..1 | Copay options which can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html | – | – |
+| copay_option | cost_sharing | 1..1 | Copay options which can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html) | – | – |
 | coinsurance_rate | cost_sharing | 1..1 | – | – | decimal |
-| coinsurance_option | cost_sharing | 1..1 | CoInsurance options which can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html | – | – |
+| coinsurance_option | cost_sharing | 1..1 | CoInsurance options which can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html) | – | – |
 | formulary_drugs | drug_tier | 1..1 | – | – | formulary_drugs |
 {: .heatMap}
 
@@ -259,8 +259,8 @@ For more information regarding these underlying standards, please visit:
 | formulary_url | coverage_plan | 0..1 | The URL that goes directly to the formulary brochure for the specific standard plan or plan variation. | – | string |
 | email_plan_contact | coverage_plan | 0..1 | – | – | string |
 | network | coverage_plan | 0..unbounded | – | – | string |
-| status | coverage_plan | 1..1 | The CoveragePlan Status (current, retired, entered-in-error). More details can be found here: http://hl7.org/fhir/R4/valueset-list-status.html | – | – |
-| mode | coverage_plan | 1..1 | The CoveragePlan Mode (working, snapshot, changes). More details can be found here: http://hl7.org/fhir/R4/valueset-list-mode.html | – | – |
+| status | coverage_plan | 1..1 | The CoveragePlan Status (current, retired, entered-in-error). More details can be found here: [http://hl7.org/fhir/R4/valueset-list-status.html](http://hl7.org/fhir/R4/valueset-list-status.html) | – | – |
+| mode | coverage_plan | 1..1 | The CoveragePlan Mode (working, snapshot, changes). More details can be found here: [http://hl7.org/fhir/R4/valueset-list-mode.html](http://hl7.org/fhir/R4/valueset-list-mode.html) | – | – |
 | date | coverage_plan | 0..1 | – | – | dateTime |
 | drug_tiers | coverage_plan | 1..1 | A description of the drug tiers used by the formulary and how those tiers implement copay and coinsurance amounts. Drug tiers do not have any inherent meaning that is consistent across all formularies. Rather, each tier is defined using this element. | – | – |
 | drug_tier | drug_tiers | 1..unbounded | The drug tier of a particular medication in a health plan. Base set are examples. Each plan may have its own controlled vocabulary. | – | – |
@@ -270,13 +270,13 @@ For more information regarding these underlying standards, please visit:
 | mail_order | drug_tier | 1..1 | – | – | boolean |
 | cost_sharings | drug_tier | 0..1 | – | – | – |
 | cost_sharing | cost_sharings | 0..unbounded | – | – | – |
-| pharmacy_type | cost_sharing | 1..1 | Types of Pharmacies. Each payer will have its own controlled vocabulary. More inoformation can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html | – | – |
+| pharmacy_type | cost_sharing | 1..1 | Types of Pharmacies. Each payer will have its own controlled vocabulary. More inoformation can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html) | – | – |
 | copay_amount | cost_sharing | 1..1 | – | – | – |
 | value | copay_amount | 0..1 | – | – | decimal |
-| currency | copay_amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
-| copay_option | cost_sharing | 1..1 | Copay options which can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html | – | – |
+| currency | copay_amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
+| copay_option | cost_sharing | 1..1 | Copay options which can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html) | – | – |
 | coinsurance_rate | cost_sharing | 1..1 | – | – | decimal |
-| coinsurance_option | cost_sharing | 1..1 | CoInsurance options which can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html | – | – |
+| coinsurance_option | cost_sharing | 1..1 | CoInsurance options which can be found here: [http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html) | – | – |
 | formulary_drugs | drug_tier | 1..1 | – | – | formulary_drugs |
 {: .heatMap}
 
@@ -406,7 +406,7 @@ The following substance category codes can be found here: [http://hl7.org/fhir/R
 | allergen | Allergen | A substance that causes an allergic reaction. |
 | biological | Biological Substance | A substance that is produced by or extracted from a biological source. |
 | body | Body Substance | A substance that comes directly from a human or an animal (e.g. blood, urine, feces, tears, etc.). |
-| chemical | Chemical | Any organic or inorganic substance of a particular molecular identity, including (i) any combination of such substances occurring in whole or in part as a result of a chemical reaction or occurring in nature and (ii) any element or uncombined radical (http://www.epa.gov/opptintr/import-export/pubs/importguide.pdf). |
+| chemical | Chemical | Any organic or inorganic substance of a particular molecular identity, including (i) any combination of such substances occurring in whole or in part as a result of a chemical reaction or occurring in nature and (ii) any element or uncombined radical ([http://www.epa.gov/opptintr/import-export/pubs/importguide.pdf](http://www.epa.gov/opptintr/import-export/pubs/importguide.pdf)). |
 | food | Dietary Substance | A food, dietary ingredient, or dietary supplement for human or animal. |
 | drug | Drug or Medicament | A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease in man or other animals (Federal Food Drug and Cosmetic Act). |
 | material | Material | A finished product which is not normally ingested, absorbed or injected (e.g. steel, iron, wood, plastic and paper). |

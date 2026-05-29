@@ -44,7 +44,7 @@ This document is provided by HealthLX for informational purposes only. Informati
 
 <h2 id="overview" style="color:#E60073">Overview</h2>
 
-This implementation guide provides field mappings and requirements for HealthLX EOB_V6.0 data submissions in XML format based on FHIR R4 standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
+This implementation guide provides field mappings and requirements for HealthLX EOB_V6.0 data submissions in XML format based on [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
 
 <h2 id="encoding" style="color:#E60073">Encoding</h2>
 
@@ -56,13 +56,13 @@ Payers need to send their files with utf-8 encoding as shown below:
 
 <h2 id="interoperability" style="color:#E60073">Interoperability</h2>
 
-This implementation guide is based on constructs presented in FHIR R4 (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
+This implementation guide is based on constructs presented in [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
 
 For more information regarding these underlying standards, please visit:
 
-- FHIR R4: https://www.hl7.org/fhir/R4/
-- Da Vinci Project: https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome
-- CARIN Alliance: https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides
+- [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/)
+- [https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome](https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome)
+- [https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides](https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides)
 
 <h2 id="change-log" style="color:#E60073">Change Log</h2>
 
@@ -169,7 +169,7 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| use | – | 0 | 1 | Use this element to describe the name. More information can be found here: http://hl7.org/fhir/R4/valueset-name-use.html |
+| use | – | 0 | 1 | Use this element to describe the name. More information can be found here: [http://hl7.org/fhir/R4/valueset-name-use.html](http://hl7.org/fhir/R4/valueset-name-use.html) |
 | text | string | 0 | 1 | Use this element to enter the entire name |
 | family | string | 1 | 1 | Family name (often called 'Surname') |
 | given | string | 1 | unbounded | Given names (not always 'first'). Includes middle names |
@@ -184,8 +184,8 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| use | – | 0 | 1 | The use of this address. More information can be found here: http://hl7.org/fhir/R4/valueset-address-use.html |
-| type | – | 0 | 1 | The type of address. More information can be found here: http://hl7.org/fhir/R4/valueset-address-type.html |
+| use | – | 0 | 1 | The use of this address. More information can be found here: [http://hl7.org/fhir/R4/valueset-address-use.html](http://hl7.org/fhir/R4/valueset-address-use.html) |
+| type | – | 0 | 1 | The type of address. More information can be found here: [http://hl7.org/fhir/R4/valueset-address-type.html](http://hl7.org/fhir/R4/valueset-address-type.html) |
 | text | string | 0 | 1 | Use this element to list the address in it's entirety (e.g. 123 Test Way City, State 12345) |
 | line | string | 1 | unbounded | – |
 | city | string | 1 | 1 | Name of city, town etc. |
@@ -202,9 +202,9 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| system | – | 1 | 1 | Use this element to descripbe the contact point. https://www.hl7.org/fhir/valueset-contact-point-system.html |
+| system | – | 1 | 1 | Use this element to descripbe the contact point. [https://www.hl7.org/fhir/valueset-contact-point-system.html](https://www.hl7.org/fhir/valueset-contact-point-system.html) |
 | value | string | 1 | 1 | The actual value of the contact point |
-| use | – | 0 | 1 | The use of the contact point. https://www.hl7.org/fhir/valueset-contact-point-use.html |
+| use | – | 0 | 1 | The use of the contact point. [https://www.hl7.org/fhir/valueset-contact-point-use.html](https://www.hl7.org/fhir/valueset-contact-point-use.html) |
 | rank | positiveInt | 0 | 1 | Specify preferred order of use (1 = highest) |
 | period | period | 0 | 1 | Time period when the contact point was/is in use |
 {: .heatMap}
@@ -262,7 +262,7 @@ For more information regarding these underlying standards, please visit:
 | name | human_name | 1 | unbounded | – |
 | gender | – | 1 | 1 | Use this element for Gender (male, female, other or unknown) |
 | birth_date | xs:date | 1 | 1 | Birth date (1900-01-01) |
-| marital_status | – | 0 | 1 | Marital Status, more information can be found here: http://hl7.org/fhir/R4/valueset-marital-status.html |
+| marital_status | – | 0 | 1 | Marital Status, more information can be found here: [http://hl7.org/fhir/R4/valueset-marital-status.html](http://hl7.org/fhir/R4/valueset-marital-status.html) |
 | deceased | – | 0 | 1 | – |
 | is_deceased | boolean | 0 | 1 | – |
 | deceased_date_time | dateTime | 0 | 1 | – |
@@ -272,20 +272,20 @@ For more information regarding these underlying standards, please visit:
 | address | address | 1 | unbounded | – |
 | communications | – | 0 | 1 | – |
 | communication | – | 0 | unbounded | – |
-| language | – | 1 | 1 | This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47). More information can be found here: http://hl7.org/fhir/R4/valueset-languages.html |
+| language | – | 1 | 1 | This value set includes common codes from BCP-47 ([http://tools.ietf.org/html/bcp47](http://tools.ietf.org/html/bcp47)). More information can be found here: [http://hl7.org/fhir/R4/valueset-languages.html](http://hl7.org/fhir/R4/valueset-languages.html) |
 | language_code | language | 1 | 1 | – |
 | system | – | 0 | 1 | – |
 | display | string | 0 | 1 | Description |
 | is_preferred | boolean | 0 | 1 | Is this language the preferred language (true/false) |
 | us_core_race | – | 0 | 1 | – |
-| omb_category_code | – | 0 | 5 | This element is for selecting 1 of the 5 OMB race category codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-race.html |
+| omb_category_code | – | 0 | 5 | This element is for selecting 1 of the 5 OMB race category codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-detailed-race.html](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) |
 | code | – | 1 | 1 | – |
 | system | – | 0 | 1 | – |
-| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional expansion codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-race.html |
+| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional expansion codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-detailed-race.html](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) |
 | text | string | 1 | 1 | Use this element for adding a text description |
 | us_core_ethnicity | – | 0 | 1 | – |
-| omb_category_code | – | 0 | 1 | This element is for selecting 1 of the OMB ethnicity category codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html |
-| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional ethnicity codes from the CDC that can be found here: https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html |
+| omb_category_code | – | 0 | 1 | This element is for selecting 1 of the OMB ethnicity category codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html](http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html) |
+| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional ethnicity codes from the CDC that can be found here: [https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html](https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html) |
 | text | string | 1 | 1 | Use this element for adding a text description if the ethnicity is not listed within the enummeration |
 | us_core_birth_sex | – | 0 | 1 | This element is used for selecting birth sex (M = Male, F = Female, UNK = Unknown) |
 {: .heatMap}
@@ -306,7 +306,7 @@ For more information regarding these underlying standards, please visit:
 | name | human_name | 1 | unbounded | – |
 | gender | – | 0 | 1 | Use this element for Gender (male, female, other or unknown) |
 | birth_date | xs:date | 0 | 1 | Birth date (1900-01-01) |
-| marital_status | – | 0 | 1 | Marital Status, more information can be found here: http://hl7.org/fhir/R4/valueset-marital-status.html |
+| marital_status | – | 0 | 1 | Marital Status, more information can be found here: [http://hl7.org/fhir/R4/valueset-marital-status.html](http://hl7.org/fhir/R4/valueset-marital-status.html) |
 | deceased | – | 0 | 1 | – |
 | is_deceased | boolean | 0 | 1 | – |
 | deceased_date_time | dateTime | 0 | 1 | – |
@@ -316,16 +316,16 @@ For more information regarding these underlying standards, please visit:
 | address | address | 0 | unbounded | – |
 | communications | – | 0 | 1 | – |
 | communication | – | 0 | unbounded | – |
-| language_code | language | 1 | 1 | This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47). More information can be found here: http://hl7.org/fhir/R4/valueset-languages.html |
+| language_code | language | 1 | 1 | This value set includes common codes from BCP-47 ([http://tools.ietf.org/html/bcp47](http://tools.ietf.org/html/bcp47)). More information can be found here: [http://hl7.org/fhir/R4/valueset-languages.html](http://hl7.org/fhir/R4/valueset-languages.html) |
 | is_preferred | boolean | 0 | 1 | Is this language the preferred language (true/false) |
 | display | string | 0 | 1 | Description |
 | us_core_race | – | 0 | 1 | – |
-| omb_category_code | – | 0 | 5 | This element is for selecting 1 of the 5 OMB race category codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-race.html |
-| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional expansion codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-race.html |
+| omb_category_code | – | 0 | 5 | This element is for selecting 1 of the 5 OMB race category codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-detailed-race.html](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) |
+| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional expansion codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-detailed-race.html](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) |
 | text | string | 1 | 1 | Use this element for adding a text description |
 | us_core_ethnicity | – | 0 | 1 | – |
-| omb_category_code | – | 0 | 1 | This element is for selecting 1 of the OMB ethnicity category codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html |
-| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional ethnicity codes from the CDC that can be found here: https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html |
+| omb_category_code | – | 0 | 1 | This element is for selecting 1 of the OMB ethnicity category codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html](http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html) |
+| detailed_code | – | 0 | unbounded | This element is for selecting 1 of the additional ethnicity codes from the CDC that can be found here: [https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html](https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html) |
 | text | string | 1 | 1 | Use this element for adding a text description if the ethnicity is not listed within the enummeration |
 | us_core_birth_sex | – | 0 | 1 | This element is used for selecting birth sex (M = Male, F = Female, UNK = Unknown) |
 {: .heatMap}
@@ -344,9 +344,9 @@ For more information regarding these underlying standards, please visit:
 | eob_identifier | eob | 1..1 | This is a unique business identifier assigned to the EOB. In the event, that this EOB changes in either status or content, the replacement EOB would be expected to have the same identifier. | – | eob_identifier |
 | status | eob | 1..1 | Claim processing status code | – | – |
 | type | eob | 1..1 | Claim type code (institutional, oral, pharmacy, professional or vision) | – | – |
-| use | eob | 1..1 | The purpose of the Claim: predetermination, preauthorization, claim. More information can be found here: http://hl7.org/fhir/R4/valueset-claim-use.html | – | – |
+| use | eob | 1..1 | The purpose of the Claim: predetermination, preauthorization, claim. More information can be found here: [http://hl7.org/fhir/R4/valueset-claim-use.html](http://hl7.org/fhir/R4/valueset-claim-use.html) | – | – |
 | created | eob | 1..1 | – | – | dateTime |
-| outcome | eob | 1..1 | This value set includes Claim Processing Outcome codes. More information can be found here: http://hl7.org/fhir/R4/valueset-remittance-outcome.html | – | – |
+| outcome | eob | 1..1 | This value set includes Claim Processing Outcome codes. More information can be found here: [http://hl7.org/fhir/R4/valueset-remittance-outcome.html](http://hl7.org/fhir/R4/valueset-remittance-outcome.html) | – | – |
 | claim | eob | 1..1 | – | – | – |
 | identifier | claim | 1..unbounded | Please include the following claim identifiers -The Payer Claim Control Number as it would be returned on the 835 2100 CLP07. This number must apply to the entire claim. Please use an identifier.type of DCN. - If available, the Claim Identifier for Transmission Intermediaries as sent to the payer on the 837 2300 Ref*D9. Please use an identifier.type of D9 | – | identifier |
 | patient | eob | 1..1 | – | – | – |
@@ -398,7 +398,7 @@ For more information regarding these underlying standards, please visit:
 | category | allowed_units | 1..1 | – | – | – |
 | code | category | 1..1 | – | – | – |
 | system | category | 1..1 | – | – | – |
-| category | in_out_network | 1..1 | Indicates the in network or out of network payment status of the claim. More info can be found here: http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html | – | – |
+| category | in_out_network | 1..1 | Indicates the in network or out of network payment status of the claim. More info can be found here: [http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html](http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html) | – | – |
 | category | adjudication_generic | 1..1 | – | – | – |
 | code | category | 1..1 | – | – | adjudication_category |
 | product_or_service | detail | 1..1 | Billing, service, product, or drug code | – | string |
@@ -419,12 +419,12 @@ For more information regarding these underlying standards, please visit:
 | amount | adjudication_amount_type | 1..1 | – | – | – |
 | value | amount | 1..1 | – | – | decimal |
 | category | in_out_network | 1..1 | – | – | – |
-| code | category | 1..1 | Indicates the in network or out of network payment status of the claim. More info can be found here: : http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html | – | – |
+| code | category | 1..1 | Indicates the in network or out of network payment status of the claim. More info can be found here: : [http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html](http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html) | – | – |
 | system | category | 1..1 | – | – | – |
 | amount | in_out_network | 1..1 | – | – | – |
 | value | amount | 1..1 | – | – | decimal |
-| category | benefit_balance | 1..1 | Benefit Category Codes. More information can be found here: http://hl7.org/fhir/R4/valueset-ex-benefitcategory.html Preferred code sets list: 1,2,3,4,5,14,23,24,25,26,27,28,30,35,36,37,49,55,56,61,62,63,69,76,F1,F3,F4,F6 | – | string |
-| type | financial | 1..1 | Benefit classification. More information can be found here: http://hl7.org/fhir/R4/valueset-benefit-type.html Preferred code sets list: benefit,deductible,visit,room,copay,copay-percent,copay-maximum,vision-exam,vision-glasses,vision-contacts,medical-primarycare,pharmacy-dispense | – | string |
+| category | benefit_balance | 1..1 | Benefit Category Codes. More information can be found here: [http://hl7.org/fhir/R4/valueset-ex-benefitcategory.html](http://hl7.org/fhir/R4/valueset-ex-benefitcategory.html) Preferred code sets list: 1,2,3,4,5,14,23,24,25,26,27,28,30,35,36,37,49,55,56,61,62,63,69,76,F1,F3,F4,F6 | – | string |
+| type | financial | 1..1 | Benefit classification. More information can be found here: [http://hl7.org/fhir/R4/valueset-benefit-type.html](http://hl7.org/fhir/R4/valueset-benefit-type.html) Preferred code sets list: benefit,deductible,visit,room,copay,copay-percent,copay-maximum,vision-exam,vision-glasses,vision-contacts,medical-primarycare,pharmacy-dispense | – | string |
 | – | allowed | – | One of: allowed_unsigned_int, allowed_string, allowed_money | – | choice |
 | – | used | – | One of: used_unsigned_int, used_money | – | choice |
 | sequence | billing_network_contracting_status | 1..1 | Information instance identifier | – | positiveInt |
@@ -577,10 +577,10 @@ The following table provides a summary of second level `type`/`sub_type` element
 | status | eob | 1..1 | Claim processing status code | – | – |
 | type | eob | 1..1 | Claim type code (institutional, oral, pharmacy, professional or vision) | – | – |
 | sub_type | eob | 0..1 | sub type of Institutional Profiles | – | – |
-| use | eob | 1..1 | The purpose of the Claim: predetermination, preauthorization, claim. More information can be found here: http://hl7.org/fhir/R4/valueset-claim-use.html | – | – |
+| use | eob | 1..1 | The purpose of the Claim: predetermination, preauthorization, claim. More information can be found here: [http://hl7.org/fhir/R4/valueset-claim-use.html](http://hl7.org/fhir/R4/valueset-claim-use.html) | – | – |
 | billable_period | eob | 0..1 | – | – | period |
 | created | eob | 1..1 | – | – | dateTime |
-| outcome | eob | 1..1 | This value set includes Claim Processing Outcome codes. More information can be found here: http://hl7.org/fhir/R4/valueset-remittance-outcome.html | – | – |
+| outcome | eob | 1..1 | This value set includes Claim Processing Outcome codes. More information can be found here: [http://hl7.org/fhir/R4/valueset-remittance-outcome.html](http://hl7.org/fhir/R4/valueset-remittance-outcome.html) | – | – |
 | disposition | eob | 0..1 | – | – | string |
 | pre_auth_ref | eob | 0..unbounded | – | – | string |
 | pre_auth_ref_periods | eob | 0..1 | – | – | – |
@@ -607,7 +607,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | name | facility | 0..1 | Name of the facility as used by humans | – | string |
 | alias | facility | 0..unbounded | A list of alternate names that the facility is known as, or was known as, in the past. | – | string |
 | description | facility | 0..1 | Additional details about the facility that could be displayed as further information to identify the location beyond its name. | – | string |
-| type | facility | 0..unbounded | A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered. More information can be found here: http://hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html | – | – |
+| type | facility | 0..unbounded | A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered. More information can be found here: [http://hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html](http://hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html) | – | – |
 | telecoms | facility | 0..1 | – | – | – |
 | telecom | telecoms | 0..unbounded | – | – | telecom |
 | address | facility | 0..1 | – | – | address |
@@ -650,7 +650,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | role | care_team | 1..1 | This element defines Function within the team,Enumuration set is combined list of possible code value set from each profile: Inpatient-Facility and Outpatient-Facility (primary,attending,performing,referring,operating,otheroperating), Pharmacy (prescribing,primary) and Professional-NonClinician (primary,performing,referring,supervisor,purchasedservice) | – | – |
 | code | role | 1..1 | – | – | – |
 | system | role | 0..1 | – | – | – |
-| qualification | care_team | 0..1 | Practitioner credential or specialization. More information can be found here: http://hl7.org/fhir/R4/codesystem-provider-qualification.html | – | – |
+| qualification | care_team | 0..1 | Practitioner credential or specialization. More information can be found here: [http://hl7.org/fhir/R4/codesystem-provider-qualification.html](http://hl7.org/fhir/R4/codesystem-provider-qualification.html) | – | – |
 | code | qualification | 0..1 | – | – | string |
 | system | qualification | 0..1 | – | – | – |
 | diagnoses | eob | 0..1 | – | – | – |
@@ -665,7 +665,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | type | diagnosis | 0..unbounded | Diagnosis type codes for inpatient, outpatient, nonclinician and pharmacy | – | – |
 | code | type | 0..1 | – | – | – |
 | system | type | 0..1 | – | – | – |
-| on_admission | diagnosis | 0..1 | Diagnosis on Admission Codes. More information can be found here: http://hl7.org/fhir/R4/valueset-ex-diagnosis-on-admission.html | – | – |
+| on_admission | diagnosis | 0..1 | Diagnosis on Admission Codes. More information can be found here: [http://hl7.org/fhir/R4/valueset-ex-diagnosis-on-admission.html](http://hl7.org/fhir/R4/valueset-ex-diagnosis-on-admission.html) | – | – |
 | code | on_admission | 0..1 | – | – | string |
 | system | on_admission | 0..1 | – | – | – |
 | package_code | diagnosis | 0..1 | – | – | string |
@@ -703,8 +703,8 @@ The following table provides a summary of second level `type`/`sub_type` element
 | information_sequence | item | 0..unbounded | Applicable exception and supporting information,Enumuration list is not published yet but required | – | positiveInt |
 | revenue | item | 0..1 | Revenue or cost center code | – | – |
 | code | revenue | 0..1 | – | – | string |
-| system | revenue | 0..1 | Required valid value for institutional profile:https://www.nubc.org/CodeSystem/RevenueCodes | – | string |
-| category | item | 0..1 | Benefit classification. More information can be found here: http://hl7.org/fhir/R4/valueset-ex-benefitcategory.html Preferred code sets list: 1 ,2 ,3 ,4 ,5 ,14 ,23 ,24 ,25 ,26 ,27 ,28 ,30 ,35 ,36 ,37 ,49 ,55 ,56 ,61 ,62 ,63 ,69 ,76 ,F1 ,F3 ,F4 ,F6 | – | string |
+| system | revenue | 0..1 | Required valid value for institutional profile:[https://www.nubc.org/CodeSystem/RevenueCodes](https://www.nubc.org/CodeSystem/RevenueCodes) | – | string |
+| category | item | 0..1 | Benefit classification. More information can be found here: [http://hl7.org/fhir/R4/valueset-ex-benefitcategory.html](http://hl7.org/fhir/R4/valueset-ex-benefitcategory.html) Preferred code sets list: 1 ,2 ,3 ,4 ,5 ,14 ,23 ,24 ,25 ,26 ,27 ,28 ,30 ,35 ,36 ,37 ,49 ,55 ,56 ,61 ,62 ,63 ,69 ,76 ,F1 ,F3 ,F4 ,F6 | – | string |
 | product_or_service | item | 1..1 | Current Procedural Terminology (CPT) - Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes - Procedure Codes NDC or Compound | – | – |
 | code | product_or_service | 1..1 | – | – | string |
 | system | product_or_service | 0..1 | – | – | – |
@@ -725,11 +725,11 @@ The following table provides a summary of second level `type`/`sub_type` element
 | code | quantity | 0..1 | – | – | string |
 | unit_price | item | 0..1 | – | – | – |
 | value | unit_price | 0..1 | – | – | decimal |
-| currency | unit_price | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | unit_price | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | factor | item | 0..1 | Price scaling factor | – | decimal |
 | net | item | 0..1 | – | – | – |
 | value | net | 0..1 | – | – | decimal |
-| currency | net | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | net | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | note_number | item | 0..unbounded | Applicable note numbers | – | positiveInt |
 | location | item | 0..1 | – | – | – |
 {: .heatMap}
@@ -748,7 +748,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | name | location_reference | 0..1 | Name of the facility as used by humans | – | string |
 | alias | location_reference | 0..unbounded | A list of alternate names that the facility is known as, or was known as, in the past. | – | string |
 | description | location_reference | 0..1 | Additional details about the facility that could be displayed as further information to identify the location beyond its name. | – | string |
-| type | location_reference | 0..unbounded | A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered. More information can be found here: http://hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html | – | – |
+| type | location_reference | 0..unbounded | A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered. More information can be found here: [http://hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html](http://hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html) | – | – |
 | telecoms | location_reference | 0..1 | – | – | – |
 | telecom | telecoms | 0..unbounded | – | – | telecom |
 | address | location_reference | 0..1 | – | – | address |
@@ -761,7 +761,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | reason | adjudication_amount_type | 0..1 | Adjudication Reason Codes | – | string |
 | amount | adjudication_amount_type | 0..1 | – | – | – |
 | value | amount | 0..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | value | adjudication_amount_type | 0..1 | Non-monitary value | – | decimal |
 | denial_reason | adjudication | 0..unbounded | – | – | – |
 | code | denial_reason | 1..1 | – | – | – |
@@ -771,7 +771,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | system | reason | 0..1 | – | – | – |
 | amount | denial_reason | 0..1 | – | – | – |
 | value | amount | 0..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | value | denial_reason | 0..1 | – | – | decimal |
 | allowed_units | adjudication | 0..1 | – | – | – |
 | category | allowed_units | 1..1 | – | – | – |
@@ -780,14 +780,14 @@ The following table provides a summary of second level `type`/`sub_type` element
 | reason | allowed_units | 0..1 | Explanation of adjudication outcome | – | string |
 | amount | allowed_units | 0..1 | – | – | – |
 | value | amount | 0..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | value | allowed_units | 0..1 | – | – | decimal |
 | in_out_network | adjudication | 0..1 | – | – | – |
-| category | in_out_network | 1..1 | Indicates the in network or out of network payment status of the claim. More info can be found here: http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html | – | – |
+| category | in_out_network | 1..1 | Indicates the in network or out of network payment status of the claim. More info can be found here: [http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html](http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html) | – | – |
 | reason | in_out_network | 0..1 | Adjudication Reason Codes | – | string |
 | amount | in_out_network | 0..1 | – | – | – |
 | value | amount | 0..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | value | in_out_network | 0..1 | – | – | decimal |
 | adjudication_generic | adjudication | 0..unbounded | – | – | – |
 | category | adjudication_generic | 1..1 | – | – | – |
@@ -796,7 +796,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | reason | adjudication_generic | 0..1 | Explanation of adjudication outcome | – | string |
 | amount | adjudication_generic | 0..1 | – | – | – |
 | value | amount | 0..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | value | adjudication_generic | 0..1 | – | – | decimal |
 | details | item | 0..1 | – | – | – |
 | detail | details | 0..unbounded | – | – | – |
@@ -815,7 +815,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | reason | adjudication_amount_type | 0..1 | Adjudication Reason Codes | – | string |
 | amount | adjudication_amount_type | 1..1 | – | – | – |
 | value | amount | 0..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | value | adjudication_amount_type | 0..1 | – | – | decimal |
 | denial_reason | adjudication | 0..unbounded | – | – | – |
 | category | denial_reason | 1..1 | – | – | – |
@@ -824,7 +824,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | reason | denial_reason | 0..1 | Explanation of adjudication outcome | – | string |
 | amount | denial_reason | 0..1 | – | – | – |
 | value | amount | 0..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | value | denial_reason | 0..1 | – | – | decimal |
 | adjudication_generic | adjudication | 0..unbounded | – | – | – |
 | category | adjudication_generic | 1..1 | – | – | – |
@@ -833,7 +833,7 @@ The following table provides a summary of second level `type`/`sub_type` element
 | reason | adjudication_generic | 0..1 | Explanation of adjudication outcome | – | string |
 | amount | adjudication_generic | 0..1 | – | – | – |
 | value | amount | 0..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | value | adjudication_generic | 0..1 | – | – | decimal |
 | totals | eob | 1..1 | – | – | – |
 | total | totals | 1..unbounded | – | – | – |
@@ -843,57 +843,57 @@ The following table provides a summary of second level `type`/`sub_type` element
 | system | category | 1..1 | – | – | – |
 | amount | adjudication_amount_type | 1..1 | – | – | – |
 | value | amount | 1..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | in_out_network | total | 0..1 | – | – | – |
 | category | in_out_network | 1..1 | – | – | – |
-| code | category | 1..1 | Indicates the in network or out of network payment status of the claim. More info can be found here: : http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html | – | – |
+| code | category | 1..1 | Indicates the in network or out of network payment status of the claim. More info can be found here: : [http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html](http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerBenefitPaymentStatus.html) | – | – |
 | system | category | 1..1 | – | – | – |
 | amount | in_out_network | 1..1 | – | – | – |
 | value | amount | 1..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | payment | eob | 0..1 | – | – | – |
-| type | payment | 0..1 | Indicates whether the claim / item was paid or denied. More information can be found here: http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerClaimPaymentStatusCode.html | – | – |
+| type | payment | 0..1 | Indicates whether the claim / item was paid or denied. More information can be found here: [http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerClaimPaymentStatusCode.html](http://hl7.org/fhir/us/carin-bb/STU1/ValueSet-C4BBPayerClaimPaymentStatusCode.html) | – | – |
 | adjustment | payment | 0..1 | – | – | – |
 | value | adjustment | 0..1 | – | – | decimal |
-| currency | adjustment | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | adjustment | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | adjustment_reason | payment | 0..1 | Payment Adjustment Reason Code | – | string |
 | date | payment | 0..1 | Expected date of payment | – | date |
 | amount | payment | 0..1 | Payable amount after adjustment | – | – |
 | value | amount | 0..1 | – | – | decimal |
-| currency | amount | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | amount | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | identifier | payment | 0..1 | Business identifier for the payment | – | identifier |
 | process_notes | eob | 0..1 | – | – | – |
 | process_note | process_notes | 0..unbounded | Note concerning adjudication | – | – |
 | number | process_note | 0..1 | Note instance identifier | – | positiveInt |
-| type | process_note | 0..1 | The presentation types of notes. More information can be found here: http://hl7.org/fhir/R4/valueset-note-type.html | – | – |
+| type | process_note | 0..1 | The presentation types of notes. More information can be found here: [http://hl7.org/fhir/R4/valueset-note-type.html](http://hl7.org/fhir/R4/valueset-note-type.html) | – | – |
 | text | process_note | 0..1 | Note explanatory text | – | string |
-| language | process_note | 0..1 | This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47). More information can be found here: http://hl7.org/fhir/R4/valueset-languages.html | – | language |
+| language | process_note | 0..1 | This value set includes common codes from BCP-47 ([http://tools.ietf.org/html/bcp47](http://tools.ietf.org/html/bcp47)). More information can be found here: [http://hl7.org/fhir/R4/valueset-languages.html](http://hl7.org/fhir/R4/valueset-languages.html) | – | language |
 | benefit_period | eob | 0..1 | – | – | period |
 | benefit_balances | eob | 0..1 | – | – | – |
 | benefit_balance | benefit_balances | 0..unbounded | – | – | – |
-| category | benefit_balance | 1..1 | Benefit Category Codes. More information can be found here: http://hl7.org/fhir/R4/valueset-ex-benefitcategory.html Preferred code sets list: 1,2,3,4,5,14,23,24,25,26,27,28,30,35,36,37,49,55,56,61,62,63,69,76,F1,F3,F4,F6 | – | string |
+| category | benefit_balance | 1..1 | Benefit Category Codes. More information can be found here: [http://hl7.org/fhir/R4/valueset-ex-benefitcategory.html](http://hl7.org/fhir/R4/valueset-ex-benefitcategory.html) Preferred code sets list: 1,2,3,4,5,14,23,24,25,26,27,28,30,35,36,37,49,55,56,61,62,63,69,76,F1,F3,F4,F6 | – | string |
 | is_excluded | benefit_balance | 0..1 | Excluded from the plan | – | boolean |
 | name | benefit_balance | 0..1 | Short name for the benefit | – | string |
 | description | benefit_balance | 0..1 | Description of the benefit or services covered | – | string |
-| network | benefit_balance | 0..1 | In or out of network. More information can be found here: http://hl7.org/fhir/R4/valueset-benefit-network.html Preferred code sets list: in or out | – | string |
-| unit | benefit_balance | 0..1 | Individual or family. More information can be found here: http://hl7.org/fhir/R4/valueset-benefit-unit.html Preferred code sets list: individual or individual | – | string |
-| term | benefit_balance | 0..1 | Annual or lifetime. More information can be found here: http://hl7.org/fhir/R4/valueset-benefit-term.html Preferred code sets list: annual or day or lifetime | – | string |
+| network | benefit_balance | 0..1 | In or out of network. More information can be found here: [http://hl7.org/fhir/R4/valueset-benefit-network.html](http://hl7.org/fhir/R4/valueset-benefit-network.html) Preferred code sets list: in or out | – | string |
+| unit | benefit_balance | 0..1 | Individual or family. More information can be found here: [http://hl7.org/fhir/R4/valueset-benefit-unit.html](http://hl7.org/fhir/R4/valueset-benefit-unit.html) Preferred code sets list: individual or individual | – | string |
+| term | benefit_balance | 0..1 | Annual or lifetime. More information can be found here: [http://hl7.org/fhir/R4/valueset-benefit-term.html](http://hl7.org/fhir/R4/valueset-benefit-term.html) Preferred code sets list: annual or day or lifetime | – | string |
 | financials | benefit_balance | 0..1 | – | – | – |
 | financial | financials | 0..unbounded | – | – | – |
-| type | financial | 1..1 | Benefit classification. More information can be found here: http://hl7.org/fhir/R4/valueset-benefit-type.html Preferred code sets list: benefit,deductible,visit,room,copay,copay-percent,copay-maximum,vision-exam,vision-glasses,vision-contacts,medical-primarycare,pharmacy-dispense | – | string |
+| type | financial | 1..1 | Benefit classification. More information can be found here: [http://hl7.org/fhir/R4/valueset-benefit-type.html](http://hl7.org/fhir/R4/valueset-benefit-type.html) Preferred code sets list: benefit,deductible,visit,room,copay,copay-percent,copay-maximum,vision-exam,vision-glasses,vision-contacts,medical-primarycare,pharmacy-dispense | – | string |
 | allowed | financial | 0..1 | – | – | – |
 | – | allowed | – | One of: allowed_unsigned_int, allowed_string, allowed_money | – | choice |
 | allowed_unsigned_int | allowed | 0..1 | – | – | unsignedInt |
 | allowed_string | allowed | 0..1 | – | – | string |
 | allowed_money | allowed | 0..1 | – | – | – |
 | value | allowed_money | 0..1 | – | – | decimal |
-| currency | allowed_money | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | allowed_money | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | used | financial | 0..1 | – | – | – |
 | – | used | – | One of: used_unsigned_int, used_money | – | choice |
 | used_unsigned_int | used | 0..1 | – | – | unsignedInt |
 | used_money | used | 0..1 | – | – | – |
 | value | used_money | 0..1 | – | – | decimal |
-| currency | used_money | 0..1 | Currency codes which can be found here: http://hl7.org/fhir/R4/valueset-currencies.html | – | currency |
+| currency | used_money | 0..1 | Currency codes which can be found here: [http://hl7.org/fhir/R4/valueset-currencies.html](http://hl7.org/fhir/R4/valueset-currencies.html) | – | currency |
 | supporting_infos | eob | 0..1 | – | – | – |
 | supporting_info | supporting_infos | 0..unbounded | – | – | – |
 | billing_network_contracting_status | supporting_info | 0..1 | – | – | – |

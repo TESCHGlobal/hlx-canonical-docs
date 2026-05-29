@@ -37,7 +37,7 @@ This document is provided by HealthLX for informational purposes only. Informati
 
 <h2 id="overview" style="color:#E60073">Overview</h2>
 
-This implementation guide provides field mappings and requirements for HealthLX Insurance_V4.1 data submissions in XML format based on FHIR R4 standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
+This implementation guide provides field mappings and requirements for HealthLX Insurance_V4.1 data submissions in XML format based on [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
 
 <h2 id="data-dependencies" style="color:#E60073">Data Dependencies</h2>
 
@@ -53,13 +53,13 @@ Payers need to send their files with utf-8 encoding as shown below:
 
 <h2 id="interoperability" style="color:#E60073">Interoperability</h2>
 
-This implementation guide is based on constructs presented in FHIR R4 (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
+This implementation guide is based on constructs presented in [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
 
 For more information regarding these underlying standards, please visit:
 
-- FHIR R4: https://www.hl7.org/fhir/R4/
-- Da Vinci Project: https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome
-- CARIN Alliance: https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides
+- [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/)
+- [https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome](https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome)
+- [https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides](https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides)
 
 <h2 id="change-log" style="color:#E60073">Change Log</h2>
 
@@ -106,7 +106,7 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| use | – | 0 | 1 | use this element to describe the name. More information can be found here: http://hl7.org/fhir/R4/valueset-name-use.html |
+| use | – | 0 | 1 | use this element to describe the name. More information can be found here: [http://hl7.org/fhir/R4/valueset-name-use.html](http://hl7.org/fhir/R4/valueset-name-use.html) |
 | text | string | 0 | 1 | – |
 | family | string | 0 | 1 | family name (often called 'Surname') |
 | given | string | 0 | unbounded | Given names (not always 'first'). Includes middle names |
@@ -132,8 +132,8 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| use | – | 0 | 1 | Purpose of this address. A full list can be found here: https://www.hl7.org/fhir/valueset-address-use.html |
-| type | – | 0 | 1 | The address type. A full list can be found here: https://www.hl7.org/fhir/valueset-address-type.html |
+| use | – | 0 | 1 | Purpose of this address. A full list can be found here: [https://www.hl7.org/fhir/valueset-address-use.html](https://www.hl7.org/fhir/valueset-address-use.html) |
+| type | – | 0 | 1 | The address type. A full list can be found here: [https://www.hl7.org/fhir/valueset-address-type.html](https://www.hl7.org/fhir/valueset-address-type.html) |
 | text | string | 0 | 1 | The full text representation of the address |
 | line | string | 1 | unbounded | – |
 | city | string | 1 | 1 | – |
@@ -164,9 +164,9 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| system | – | 1 | 1 | use this element to describe the contact point. https://www.hl7.org/fhir/valueset-contact-point-system.html |
+| system | – | 1 | 1 | use this element to describe the contact point. [https://www.hl7.org/fhir/valueset-contact-point-system.html](https://www.hl7.org/fhir/valueset-contact-point-system.html) |
 | value | string | 1 | 1 | The actual value of the contact point |
-| use | – | 0 | 1 | The use of the contact point. https://www.hl7.org/fhir/valueset-contact-point-use.html |
+| use | – | 0 | 1 | The use of the contact point. [https://www.hl7.org/fhir/valueset-contact-point-use.html](https://www.hl7.org/fhir/valueset-contact-point-use.html) |
 | rank | positiveInt | 0 | 1 | Specify preferred order of use (1 = highest) |
 | period | period | 0 | 1 | Time period when the contact point was/is in use |
 | contactpoint_available_times | – | 0 | 1 | – |
@@ -175,7 +175,7 @@ For more information regarding these underlying standards, please visit:
 | via_intermediary | – | 0 | unbounded | – |
 | name | string | 1 | 1 | – |
 | telecom | – | 0 | unbounded | – |
-| system | – | 1 | 1 | The use of the contact point. http://hl7.org/fhir/R4/valueset-contact-point-system.html |
+| system | – | 1 | 1 | The use of the contact point. [http://hl7.org/fhir/R4/valueset-contact-point-system.html](http://hl7.org/fhir/R4/valueset-contact-point-system.html) |
 | value | string | 1 | 1 | The actual value of the contact point |
 {: .heatMap}
 
@@ -190,7 +190,7 @@ For more information regarding these underlying standards, please visit:
 | clia | string | 0 | 1 | Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories |
 | is_active | boolean | 1 | 1 | Whether the organization's record is still in active use |
 | types | – | 0 | 1 | – |
-| type | type_of_organization | 0 | unbounded | Organization type, a full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html |
+| type | type_of_organization | 0 | unbounded | Organization type, a full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html) |
 | name | string | 1 | 1 | – |
 | alias | string | 0 | unbounded | – |
 | org_description | string | 0 | 1 | – |
@@ -212,7 +212,7 @@ For more information regarding these underlying standards, please visit:
 | clia | string | 0 | 1 | Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories |
 | is_active | boolean | 1 | 1 | Whether the organization's record is still in active use |
 | types | – | 0 | 1 | – |
-| type | type_of_organization | 0 | unbounded | Organization type, a full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html |
+| type | type_of_organization | 0 | unbounded | Organization type, a full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html) |
 | name | string | 1 | 1 | – |
 | alias | string | 0 | unbounded | – |
 | org_description | string | 0 | 1 | – |
@@ -250,7 +250,7 @@ For more information regarding these underlying standards, please visit:
 | insurance_plan | payer | 1..unbounded | An Insurance Plan is a discrete package of health insurance coverage benefits that are offered under a particular network type.InsurancePlan describes a health insurance offering comprised of a list of covered benefits (i.e. the product), costs associated with those benefits (i.e. the plan), and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc. | – | – |
 | plan_id | insurance_plan | 1..1 | Business Identifier for Product\Plan | – | identifier |
 | status | insurance_plan | 1..1 | Insurance Plan Status | – | – |
-| type | insurance_plan | 1..1 | Insurance Plan Product Type. The full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-InsuranceProductTypeVS.html | – | – |
+| type | insurance_plan | 1..1 | Insurance Plan Product Type. The full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-InsuranceProductTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-InsuranceProductTypeVS.html) | – | – |
 | administered_by | insurance_plan | 1..1 | – | – | organization |
 | status | coverage_area | 1..1 | Status | – | – |
 | name | coverage_area | 1..1 | Name of the location as used by humans | – | string |
@@ -287,7 +287,7 @@ For more information regarding these underlying standards, please visit:
 | insurance_plan | payer | 1..unbounded | An Insurance Plan is a discrete package of health insurance coverage benefits that are offered under a particular network type.InsurancePlan describes a health insurance offering comprised of a list of covered benefits (i.e. the product), costs associated with those benefits (i.e. the plan), and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc. | – | – |
 | plan_id | insurance_plan | 1..1 | Business Identifier for Product\Plan | – | identifier |
 | status | insurance_plan | 1..1 | Insurance Plan Status | – | – |
-| type | insurance_plan | 1..1 | Insurance Plan Product Type. The full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-InsuranceProductTypeVS.html | – | – |
+| type | insurance_plan | 1..1 | Insurance Plan Product Type. The full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-InsuranceProductTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-InsuranceProductTypeVS.html) | – | – |
 | name | insurance_plan | 0..1 | Official name of Plan | – | string |
 | alias | insurance_plan | 0..unbounded | Alternate names | – | string |
 | period | insurance_plan | 0..1 | – | – | period |
@@ -300,12 +300,12 @@ For more information regarding these underlying standards, please visit:
 | name | coverage_area | 1..1 | Name of the location as used by humans | – | string |
 | alias | coverage_area | 0..unbounded | A list of alternate names that the location is known as, or was known as, in the past | – | string |
 | description | coverage_area | 0..1 | Additional details about the location that could be displayed as further information to identify the location beyond its name | – | string |
-| type | coverage_area | 0..unbounded | Type of function performed. A full list can be found here: https://www.hl7.org/fhir/v3/ServiceDeliveryLocationRoleType/vs.html | – | location_role_type |
+| type | coverage_area | 0..unbounded | Type of function performed. A full list can be found here: [https://www.hl7.org/fhir/v3/ServiceDeliveryLocationRoleType/vs.html](https://www.hl7.org/fhir/v3/ServiceDeliveryLocationRoleType/vs.html) | – | location_role_type |
 | position | coverage_area | 0..1 | – | – | position |
 | contacts | insurance_plan | 0..1 | – | – | – |
 | contact | contacts | 0..unbounded | – | – | – |
 | name | contact | 0..1 | A name associated with the contact | – | human_name |
-| purpose | contact | 0..1 | The purpose of this contact. A full list can be found here: https://www.hl7.org/fhir/valueset-contactentity-type.html | – | purpose |
+| purpose | contact | 0..1 | The purpose of this contact. A full list can be found here: [https://www.hl7.org/fhir/valueset-contactentity-type.html](https://www.hl7.org/fhir/valueset-contactentity-type.html) | – | purpose |
 | telecoms | contact | 0..1 | – | – | – |
 | telecom | telecoms | 0..unbounded | – | – | telecom |
 | address | contact | 0..1 | – | – | address |
@@ -315,25 +315,25 @@ For more information regarding these underlying standards, please visit:
 | name | network | 0..1 | Name of the Network | – | string |
 | alias | network | 0..unbounded | A list of alternate names that the Network is known as, or was known as in the past | – | string |
 | types | network | 0..1 | – | – | – |
-| type | types | 0..unbounded | Organization type, a full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html | – | type_of_organization |
+| type | types | 0..unbounded | Organization type, a full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html) | – | type_of_organization |
 | contacts | network | 0..1 | – | – | – |
 | contact | contacts | 0..unbounded | – | – | – |
 | name | contact | 0..1 | A name associated with the contact | – | human_name |
-| purpose | contact | 0..1 | The purpose of this contact. A full list can be found here: https://www.hl7.org/fhir/valueset-contactentity-type.html | – | purpose |
+| purpose | contact | 0..1 | The purpose of this contact. A full list can be found here: [https://www.hl7.org/fhir/valueset-contactentity-type.html](https://www.hl7.org/fhir/valueset-contactentity-type.html) | – | purpose |
 | telecoms | contact | 0..1 | – | – | – |
 | telecom | telecoms | 0..unbounded | – | – | telecom |
 | address | contact | 0..1 | – | – | address |
 | location_references | network | 0..1 | – | – | – |
 | location_reference | location_references | 0..unbounded | – | – | – |
 | status | location_reference | 1..1 | Status | – | – |
-| operational_status | location_reference | 0..1 | The operational status of the location. A full list can be found here: https://terminology.hl7.org/1.0.0//ValueSet-v2-0116.html | – | – |
+| operational_status | location_reference | 0..1 | The operational status of the location. A full list can be found here: [https://terminology.hl7.org/1.0.0//ValueSet-v2-0116.html](https://terminology.hl7.org/1.0.0//ValueSet-v2-0116.html) | – | – |
 | identifiers | location_reference | 0..1 | – | – | – |
 | identifier | identifiers | 0..unbounded | Unique code or number identifying the location to its users | – | string |
 | name | location_reference | 1..1 | Name of the location as used by humans | – | string |
 | alias | location_reference | 0..unbounded | A list of alternate names that the location is known as, or was known as, in the past | – | string |
 | description | location_reference | 0..1 | Additional details about the location that could be displayed as further information to identify the location beyond its name | – | string |
-| type | location_reference | 0..unbounded | Type of function performed. A full list can be found here: https://www.hl7.org/fhir/v3/ServiceDeliveryLocationRoleType/vs.html | – | location_role_type |
-| physical_type | location_reference | 0..1 | Physical form of the location. A full list can be found here: https://www.hl7.org/fhir/valueset-location-physical-type.html | – | – |
+| type | location_reference | 0..unbounded | Type of function performed. A full list can be found here: [https://www.hl7.org/fhir/v3/ServiceDeliveryLocationRoleType/vs.html](https://www.hl7.org/fhir/v3/ServiceDeliveryLocationRoleType/vs.html) | – | location_role_type |
+| physical_type | location_reference | 0..1 | Physical form of the location. A full list can be found here: [https://www.hl7.org/fhir/valueset-location-physical-type.html](https://www.hl7.org/fhir/valueset-location-physical-type.html) | – | – |
 | position | location_reference | 0..1 | – | – | position |
 | availability_exceptions | network | 0..1 | – | – | string |
 {: .heatMap}

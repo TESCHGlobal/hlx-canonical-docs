@@ -37,7 +37,7 @@ This document is provided by HealthLX for informational purposes only. Informati
 
 <h2 id="overview" style="color:#E60073">Overview</h2>
 
-This implementation guide provides field mappings and requirements for HealthLX Provider Directory_V4.3 data submissions in XML format based on FHIR R4 standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
+This implementation guide provides field mappings and requirements for HealthLX Provider Directory_V4.3 data submissions in XML format based on [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
 
 <h2 id="data-dependencies" style="color:#E60073">Data Dependencies</h2>
 
@@ -53,13 +53,13 @@ Payers need to send their files with utf-8 encoding as shown below:
 
 <h2 id="interoperability" style="color:#E60073">Interoperability</h2>
 
-This implementation guide is based on constructs presented in FHIR R4 (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
+This implementation guide is based on constructs presented in [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
 
 For more information regarding these underlying standards, please visit:
 
-- FHIR R4: https://www.hl7.org/fhir/R4/
-- Da Vinci Project: https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome
-- CARIN Alliance: https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides
+- [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/)
+- [https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome](https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome)
+- [https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides](https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides)
 
 <h2 id="change-log" style="color:#E60073">Change Log</h2>
 
@@ -153,7 +153,7 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| use | – | 0 | 1 | use this element to describe the name. More information can be found here: http://hl7.org/fhir/R4/valueset-name-use.html |
+| use | – | 0 | 1 | use this element to describe the name. More information can be found here: [http://hl7.org/fhir/R4/valueset-name-use.html](http://hl7.org/fhir/R4/valueset-name-use.html) |
 | text | string | 0 | 1 | – |
 | family | string | 1 | 1 | family name (often called 'Surname') |
 | given | string | 0 | unbounded | Given names (not always 'first'). Includes middle names |
@@ -171,7 +171,7 @@ For more information regarding these underlying standards, please visit:
 | identifier | identifier | 0 | 1 | – |
 | period | period | 0 | 1 | Time period when id is/was valid for use |
 | is_active | boolean | 0 | 1 | – |
-| type | type_of_organization | 0 | 1 | Select the type of orginzation this is. A full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html |
+| type | type_of_organization | 0 | 1 | Select the type of orginzation this is. A full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html) |
 | name | string | 1 | 1 | – |
 | alias | string | 0 | unbounded | – |
 | telecoms | – | 0 | 1 | – |
@@ -180,7 +180,7 @@ For more information regarding these underlying standards, please visit:
 | address | address | 0 | unbounded | – |
 | contacts | – | 0 | 1 | – |
 | contact | – | 0 | unbounded | – |
-| purpose | – | 0 | 1 | The purpose of this contact within is within the organization. A full list can be found here: https://www.hl7.org/fhir/valueset-contactentity-type.html |
+| purpose | – | 0 | 1 | The purpose of this contact within is within the organization. A full list can be found here: [https://www.hl7.org/fhir/valueset-contactentity-type.html](https://www.hl7.org/fhir/valueset-contactentity-type.html) |
 | name | human_name | 0 | 1 | – |
 | telecoms | – | 0 | 1 | – |
 | telecom | telecom_minimum | 0 | unbounded | – |
@@ -193,9 +193,9 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| system | – | 1 | 1 | use this element to descripbe the contact point. https://www.hl7.org/fhir/valueset-contact-point-system.html |
+| system | – | 1 | 1 | use this element to descripbe the contact point. [https://www.hl7.org/fhir/valueset-contact-point-system.html](https://www.hl7.org/fhir/valueset-contact-point-system.html) |
 | value | string | 1 | 1 | The actual value of the contact point |
-| use | – | 0 | 1 | The use of the contact point. https://www.hl7.org/fhir/valueset-contact-point-use.html |
+| use | – | 0 | 1 | The use of the contact point. [https://www.hl7.org/fhir/valueset-contact-point-use.html](https://www.hl7.org/fhir/valueset-contact-point-use.html) |
 | rank | positiveInt | 0 | 1 | Specify preferred order of use (1 = highest) |
 | period | period | 0 | 1 | Time period when the contact point was in use |
 {: .heatMap}
@@ -207,9 +207,9 @@ For more information regarding these underlying standards, please visit:
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | id | string | 0 | 1 | use this element to reference the CLIA |
-| system | – | 0 | 1 | use this element to descripbe the contact point. https://www.hl7.org/fhir/valueset-contact-point-system.html |
+| system | – | 0 | 1 | use this element to descripbe the contact point. [https://www.hl7.org/fhir/valueset-contact-point-system.html](https://www.hl7.org/fhir/valueset-contact-point-system.html) |
 | value | string | 0 | 1 | The actual value of the contact point |
-| use | – | 0 | 1 | The use of the contact point. https://www.hl7.org/fhir/valueset-contact-point-use.html |
+| use | – | 0 | 1 | The use of the contact point. [https://www.hl7.org/fhir/valueset-contact-point-use.html](https://www.hl7.org/fhir/valueset-contact-point-use.html) |
 | rank | positiveInt | 0 | 1 | Specify preferred order of use (1 = highest) |
 | period | period | 0 | 1 | Time period when the contact point was/is in use |
 | contactpoint_available_times | – | 0 | 1 | – |
@@ -219,7 +219,7 @@ For more information regarding these underlying standards, please visit:
 | name | string | 1 | 1 | – |
 | telecoms | – | 0 | 1 | – |
 | telecom | – | 0 | unbounded | – |
-| system | – | 1 | 1 | The use of the contact point. https://www.hl7.org/fhir/valueset-contact-point-use.html |
+| system | – | 1 | 1 | The use of the contact point. [https://www.hl7.org/fhir/valueset-contact-point-use.html](https://www.hl7.org/fhir/valueset-contact-point-use.html) |
 | value | string | 1 | 1 | The actual value of the contact point |
 {: .heatMap}
 
@@ -230,8 +230,8 @@ For more information regarding these underlying standards, please visit:
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | id | string | 0 | 1 | use this element to reference the CLIA |
-| use | – | 0 | 1 | purpose of this address. A full list can be found here: https://www.hl7.org/fhir/valueset-address-use.html |
-| type | – | 0 | 1 | The address type. A full list can be found here: https://www.hl7.org/fhir/valueset-address-type.html |
+| use | – | 0 | 1 | purpose of this address. A full list can be found here: [https://www.hl7.org/fhir/valueset-address-use.html](https://www.hl7.org/fhir/valueset-address-use.html) |
+| type | – | 0 | 1 | The address type. A full list can be found here: [https://www.hl7.org/fhir/valueset-address-type.html](https://www.hl7.org/fhir/valueset-address-type.html) |
 | text | string | 0 | 1 | The full text representation of the address |
 | line | string | 1 | unbounded | – |
 | city | string | 0 | 1 | – |
@@ -252,8 +252,8 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| language | – | 1 | 1 | Language the practitioner can use in patient communication. The full list can be found here: http://hl7.org/fhir/R4/valueset-languages.html |
-| proficiency | – | 0 | 1 | The proficiency of the language. The full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-LanguageProficiencyVS.html |
+| language | – | 1 | 1 | Language the practitioner can use in patient communication. The full list can be found here: [http://hl7.org/fhir/R4/valueset-languages.html](http://hl7.org/fhir/R4/valueset-languages.html) |
+| proficiency | – | 0 | 1 | The proficiency of the language. The full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-LanguageProficiencyVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-LanguageProficiencyVS.html) |
 {: .heatMap}
 
 
@@ -264,15 +264,15 @@ For more information regarding these underlying standards, please visit:
 | --- | --- | --- | --- | --- |
 | location | – | 0 | unbounded | – |
 | status | – | 1 | 1 | – |
-| operational_status | – | 0 | 1 | The operational status of the location. A full list can be found here: https://www.hl7.org/fhir/v2/0116/index.html |
+| operational_status | – | 0 | 1 | The operational status of the location. A full list can be found here: [https://www.hl7.org/fhir/v2/0116/index.html](https://www.hl7.org/fhir/v2/0116/index.html) |
 | identifiers | – | 0 | 1 | – |
 | identifier | identifier | 0 | unbounded | – |
 | name | string | 1 | 1 | – |
 | alias | string | 0 | unbounded | – |
 | description | string | 0 | 1 | – |
 | types | – | 0 | 1 | – |
-| type | – | 0 | unbounded | A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered. A full list can be found here: https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html |
-| physical_type | – | 0 | 1 | This example value set defines a set of codes that can be used to indicate the physical form of the Location. A full list can be found here: http://hl7.org/fhir/R4/valueset-location-physical-type.html |
+| type | – | 0 | unbounded | A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered. A full list can be found here: [https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html](https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html) |
+| physical_type | – | 0 | 1 | This example value set defines a set of codes that can be used to indicate the physical form of the Location. A full list can be found here: [http://hl7.org/fhir/R4/valueset-location-physical-type.html](http://hl7.org/fhir/R4/valueset-location-physical-type.html) |
 | position | – | 0 | 1 | – |
 | longitude | decimal | 1 | 1 | – |
 | latitude | decimal | 1 | 1 | – |
@@ -285,7 +285,7 @@ For more information regarding these underlying standards, please visit:
 | opening_time | time | 0 | 1 | – |
 | closing_time | time | 0 | 1 | – |
 | availability_exceptions | string | 0 | 1 | Description of availability exceptions |
-| accessibility | – | 0 | unbounded | Accessibility options. A full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-AccessibilityVS.html |
+| accessibility | – | 0 | unbounded | Accessibility options. A full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-AccessibilityVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-AccessibilityVS.html) |
 | new_patients_list | – | 0 | 1 | – |
 | new_patients | new_patients | 0 | unbounded | – |
 | telecoms | – | 0 | 1 | – |
@@ -300,15 +300,15 @@ For more information regarding these underlying standards, please visit:
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
 | status | – | 1 | 1 | – |
-| operational_status | – | 0 | 1 | The operational status of the location. A full list can be found here: https://www.hl7.org/fhir/v2/0116/index.html |
+| operational_status | – | 0 | 1 | The operational status of the location. A full list can be found here: [https://www.hl7.org/fhir/v2/0116/index.html](https://www.hl7.org/fhir/v2/0116/index.html) |
 | identifiers | – | 0 | 1 | – |
 | identifier | identifier | 0 | unbounded | – |
 | name | string | 1 | 1 | – |
 | alias | string | 0 | unbounded | – |
 | description | string | 0 | 1 | – |
 | types | – | 0 | 1 | – |
-| type | – | 0 | unbounded | A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered. A full list can be found here: https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html |
-| physical_type | – | 0 | 1 | This example value set defines a set of codes that can be used to indicate the physical form of the Location. A full list can be found here: http://hl7.org/fhir/R4/valueset-location-physical-type.html |
+| type | – | 0 | unbounded | A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered. A full list can be found here: [https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html](https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html) |
+| physical_type | – | 0 | 1 | This example value set defines a set of codes that can be used to indicate the physical form of the Location. A full list can be found here: [http://hl7.org/fhir/R4/valueset-location-physical-type.html](http://hl7.org/fhir/R4/valueset-location-physical-type.html) |
 | position | – | 0 | 1 | – |
 | longitude | decimal | 1 | 1 | – |
 | latitude | decimal | 1 | 1 | – |
@@ -320,7 +320,7 @@ For more information regarding these underlying standards, please visit:
 | opening_time | time | 0 | 1 | – |
 | closing_time | time | 0 | 1 | – |
 | availability_exceptions | string | 0 | 1 | Description of availability exceptions |
-| accessibility | – | 0 | unbounded | Accessibility options. A full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-AccessibilityVS.html |
+| accessibility | – | 0 | unbounded | Accessibility options. A full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-AccessibilityVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-AccessibilityVS.html) |
 | new_patients_list | – | 0 | 1 | – |
 | new_patients | new_patients | 0 | unbounded | – |
 {: .heatMap}
@@ -331,7 +331,7 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| specialty | – | 0 | unbounded | Individual and Group Specialties from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set. A full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-IndividualAndGroupSpecialtiesVS.html |
+| specialty | – | 0 | unbounded | Individual and Group Specialties from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set. A full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-IndividualAndGroupSpecialtiesVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-IndividualAndGroupSpecialtiesVS.html) |
 {: .heatMap}
 
 
@@ -340,7 +340,7 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| specialty | – | 0 | unbounded | Specialties value set based on National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set. A full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-SpecialtiesVS.html |
+| specialty | – | 0 | unbounded | Specialties value set based on National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy code set. A full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-SpecialtiesVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-SpecialtiesVS.html) |
 {: .heatMap}
 
 
@@ -353,9 +353,9 @@ For more information regarding these underlying standards, please visit:
 | identifiers | – | 0 | 1 | – |
 | identifier | identifier | 0 | unbounded | – |
 | is_active | boolean | 0 | 1 | – |
-| category | – | 1 | 1 | Valueset for descripting the broad category of service being performed or delivered by a health care service. A full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-HealthcareServiceCategoryVS.html |
+| category | – | 1 | 1 | Valueset for descripting the broad category of service being performed or delivered by a health care service. A full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-HealthcareServiceCategoryVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-HealthcareServiceCategoryVS.html) |
 | types | – | 0 | 1 | – |
-| type | – | 0 | unbounded | Valueset for HealthCareService type. A full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-HealthcareServiceTypeVS.html |
+| type | – | 0 | unbounded | Valueset for HealthCareService type. A full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-HealthcareServiceTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-HealthcareServiceTypeVS.html) |
 | specialties | provider_organization_specialties | 0 | 1 | – |
 | name | string | 0 | 1 | Description of service as presented to a consumer while searching |
 | comment | string | 0 | 1 | Additional description and/or any specific issues not covered elsewhere |
@@ -363,7 +363,7 @@ For more information regarding these underlying standards, please visit:
 | delivery_methods | – | 1 | 1 | – |
 | delivery_method | – | 1 | unbounded | – |
 | type | – | 1 | 1 | Physical or Virtual Service Delivery |
-| virtual_modalities | – | 0 | unbounded | Modalities of Virtual Delivery-Choose from code valueset. More information can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-VirtualModalitiesVS.html |
+| virtual_modalities | – | 0 | unbounded | Modalities of Virtual Delivery-Choose from code valueset. More information can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-VirtualModalitiesVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-VirtualModalitiesVS.html) |
 | new_patients_list | – | 0 | 1 | – |
 | new_patients | new_patients | 0 | unbounded | – |
 | eligibilities | – | 0 | 1 | – |
@@ -372,7 +372,7 @@ For more information regarding these underlying standards, please visit:
 | comment | string | 0 | 1 | Describes the eligibility conditions for the service |
 | programs | – | 0 | 1 | – |
 | program | – | 0 | unbounded | – |
-| code | – | 0 | 1 | This value set defines an example set of codes that could be can be used to classify groupings of service-types/specialties. A full list can be found here: http://hl7.org/fhir/R4/valueset-program.html |
+| code | – | 0 | 1 | This value set defines an example set of codes that could be can be used to classify groupings of service-types/specialties. A full list can be found here: [http://hl7.org/fhir/R4/valueset-program.html](http://hl7.org/fhir/R4/valueset-program.html) |
 | display | string | 1 | 1 | – |
 | characteristics | – | 0 | 1 | – |
 | characteristic | coding | 0 | unbounded | – |
@@ -380,7 +380,7 @@ For more information regarding these underlying standards, please visit:
 | communication | coding | 0 | unbounded | – |
 | referral_methods | – | 0 | 1 | – |
 | referral_method | – | 0 | unbounded | – |
-| code | – | 0 | 1 | The methods of referral can be used when referring to a specific HealthCareService resource. A full list can be found here: http://hl7.org/fhir/R4/valueset-service-referral-method.html |
+| code | – | 0 | 1 | The methods of referral can be used when referring to a specific HealthCareService resource. A full list can be found here: [http://hl7.org/fhir/R4/valueset-service-referral-method.html](http://hl7.org/fhir/R4/valueset-service-referral-method.html) |
 | display | string | 1 | 1 | – |
 | appointment_required | boolean | 0 | 1 | – |
 | available_times | – | 0 | 1 | – |
@@ -401,7 +401,7 @@ For more information regarding these underlying standards, please visit:
 | clia | clia | 0 | 1 | Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories |
 | is_active | boolean | 1 | 1 | Whether the organization's record is still in active use |
 | types | – | 0 | 1 | – |
-| type | type_of_organization | 1 | unbounded | Organization type, a full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html |
+| type | type_of_organization | 1 | unbounded | Organization type, a full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html) |
 | name | string | 1 | 1 | – |
 | alias | string | 0 | unbounded | – |
 | org_description | string | 0 | 1 | – |
@@ -422,7 +422,7 @@ For more information regarding these underlying standards, please visit:
 | clia | string | 0 | 1 | Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories |
 | is_active | boolean | 1 | 1 | Whether the organization's record is still in active use |
 | types | – | 1 | 1 | – |
-| type | type_of_organization | 1 | unbounded | Organization type, a full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html |
+| type | type_of_organization | 1 | unbounded | Organization type, a full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html) |
 | name | string | 1 | 1 | – |
 | alias | string | 0 | unbounded | – |
 | org_description | string | 0 | 1 | – |
@@ -508,7 +508,7 @@ For more information regarding these underlying standards, please visit:
 | clia | clias | 1..unbounded | – | – | clia |
 | is_active | providing_organization | 1..1 | – | – | boolean |
 | name | providing_organization | 1..1 | – | – | string |
-| code | codes | 1..unbounded | Value Set for Organization Affiliation Roles. The full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrganizationAffiliationRoleVS.html | – | codeable_concept |
+| code | codes | 1..unbounded | Value Set for Organization Affiliation Roles. The full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrganizationAffiliationRoleVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrganizationAffiliationRoleVS.html) | – | codeable_concept |
 | specialty | specialties | 1..unbounded | – | – | codeable_concept |
 {: .heatMap}
 
@@ -553,7 +553,7 @@ For more information regarding these underlying standards, please visit:
 | period | practitioner | 0..1 | – | – | period |
 | affiliated_organization | practitioner | 0..1 | – | – | organization |
 | codes | practitioner | 0..1 | – | – | – |
-| code | codes | 0..unbounded | This element is used to indicate the role of a Practitioner. The full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-PractitionerRoleVS.html | – | codeable_concept |
+| code | codes | 0..unbounded | This element is used to indicate the role of a Practitioner. The full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-PractitionerRoleVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-PractitionerRoleVS.html) | – | codeable_concept |
 | specialties | practitioner | 0..1 | – | – | – |
 | specialty | specialties | 1..unbounded | – | – | codeable_concept |
 | available_times | practitioner | 0..1 | – | – | – |
@@ -589,7 +589,7 @@ For more information regarding these underlying standards, please visit:
 | clia | clias | 1..unbounded | – | – | clia |
 | is_active | providing_organization | 1..1 | – | – | boolean |
 | types | providing_organization | 0..1 | – | – | – |
-| type | types | 0..unbounded | Organization type, a full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html | – | type_of_organization |
+| type | types | 0..unbounded | Organization type, a full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrgTypeVS.html) | – | type_of_organization |
 | name | providing_organization | 1..1 | – | – | string |
 | alias | providing_organization | 0..unbounded | A list of alternate names that the organization is known as, or was known as in the past | – | string |
 | org_description | providing_organization | 0..1 | – | – | string |
@@ -598,7 +598,7 @@ For more information regarding these underlying standards, please visit:
 | addresses | providing_organization | 0..1 | – | – | – |
 | address | addresses | 0..unbounded | – | – | address |
 | codes | providing_organization | 0..1 | – | – | – |
-| code | codes | 1..unbounded | Value Set for Organization Affiliation Roles. The full list can be found here: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrganizationAffiliationRoleVS.html | – | codeable_concept |
+| code | codes | 1..unbounded | Value Set for Organization Affiliation Roles. The full list can be found here: [https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrganizationAffiliationRoleVS.html](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-OrganizationAffiliationRoleVS.html) | – | codeable_concept |
 | specialties | providing_organization | 0..1 | – | – | – |
 | specialty | specialties | 1..unbounded | – | – | codeable_concept |
 | qualifications | providing_organization | 0..1 | – | – | – |
@@ -606,7 +606,7 @@ For more information regarding these underlying standards, please visit:
 | contacts | providing_organization | 0..1 | – | – | – |
 | contact | contacts | 0..unbounded | – | – | – |
 | name | contact | 0..1 | – | – | human_name |
-| purpose | contact | 0..1 | The purpose of this contact within is within the organization. A full list can be found here: https://www.hl7.org/fhir/valueset-contactentity-type.html | – | – |
+| purpose | contact | 0..1 | The purpose of this contact within is within the organization. A full list can be found here: [https://www.hl7.org/fhir/valueset-contactentity-type.html](https://www.hl7.org/fhir/valueset-contactentity-type.html) | – | – |
 | telecoms | contact | 0..1 | – | – | – |
 | telecom | telecoms | 0..unbounded | – | – | telecom |
 | address | contact | 0..unbounded | – | – | address |

@@ -35,7 +35,7 @@ This document is provided by HealthLX for informational purposes only. Informati
 
 <h2 id="overview" style="color:#E60073">Overview</h2>
 
-This implementation guide provides field mappings and requirements for HealthLX Roster_V6.2 data submissions in XML format based on FHIR R4 standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
+This implementation guide provides field mappings and requirements for HealthLX Roster_V6.2 data submissions in XML format based on [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
 
 <h2 id="encoding" style="color:#E60073">Encoding</h2>
 
@@ -47,13 +47,13 @@ Payers need to send their files with utf-8 encoding as shown below:
 
 <h2 id="interoperability" style="color:#E60073">Interoperability</h2>
 
-This implementation guide is based on constructs presented in FHIR R4 (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
+This implementation guide is based on constructs presented in [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/) (Fast Healthcare Interoperability Resources Release 4) and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.
 
 For more information regarding these underlying standards, please visit:
 
-- FHIR R4: https://www.hl7.org/fhir/R4/
-- Da Vinci Project: https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome
-- CARIN Alliance: https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides
+- [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/)
+- [https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome](https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome)
+- [https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides](https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides)
 
 <h2 id="change-log" style="color:#E60073">Change Log</h2>
 
@@ -121,9 +121,9 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| system | – | 1 | 1 | Use this element to descripbe the contact point. https://www.hl7.org/fhir/valueset-contact-point-system.html |
+| system | – | 1 | 1 | Use this element to descripbe the contact point. [https://www.hl7.org/fhir/valueset-contact-point-system.html](https://www.hl7.org/fhir/valueset-contact-point-system.html) |
 | value | string | 1 | 1 | The actual value of the contact point |
-| use | – | 0 | 1 | The use of the contact point. https://www.hl7.org/fhir/valueset-contact-point-use.html |
+| use | – | 0 | 1 | The use of the contact point. [https://www.hl7.org/fhir/valueset-contact-point-use.html](https://www.hl7.org/fhir/valueset-contact-point-use.html) |
 | rank | positiveInt | 0 | 1 | Specify preferred order of use (1 = highest) |
 | period | period | 0 | 1 | Time period when the contact point was/is in use |
 {: .heatMap}
@@ -134,8 +134,8 @@ For more information regarding these underlying standards, please visit:
 
 | Field Name | Type | MinOccurs | MaxOccurs | Description |
 | --- | --- | --- | --- | --- |
-| use | – | 0 | 1 | The use of this address. More information can be found here: http://hl7.org/fhir/R4/valueset-address-use.html |
-| type | – | 0 | 1 | The type of address. More information can be found here: http://hl7.org/fhir/R4/valueset-address-type.html |
+| use | – | 0 | 1 | The use of this address. More information can be found here: [http://hl7.org/fhir/R4/valueset-address-use.html](http://hl7.org/fhir/R4/valueset-address-use.html) |
+| type | – | 0 | 1 | The type of address. More information can be found here: [http://hl7.org/fhir/R4/valueset-address-type.html](http://hl7.org/fhir/R4/valueset-address-type.html) |
 | text | string | 0 | 1 | Use this element to list the address in it's entirety (e.g. 123 Test Way City, State 12345) |
 | line | string | 0 | unbounded | – |
 | city | string | 1 | 1 | Name of city, town etc. |
@@ -182,17 +182,17 @@ For more information regarding these underlying standards, please visit:
 | text | us_core_race | 1..1 | Use this element for adding a text description | – | string |
 | text | us_core_ethnicity | 1..1 | Use this element for adding a text description | – | string |
 | is_subscriber | member | 1..1 | This element is used to identify if this person is the subscriber (True / False). (e.g. The main policy holder of the plan) | – | boolean |
-| relationship | member | 1..1 | Relationship to the Subscriber. The full list can be found here: http://hl7.org/fhir/R4/valueset-subscriber-relationship.html | – | – |
+| relationship | member | 1..1 | Relationship to the Subscriber. The full list can be found here: [http://hl7.org/fhir/R4/valueset-subscriber-relationship.html](http://hl7.org/fhir/R4/valueset-subscriber-relationship.html) | – | – |
 | birth_date | member | 1..1 | Birth date (1900-01-01) | – | date |
 | gender | member | 1..1 | Use this element for Gender (male, female, other or unknown) | – | – |
 | tribal_affiliation | tribal_affiliations | 1..unbounded | – | – | – |
 | codeable_concept | tribal_affiliation | 1..1 | – | – | codeable_concept |
 | is_enrolled | tribal_affiliation | 1..1 | – | – | xs:boolean |
 | sexual_orientation | sexual_orientations | 1..unbounded | – | – | – |
-| codeable_concept | sexual_orientation | 1..1 | MUST be one of: https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-sexual-orientation.html | – | codeable_concept |
+| codeable_concept | sexual_orientation | 1..1 | MUST be one of: [https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-sexual-orientation.html](https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-sexual-orientation.html) | – | codeable_concept |
 | status | sexual_orientation | 1..1 | MUST be one of: registered \| preliminary \| final \| amended | – | – |
 | gender_identity | gender_identities | 1..unbounded | – | – | – |
-| codeable_concept | gender_identity | 1..1 | SHOULD be one of: https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1021.32/expansion | – | codeable_concept |
+| codeable_concept | gender_identity | 1..1 | SHOULD be one of: [https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1021.32/expansion](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1021.32/expansion) | – | codeable_concept |
 | status | gender_identity | 1..1 | MUST be one of: registered \| preliminary \| final \| amended | – | – |
 | relatedPerson | relatedPersons | 1..unbounded | – | – | – |
 | active | relatedPerson | 1..1 | – | – | xs:boolean |
@@ -241,7 +241,7 @@ For more information regarding these underlying standards, please visit:
 | family | name | 1..1 | Family name (often called 'Surname') (Note: At least Family or Given need to be filled in) | – | string |
 | given | name | 1..unbounded | Given names (not always 'first'). Includes middle names | – | string |
 | telecom | telecoms | 1..unbounded | Contact points of telecommunications. Please provide at least one form of contact (e.g. phone, email, etc.) | – | – |
-| system | telecom | 1..1 | Use this element to descripbe the contact point. https://www.hl7.org/fhir/valueset-contact-point-system.html | – | – |
+| system | telecom | 1..1 | Use this element to descripbe the contact point. [https://www.hl7.org/fhir/valueset-contact-point-system.html](https://www.hl7.org/fhir/valueset-contact-point-system.html) | – | – |
 | value | telecom | 1..1 | The actual value of the contact point. This is a free form text field allowing country and extension. (e.g. (+001) 111-111-1111 x1111) | – | string |
 | address | addresses | 1..unbounded | Use this element to list all the addresses the member is associated with. It is recommended that at least one address be supplied for identification purposes. | – | – |
 | text | address | 1..1 | Use this element to list the address in it's entirety (e.g. 123 Test Way City, State 12345) | – | string |
@@ -252,7 +252,7 @@ For more information regarding these underlying standards, please visit:
 | codeable_concept | coverage_type | 1..1 | Category of healthcare payers, insurance products, or benefits. | – | codeable_concept |
 | coverage_period | health_coverage | 1..1 | Use this element to provide dates of coverage for this member. If the coverage is still active, do not provide an End date. Format is YYYY-MM-DD. | – | period |
 | communication | communications | 1..unbounded | Use this element to provide the languages the member communicates in | – | – |
-| language_code | communication | 1..1 | This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47). More information can be found here: http://hl7.org/fhir/R4/valueset-languages.html Also includes the List of ISO 639 language codes officially assigned. More info can be found here: https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes | – | – |
+| language_code | communication | 1..1 | This value set includes common codes from BCP-47 ([http://tools.ietf.org/html/bcp47](http://tools.ietf.org/html/bcp47)). More information can be found here: [http://hl7.org/fhir/R4/valueset-languages.html](http://hl7.org/fhir/R4/valueset-languages.html) Also includes the List of ISO 639 language codes officially assigned. More info can be found here: [https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) | – | – |
 | unique_record_identifier | member | 1..1 | – | – | string |
 | delegate | delegates | 1..unbounded | – | – | – |
 | family | delegate | 1..1 | Family name (often called 'Surname') (Note: At least Family or Given need to be filled in) | – | string |
@@ -280,16 +280,16 @@ For more information regarding these underlying standards, please visit:
 | member | roster | 1..unbounded | – | – | – |
 | – | member | – | All of (any order): us_core_race, us_core_ethnicity, us_core_birth_sex, is_subscriber, relationship, birth_date, deceased_date_time, gender, tribal_affiliations, sexual_orientations, gender_identities, relatedPersons, occupations, unique_person_ids, member_identity, member_id, member_id_system, subscriber_id, names, telecoms, addresses, health_coverage, communications, smoking_status, smoking_effective_date_time, record_type, unique_record_identifier, delegates | – | all |
 | us_core_race | member | 0..1 | – | – | – |
-| code | us_core_race | 0..5 | This element is for selecting 1 of the 5 OMB race category codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-race.html | – | – |
-| detailed_code | us_core_race | 0..unbounded | This element is for selecting 1 of the additional expansion codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-race.html | – | – |
+| code | us_core_race | 0..5 | This element is for selecting 1 of the 5 OMB race category codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-detailed-race.html](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) | – | – |
+| detailed_code | us_core_race | 0..unbounded | This element is for selecting 1 of the additional expansion codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-detailed-race.html](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) | – | – |
 | text | us_core_race | 1..1 | Use this element for adding a text description | – | string |
 | us_core_ethnicity | member | 0..1 | – | – | – |
-| code | us_core_ethnicity | 0..1 | This element is for selecting 1 of the OMB ethnicity category codes that can be found here: http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html | – | – |
-| detailed_code | us_core_ethnicity | 0..unbounded | This element is for selecting 1 of the additional ethnicity codes from the CDC that can be found here: https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html | – | – |
+| code | us_core_ethnicity | 0..1 | This element is for selecting 1 of the OMB ethnicity category codes that can be found here: [http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html](http://hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html) | – | – |
+| detailed_code | us_core_ethnicity | 0..unbounded | This element is for selecting 1 of the additional ethnicity codes from the CDC that can be found here: [https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html](https://www.hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html) | – | – |
 | text | us_core_ethnicity | 1..1 | Use this element for adding a text description | – | string |
 | us_core_birth_sex | member | 0..1 | This element is used for selecting birth sex (M = Male, F = Female, UNK = Unknown) | – | – |
 | is_subscriber | member | 1..1 | This element is used to identify if this person is the subscriber (True / False). (e.g. The main policy holder of the plan) | – | boolean |
-| relationship | member | 1..1 | Relationship to the Subscriber. The full list can be found here: http://hl7.org/fhir/R4/valueset-subscriber-relationship.html | – | – |
+| relationship | member | 1..1 | Relationship to the Subscriber. The full list can be found here: [http://hl7.org/fhir/R4/valueset-subscriber-relationship.html](http://hl7.org/fhir/R4/valueset-subscriber-relationship.html) | – | – |
 | birth_date | member | 1..1 | Birth date (1900-01-01) | – | date |
 | deceased_date_time | member | 0..1 | DateTime of death (2001-10-26T21:32:52+02:00) | – | dateTime |
 | gender | member | 1..1 | Use this element for Gender (male, female, other or unknown) | – | – |
@@ -299,11 +299,11 @@ For more information regarding these underlying standards, please visit:
 | is_enrolled | tribal_affiliation | 1..1 | – | – | xs:boolean |
 | sexual_orientations | member | 0..1 | – | – | – |
 | sexual_orientation | sexual_orientations | 1..unbounded | – | – | – |
-| codeable_concept | sexual_orientation | 1..1 | MUST be one of: https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-sexual-orientation.html | – | codeable_concept |
+| codeable_concept | sexual_orientation | 1..1 | MUST be one of: [https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-sexual-orientation.html](https://hl7.org/fhir/us/core/STU6.1/ValueSet-us-core-sexual-orientation.html) | – | codeable_concept |
 | status | sexual_orientation | 1..1 | MUST be one of: registered \| preliminary \| final \| amended | – | – |
 | gender_identities | member | 0..1 | – | – | – |
 | gender_identity | gender_identities | 1..unbounded | – | – | – |
-| codeable_concept | gender_identity | 1..1 | SHOULD be one of: https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1021.32/expansion | – | codeable_concept |
+| codeable_concept | gender_identity | 1..1 | SHOULD be one of: [https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1021.32/expansion](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1021.32/expansion) | – | codeable_concept |
 | status | gender_identity | 1..1 | MUST be one of: registered \| preliminary \| final \| amended | – | – |
 | relatedPersons | member | 0..1 | – | – | – |
 | relatedPerson | relatedPersons | 1..unbounded | – | – | – |
@@ -365,7 +365,7 @@ For more information regarding these underlying standards, please visit:
 | subscriber_id | member | 1..1 | Use this element to list the Subscriber Number. An identifier for a subscriber of an insurance policy which is unique for, and usually assigned by, the insurance carrier. Use Case: A person is the subscriber of an insurance policy. The person’s family may be plan members, but are not the subscriber. | – | string |
 | names | member | 1..1 | – | – | – |
 | name | names | 1..unbounded | – | – | – |
-| use | name | 0..1 | Use this element to describe the name. More information can be found here: http://hl7.org/fhir/R4/valueset-name-use.html | – | – |
+| use | name | 0..1 | Use this element to describe the name. More information can be found here: [http://hl7.org/fhir/R4/valueset-name-use.html](http://hl7.org/fhir/R4/valueset-name-use.html) | – | – |
 | text | name | 1..1 | Use this element to enter the entire name of the member | – | string |
 | family | name | 1..1 | Family name (often called 'Surname') (Note: At least Family or Given need to be filled in) | – | string |
 | given | name | 1..unbounded | Given names (not always 'first'). Includes middle names | – | string |
@@ -374,15 +374,15 @@ For more information regarding these underlying standards, please visit:
 | period | name | 0..1 | Time period when name was/is in use. If the name is still in use, do not supply an End date | – | period |
 | telecoms | member | 0..1 | – | – | – |
 | telecom | telecoms | 1..unbounded | Contact points of telecommunications. Please provide at least one form of contact (e.g. phone, email, etc.) | – | – |
-| system | telecom | 1..1 | Use this element to descripbe the contact point. https://www.hl7.org/fhir/valueset-contact-point-system.html | – | – |
+| system | telecom | 1..1 | Use this element to descripbe the contact point. [https://www.hl7.org/fhir/valueset-contact-point-system.html](https://www.hl7.org/fhir/valueset-contact-point-system.html) | – | – |
 | value | telecom | 1..1 | The actual value of the contact point. This is a free form text field allowing country and extension. (e.g. (+001) 111-111-1111 x1111) | – | string |
-| use | telecom | 0..1 | The use of the contact point. https://www.hl7.org/fhir/valueset-contact-point-use.html | – | – |
+| use | telecom | 0..1 | The use of the contact point. [https://www.hl7.org/fhir/valueset-contact-point-use.html](https://www.hl7.org/fhir/valueset-contact-point-use.html) | – | – |
 | rank | telecom | 0..1 | Specify preferred order of use (1 = highest) | – | positiveInt |
 | period | telecom | 0..1 | Time period when the contact point was/is in use | – | period |
 | addresses | member | 0..1 | – | – | – |
 | address | addresses | 1..unbounded | Use this element to list all the addresses the member is associated with. It is recommended that at least one address be supplied for identification purposes. | – | – |
-| use | address | 0..1 | The use of this address. More information can be found here: http://hl7.org/fhir/R4/valueset-address-use.html | – | – |
-| type | address | 0..1 | The type of address. More information can be found here: http://hl7.org/fhir/R4/valueset-address-type.html | – | – |
+| use | address | 0..1 | The use of this address. More information can be found here: [http://hl7.org/fhir/R4/valueset-address-use.html](http://hl7.org/fhir/R4/valueset-address-use.html) | – | – |
+| type | address | 0..1 | The type of address. More information can be found here: [http://hl7.org/fhir/R4/valueset-address-type.html](http://hl7.org/fhir/R4/valueset-address-type.html) | – | – |
 | text | address | 1..1 | Use this element to list the address in it's entirety (e.g. 123 Test Way City, State 12345) | – | string |
 | line | address | 0..unbounded | – | – | string |
 | city | address | 0..1 | – | – | string |
@@ -404,10 +404,10 @@ For more information regarding these underlying standards, please visit:
 | payor | health_coverage | 0..1 | Payer Identifier-Issuer of the Policy | – | organization |
 | communications | member | 0..1 | – | – | – |
 | communication | communications | 1..unbounded | Use this element to provide the languages the member communicates in | – | – |
-| language_code | communication | 1..1 | This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47). More information can be found here: http://hl7.org/fhir/R4/valueset-languages.html Also includes the List of ISO 639 language codes officially assigned. More info can be found here: https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes | – | – |
-| display | communication | 0..1 | Type the name of the language if not found here (http://hl7.org/fhir/R4/datatypes.html#CodeableConcept) | – | string |
+| language_code | communication | 1..1 | This value set includes common codes from BCP-47 ([http://tools.ietf.org/html/bcp47](http://tools.ietf.org/html/bcp47)). More information can be found here: [http://hl7.org/fhir/R4/valueset-languages.html](http://hl7.org/fhir/R4/valueset-languages.html) Also includes the List of ISO 639 language codes officially assigned. More info can be found here: [https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) | – | – |
+| display | communication | 0..1 | Type the name of the language if not found here ([http://hl7.org/fhir/R4/datatypes.html#CodeableConcept](http://hl7.org/fhir/R4/datatypes.html#CodeableConcept)) | – | string |
 | is_preferred | communication | 0..1 | Is this language the preferred language (true/false) | – | boolean |
-| smoking_status | member | 0..1 | This element is for selecting the current smoking status of the member (449868002 = Current every day smoker, 428041000124106 = Current some day smoker, 8517006 = Former smoker, 266919005 = Never smoker, 77176002 = Smoker - current status unknown, 266927001 = Unknown if ever smoked, 428071000124103 = Current Heavy tobacco smoker, 428061000124105 = Current Light tobacco smoker). More information can be found here: http://hl7.org/fhir/us/core/ValueSet-us-core-observation-smokingstatus.html | – | – |
+| smoking_status | member | 0..1 | This element is for selecting the current smoking status of the member (449868002 = Current every day smoker, 428041000124106 = Current some day smoker, 8517006 = Former smoker, 266919005 = Never smoker, 77176002 = Smoker - current status unknown, 266927001 = Unknown if ever smoked, 428071000124103 = Current Heavy tobacco smoker, 428061000124105 = Current Light tobacco smoker). More information can be found here: [http://hl7.org/fhir/us/core/ValueSet-us-core-observation-smokingstatus.html](http://hl7.org/fhir/us/core/ValueSet-us-core-observation-smokingstatus.html) | – | – |
 | smoking_effective_date_time | member | 0..1 | This element contains the date and time when the smoking status was recorded. | – | dateTime |
 | record_type | member | 0..1 | This element describes the action for this member (A = Add, U = Update, D = Delete) | – | – |
 | unique_record_identifier | member | 1..1 | – | – | string |
