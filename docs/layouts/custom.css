@@ -205,7 +205,7 @@ body {
 }
 
 .home-hero h1 {
-  font-size: 4.6rem;
+  font-size: 3.45rem;
   font-weight: 800;
   color: #0d2a3a;
   margin-bottom: 0.85rem;
@@ -262,7 +262,7 @@ body {
 }
 
 .section-header h2 {
-  font-size: 2.6rem;
+  font-size: 1.95rem;
   font-weight: 700;
   color: var(--navy);
 }
@@ -369,7 +369,7 @@ body {
 }
 
 .about h2 {
-  font-size: 2.3rem;
+  font-size: 1.725rem;
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 0.85rem;
@@ -421,7 +421,7 @@ body {
 
 .guide-page-title {
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.3;
 }
@@ -434,7 +434,7 @@ body {
 }
 
 .page-content h1 {
-  font-size: 3.7rem;
+  font-size: 2.775rem;
   font-weight: 800;
   color: var(--navy);
   margin-bottom: 0.5rem;
@@ -443,7 +443,7 @@ body {
 }
 
 .page-content h2 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--navy);
   margin-top: 2.5rem;
@@ -453,7 +453,7 @@ body {
 }
 
 .page-content h3 {
-  font-size: 1.64rem;
+  font-size: 1.23rem;
   font-weight: 700;
   color: var(--pink-dark);
   margin-top: 1.5rem;
@@ -662,7 +662,7 @@ body {
    ============================================================ */
 @media (max-width: 900px) {
   .home-hero h1 {
-    font-size: 3.4rem;
+    font-size: 2.55rem;
   }
 
   .guide-list ul {
@@ -676,7 +676,7 @@ body {
   }
 
   .home-hero h1 {
-    font-size: 2.9rem;
+    font-size: 2.175rem;
   }
 
   .guide-list ul {
