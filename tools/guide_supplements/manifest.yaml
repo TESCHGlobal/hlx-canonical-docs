@@ -121,6 +121,10 @@ ProviderDirectory_V4.3:
       title: Appendix A – Element Values
       after: member-identification
       file: ProviderDirectory_V4.3/appendix_a_element_values.md
+    - id: appendix-b-architecture
+      title: Appendix B – Architecture
+      after: member-identification
+      file: shared/plan_net_appendix_b_architecture.md
 
 Insurance_V4.1:
   sections:
@@ -132,3 +136,7 @@ Insurance_V4.1:
       title: Appendix A – Element Values
       after: member-identification
       file: Insurance_V4.1/appendix_a_element_values.md
+    - id: appendix-b-architecture
+      title: Appendix B – Architecture
+      after: member-identification
+      file: shared/plan_net_appendix_b_architecture.md
