@@ -57,9 +57,9 @@ This implementation guide is based on constructs presented in [https://www.hl7.o
 
 For more information regarding these underlying standards, please visit:
 
-- [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/)
-- [https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome](https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome)
-- [https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides](https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides)
+- FHIR R4: [https://www.hl7.org/fhir/R4/](https://www.hl7.org/fhir/R4/)
+- Da Vinci Project: [https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome](https://confluence.hl7.org/display/DVP/Da+Vinci+Welcome)
+- CARIN Alliance: [https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides](https://confluence.hl7.org/display/CAR/CARIN+Alliance+Implementation+Guides)
 
 <h2 id="supported-profiles" style="color:#E60073">Supported Profiles</h2>
 

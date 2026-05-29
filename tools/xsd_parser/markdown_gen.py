@@ -230,9 +230,9 @@ def generate_interoperability(schema_info: SchemaInfo):
         "and associated FHIR Implementation Guides, such as those found in Da Vinci and CARIN.\n\n"
     )
     output += "For more information regarding these underlying standards, please visit:\n\n"
-    output += f"- [{FHIR_R4_URL}]({FHIR_R4_URL})\n"
-    output += f"- [{DAVINCI_PROJECT_URL}]({DAVINCI_PROJECT_URL})\n"
-    output += f"- [{CARIN_ALLIANCE_URL}]({CARIN_ALLIANCE_URL})\n\n"
+    output += f"- FHIR R4: [{FHIR_R4_URL}]({FHIR_R4_URL})\n"
+    output += f"- Da Vinci Project: [{DAVINCI_PROJECT_URL}]({DAVINCI_PROJECT_URL})\n"
+    output += f"- CARIN Alliance: [{CARIN_ALLIANCE_URL}]({CARIN_ALLIANCE_URL})\n\n"
 
     return output
 
