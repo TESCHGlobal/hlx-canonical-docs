@@ -41,7 +41,7 @@ This implementation guide provides field mappings and requirements for HealthLX 
 
 <h2 id="data-dependencies" style="color:#E60073">Data Dependencies</h2>
 
-Due to the complexity and size of the reporting requirements, the complete schema has been divided into two distinct files. This guide strictly covers the requirements for health insurance offerings, covered benefits, and coverage areas. Information regarding the actual doctors, facilities, and organizations must be submitted separately. Please refer to the Provider Directory Implementation Guide for those requirements. The two files are linked together using the networks element.
+Due to the complexity and size of the reporting requirements, the complete schema has been divided into two distinct files. This guide strictly covers the requirements for health insurance offerings, covered benefits, and coverage areas. Information regarding the actual doctors, facilities, and organizations must be submitted separately. Please refer to the [Provider Directory Implementation Guide](ProviderDirectory_V4.3_Guide.html) for those requirements. The two files are linked together using the `networks` element.
 
 <h2 id="encoding" style="color:#E60073">Encoding</h2>
 
@@ -362,19 +362,19 @@ For more information on member identity, see the Member Identification section i
 
 <h3 style="color:#E60073">LOCATION_ROLE_TYPE</h3>
 
-An updated list of location_role_type values may be found at https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html
+An updated list of `location_role_type` values may be found at [ServiceDeliveryLocationRoleType](https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html)
 
 <h3 style="color:#E60073">HUMAN_NAME</h3>
 
-An updated list of human_name values may be found at https://hl7.org/fhir/R4/valueset-name-use.html
+An updated list of `human_name` values may be found at [name-use](https://hl7.org/fhir/R4/valueset-name-use.html)
 
 <h3 style="color:#E60073">TYPE_OF_ORGANIZATION</h3>
 
-An updated list of type_of_organization values may be found at https://hl7.org/fhir/R4/valueset-organization-type.html
+An updated list of `type_of_organization` values may be found at [organization-type](https://hl7.org/fhir/R4/valueset-organization-type.html)
 
 <h3 style="color:#E60073">PURPOSE</h3>
 
-The purpose value set is correlated with the contact element. An updated list of contact entity type codes may be found at https://hl7.org/fhir/R4/valueset-contactentity-type.html
+The `purpose` value set is correlated with the `contact` element. An updated list of contact entity type codes may be found at [contactentity-type](https://hl7.org/fhir/R4/valueset-contactentity-type.html)
 
 | Value | Display | Definition |
 | --- | --- | --- |
@@ -392,7 +392,7 @@ The purpose value set is correlated with the contact element. An updated list of
 
 The overall architecture used to define the data schema is based on the following reference:
 
-https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
+[Da Vinci PDEX Plan-Net Implementation Guide](https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/)
 
 <img src="assets/provider_diagram_1.png" alt="Plan-Net overall architecture diagram" class="overall-implementation-diagram" />
 
@@ -400,13 +400,13 @@ Diagrams presented in the next section provide a visual representation of the da
 
 <h3 style="color:#E60073">Data Model Visualization</h3>
 
-A practitioner or participating organization who provides services is associated with a PractitionerRole or OrganizationAffiliation (respectively).
+A practitioner or participating organization who provides services is associated with a `PractitionerRole` or `OrganizationAffiliation` (respectively).
 
-A PractitionerRole is associated with one employer for which the practitioner works (or another organization with which the participating organization is affiliated).
+A `PractitionerRole` is associated with one employer for which the practitioner works (or another organization with which the participating organization is affiliated).
 
-The PractitionerRole or OrganizationAffiliation can specify multiple networks within which the practitioner (or participating organization) operates, even if from different insurers. It may also specify healthcare_services offered and all locations where the practitioner works (or, in the case of a ParticipatingOrganization, a single location).
+The `PractitionerRole` or `OrganizationAffiliation` can specify multiple `networks` within which the practitioner (or participating organization) operates, even if from different insurers. It may also specify `healthcare_services` offered and all locations where the practitioner works (or, in the case of a `ParticipatingOrganization`, a single location).
 
-While not illustrated, it is conceivable a practitioner could work for multiple employers and thus could have multiple PractitionerRoles. Or, in the case of a participating organization, the practitioner could be associated with multiple OrganizationAffiliations.
+While not illustrated, it is conceivable a practitioner could work for multiple employers and thus could have multiple `PractitionerRole` resources. Or, in the case of a participating organization, the practitioner could be associated with multiple `OrganizationAffiliation` resources.
 
 <img src="assets/provider_diagram_2.png" alt="Plan-Net practitioner and organization data model" class="overall-implementation-diagram" />
 

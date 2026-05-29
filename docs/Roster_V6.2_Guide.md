@@ -11,7 +11,7 @@ title: "Roster_V6.2 Implementation Guide"
 
 **Version 6.1**
 
-**May 28, 2026**
+**May 29, 2026**
 
 **Table of Contents**
 
@@ -59,7 +59,7 @@ For more information regarding these underlying standards, please visit:
 
 | Version | Date |
 |---------|------|
-| manual | May 28, 2026 |
+| manual | May 29, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -433,9 +433,9 @@ Roster_V6.2 files should be submitted according to the schedule agreed upon with
 
 <h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
 
-Updates to existing Roster records will fully replace the previous Roster record, and therefore the entire record must be submitted for the original "Add" and for every "Update". Generally, a member should never be removed from a roster if they are a legitimate member. The exception to this is when the entry should never have been sent. If such a situation arises, please contact HealthLX.
+Updates to existing Roster records will fully replace the previous Roster record, and therefore the entire record must be submitted for the original **Add** and for every **Update**. Generally, a member should never be removed from a roster if they are a legitimate member. The exception to this is when the entry should never have been sent. If such a situation arises, please contact HealthLX.
 
-The roster/member/record_type element was formerly specified as required, but HealthLX does not use this information.
+The `roster/member/record_type` element was formerly specified as required, but HealthLX does not use this information.
 
 <h2 id="supplying-member-identification" style="color:#E60073">Supplying Member Identification</h2>
 
@@ -449,15 +449,15 @@ The complex `roster/member/member_identity` element was formerly noted as requir
 
 <h2 id="appendix-a-value-sets" style="color:#E60073">Appendix A – Value Sets</h2>
 
-These value sets were updated on July 24, 2020. For updated value sets, visit http://hl7.org/fhir/.
+These value sets were updated on July 24, 2020. For updated value sets, visit [FHIR](http://hl7.org/fhir/).
 
 <h3 style="color:#E60073">Core Race Detailed Code</h3>
 
-The core race detailed list is too large to be included in this guide. An up-to-date version can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-race.html.
+The core race detailed list is too large to be included in this guide. An up-to-date version can be found here: [detailed-race](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html).
 
 <h3 style="color:#E60073">Ethnicity Detailed Code</h3>
 
-The updated ethnicity detailed code list can be found here: http://hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html.
+The updated ethnicity detailed code list can be found here: [detailed-ethnicity](http://hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html).
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -507,7 +507,7 @@ The updated ethnicity detailed code list can be found here: http://hl7.org/fhir/
 
 <h3 style="color:#E60073">Relationship Codes</h3>
 
-The updated relationship codes list can be found here: https://www.hl7.org/fhir/valueset-subscriber-relationship.html
+The updated relationship codes list can be found here: [subscriber-relationship](https://www.hl7.org/fhir/valueset-subscriber-relationship.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -522,9 +522,9 @@ The updated relationship codes list can be found here: https://www.hl7.org/fhir/
 
 <h3 style="color:#E60073">Language Code</h3>
 
-The updated language code list can be found here: https://www.hl7.org/fhir/valueset-languages.html
+The updated language code list can be found here: [languages](https://www.hl7.org/fhir/valueset-languages.html)
 
-Note: Language code will be detailed to en-US unless otherwise specified.
+**Note:** Language code will be detailed to `en-US` unless otherwise specified.
 
 | Code | Description |
 | --- | --- |
@@ -590,7 +590,7 @@ Note: Language code will be detailed to en-US unless otherwise specified.
 
 <h3 style="color:#E60073">Smoking Status</h3>
 
-The updated smoking status list can be found here: http://hl7.org/fhir/us/core/STU3.1.1/ValueSet-us-core-observation-smokingstatus.html
+The updated smoking status list can be found here: [us-core-observation-smokingstatus](http://hl7.org/fhir/us/core/STU3.1.1/ValueSet-us-core-observation-smokingstatus.html)
 
 | Code | Description |
 | --- | --- |

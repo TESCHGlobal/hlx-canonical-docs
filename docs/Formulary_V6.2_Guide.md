@@ -11,7 +11,7 @@ title: "Formulary_V6.2 Implementation Guide"
 
 **Version 6.1**
 
-**May 28, 2026**
+**May 29, 2026**
 
 **Table of Contents**
 
@@ -60,7 +60,7 @@ For more information regarding these underlying standards, please visit:
 
 | Version | Date |
 |---------|------|
-| manual | May 28, 2026 |
+| manual | May 29, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -292,15 +292,15 @@ When data in a formulary file is changed after it has already been ingested/proc
 
 <h2 id="plan-and-drug-identification" style="color:#E60073">Plan and Drug Identification</h2>
 
-Each coverage plan must be uniquely identified using the plan_id, and each drug uniquely identified by its rx_norm_code. Ensure consistency in these identifiers across all submissions to maintain data integrity.
+Each coverage plan must be uniquely identified using the `plan_id`, and each drug uniquely identified by its `rx_norm_code`. Ensure consistency in these identifiers across all submissions to maintain data integrity.
 
 <h2 id="appendix-a-value-sets" style="color:#E60073">Appendix A – Value Sets</h2>
 
-These value sets were updated July 23, 2020. For updated value sets, visit https://hl7.org/fhir/R4/index.html.
+These value sets were updated July 23, 2020. For updated value sets, visit [FHIR R4](https://hl7.org/fhir/R4/index.html).
 
 <h3 style="color:#E60073">DrugTierID Codes</h3>
 
-The following DrugTierID Codes can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-DrugTierVS.html
+The following DrugTierID Codes can be found here: [usdf-DrugTierVS](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-DrugTierVS.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -317,7 +317,7 @@ The following DrugTierID Codes can be found here: http://hl7.org/fhir/us/Davinci
 
 <h3 style="color:#E60073">PharmacyType Codes</h3>
 
-The following PharmacyType Codes can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html
+The following PharmacyType Codes can be found here: [usdf-PharmacyTypeVS](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-PharmacyTypeVS.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -333,11 +333,11 @@ The following PharmacyType Codes can be found here: http://hl7.org/fhir/us/Davin
 
 <h3 style="color:#E60073">Currency Codes</h3>
 
-The currency codes list is too large to be included in this guide. An up-to-date version can be found here: http://hl7.org/fhir/R4/valueset-currencies.html
+The currency codes list is too large to be included in this guide. An up-to-date version can be found here: [currencies](http://hl7.org/fhir/R4/valueset-currencies.html)
 
 <h3 style="color:#E60073">Copay Options Codes</h3>
 
-The following copay options codes can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html
+The following copay options codes can be found here: [usdf-CopayOptionVS](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CopayOptionVS.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -349,7 +349,7 @@ The following copay options codes can be found here: http://hl7.org/fhir/us/Davi
 
 <h3 style="color:#E60073">Coinsurance Options</h3>
 
-The following Coinsurance options codes can be found here: http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html
+The following Coinsurance options codes can be found here: [usdf-CoinsuranceOptionVS](http://hl7.org/fhir/us/Davinci-drug-formulary/ValueSet-usdf-CoinsuranceOptionVS.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -360,11 +360,11 @@ The following Coinsurance options codes can be found here: http://hl7.org/fhir/u
 
 <h3 style="color:#E60073">RxNorm Codes</h3>
 
-The RxNorm codes list is too large to be included in this guide. An up-to-date version can be found here: http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html
+The RxNorm codes list is too large to be included in this guide. An up-to-date version can be found here: [us-core-medication-codes](http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-medication-codes.html)
 
 <h3 style="color:#E60073">Medication Knowledge Status Codes</h3>
 
-The following medication knowledge status codes can be found here: http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html
+The following medication knowledge status codes can be found here: [medicationknowledge-status](http://hl7.org/fhir/R4/valueset-medicationknowledge-status.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -375,7 +375,7 @@ The following medication knowledge status codes can be found here: http://hl7.or
 
 <h3 style="color:#E60073">Organization Type Codes</h3>
 
-The following organization type codes can be found here: http://hl7.org/fhir/R4/valueset-organization-type.html
+The following organization type codes can be found here: [organization-type](http://hl7.org/fhir/R4/valueset-organization-type.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -395,11 +395,11 @@ The following organization type codes can be found here: http://hl7.org/fhir/R4/
 
 <h3 style="color:#E60073">DoseForm Codes</h3>
 
-The DoseForm codes list is too large to be included in this guide. An up-to-date version can be found here: http://hl7.org/fhir/R4/valueset-medication-form-codes.html
+The DoseForm codes list is too large to be included in this guide. An up-to-date version can be found here: [medication-form-codes](http://hl7.org/fhir/R4/valueset-medication-form-codes.html)
 
 <h3 style="color:#E60073">Substance Category Codes</h3>
 
-The following substance category codes can be found here: http://hl7.org/fhir/R4/valueset-substance-category.html
+The following substance category codes can be found here: [substance-category](http://hl7.org/fhir/R4/valueset-substance-category.html)
 
 | Code | Display | Definition |
 | --- | --- | --- |
@@ -414,18 +414,18 @@ The following substance category codes can be found here: http://hl7.org/fhir/R4
 
 <h3 style="color:#E60073">Substance Codes</h3>
 
-The substance codes list is too large to be included in this guide. An up-to-date version can be found here: http://hl7.org/fhir/R4/valueset-substance-code.html
+The substance codes list is too large to be included in this guide. An up-to-date version can be found here: [substance-code](http://hl7.org/fhir/R4/valueset-substance-code.html)
 
 <h2 id="appendix-b-architecture" style="color:#E60073">Appendix B – Architecture</h2>
 
 The overall architecture for implementation of the schema is based on the following two references:
 
-- https://davinci-pdex-formulary-client.logicahealth.org/
-- http://hl7.org/fhir/us/Davinci-drug-formulary/
+- [Da Vinci PDEX Formulary Client](https://davinci-pdex-formulary-client.logicahealth.org/)
+- [Da Vinci Drug Formulary IG](http://hl7.org/fhir/us/Davinci-drug-formulary/)
 
-The CoveragePlan profile of the FHIR R4 List resource provides links to information about the plan and formulary, contact information, a description of the drugTiers and associated cost sharing models of the plan, and a list of FormularyDrugs.
+The `CoveragePlan` profile of the [FHIR R4](https://www.hl7.org/fhir/R4/) `List` resource provides links to information about the plan and formulary, contact information, a description of the `drugTiers` and associated cost sharing models of the plan, and a list of `FormularyDrug` resources.
 
-The FormularyDrug profile of the FHIR R4 MedicationKnowledge resource provides plan-specific information about a prescribable drug identified by an RxNORM identifier. Cost sharing for the drug is described by reference to a drug tier defined as part of the coverage plan. Extensions to the MedicationKnowledge resource support important search use cases. Due to the immaturity of the MedicationKnowledge resource, it is expected that it will undergo changes, and those changes may require evolution of the FormularyDrug profile.
+The `FormularyDrug` profile of the FHIR R4 `MedicationKnowledge` resource provides plan-specific information about a prescribable drug identified by an [RxNorm](https://www.nlm.nih.gov/research/umls/rxnorm/index.html) identifier. Cost sharing for the drug is described by reference to a drug tier defined as part of the coverage plan. Extensions to the `MedicationKnowledge` resource support important search use cases. Due to the immaturity of the `MedicationKnowledge` resource, it is expected that it will undergo changes, and those changes may require evolution of the `FormularyDrug` profile.
 
 <img src="assets/formulary_diagram.png" alt="Formulary architecture overview" class="overall-implementation-diagram" />
 

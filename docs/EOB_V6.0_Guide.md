@@ -11,7 +11,7 @@ title: "EOB_V6.0 Implementation Guide"
 
 **Version 6.0**
 
-**May 28, 2026**
+**May 29, 2026**
 
 **Table of Contents**
 
@@ -68,7 +68,7 @@ For more information regarding these underlying standards, please visit:
 
 | Version | Date |
 |---------|------|
-| manual | May 28, 2026 |
+| manual | May 29, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -528,18 +528,18 @@ Refer to the Type/Sub-Type Dependencies table below for the required data elemen
 
 Profiles include:
 
-- Inpatient-Institutional
-- Outpatient-Institutional
-- Professional
-- Pharmacy
+- **Inpatient-Institutional**
+- **Outpatient-Institutional**
+- **Professional**
+- **Pharmacy**
 
 <h2 id="type-subtype-dependencies" style="color:#E60073">Type/Sub-Type Dependencies</h2>
 
-The following table provides a summary of second level type/sub_type element dependencies and requirements for an EOB file.
+The following table provides a summary of second level `type`/`sub_type` element dependencies and requirements for an EOB file.
 
-- "X" required field / "o" field must NOT be present
+- `"X"` required field / `"o"` field must NOT be present
 
-**NOTE:** In the United States, vision claims bill using the "professional" type so the "vision" eob/type code should not be used. Additionally, the CARIN Blue Button IG does not currently provide a profile for "oral" (dental) claims, so that eob/type is not currently supported.
+**NOTE:** In the United States, vision claims bill using the `"professional"` type so the `"vision"` `eob/type` code should not be used. Additionally, the [CARIN Blue Button IG](https://hl7.org/fhir/us/carin-bb/STU1.1/) does not currently provide a profile for `"oral"` (dental) claims, so that `eob/type` is not currently supported.
 
 | Element | Parent | institutional / inpatient | institutional / outpatient | pharmacy | professional |
 | --- | --- | --- | --- | --- | --- |
@@ -1075,20 +1075,20 @@ EOB_V6.0 files should be submitted according to the schedule agreed upon with He
 
 <h2 id="customer-guidance" style="color:#E60073">Customer Guidance</h2>
 
-- The size of the XML file must not exceed 100MB
+- The size of the XML file must not exceed **100MB**
 - Customers must send an EOB only once in any file
-- The `eob_identifier` must be unique for each eob record.
+- The `eob_identifier` must be unique for each EOB record.
 - Do not send empty tags.
 - If there is no data within child fields of optional tags, do not send the optional tags.
-- An Institutional "inpatient" or "outpatient" EOB must have adjudication at the item OR header level, but not both.
+- An Institutional `"inpatient"` or `"outpatient"` EOB must have adjudication at the **item** OR **header** level, but not both.
 
 <h2 id="identification-of-a-patient" style="color:#E60073">Identification of a Patient</h2>
 
 When HealthLX receives an EOB, it is associated with the most current Roster file. The sole field utilized to match an EOB record to the Roster is the `eob/patient/person/unique_person_id` value. If the `unique_person_id` value is not included, the EOB record will not be processed.
 
-Unique Identifiers are case sensitive and MUST match across file types.
+Unique Identifiers are **case sensitive** and **MUST** match across file types.
 
-For example: If the `unique_person_id` = t9808041455 on the Roster file, using a lower-case "t", but T9808041455 on the EOB file with an upper-case "T", the EOB will not be tied to the correct Patient resource/member.
+For example: If the `unique_person_id` = `t9808041455` on the Roster file, using a lower-case `"t"`, but `T9808041455` on the EOB file with an upper-case `"T"`, the EOB will not be tied to the correct `Patient` resource/member.
 
 <h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
 
@@ -1104,46 +1104,46 @@ For more information on member identity, see the Member Identification section i
 
 <h2 id="appendix-a-value-sets" style="color:#E60073">Appendix A – Value Sets</h2>
 
-For a complete list of value sets, visit https://hl7.org/fhir/R4/index.html
+For a complete list of value sets, visit [FHIR R4 Terminologies](https://hl7.org/fhir/R4/index.html)
 
 | Value Set | URL |
 | --- | --- |
-| core_race | http://hl7.org/fhir/us/core/ValueSet-detailed-race.html |
-| ethnicity | http://hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html |
-| relationship | https://hl7.org/fhir/R4/valueset-subscriber-relationship.html |
-| language | https://appmakers.dev/bcp-47-language-codes-list/ |
-| currency | https://hl7.org/fhir/R4/valueset-currencies.html |
-| adjudication_category | https://terminology.hl7.org/2.1.0/CodeSystem-adjudication.html |
-| marital_status | https://hl7.org/fhir/R4/valueset-marital-status.html |
-| location_role | https://www.hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html |
-| qualification | https://hl7.org/fhir/R4/valueset-provider-qualification.html |
-| diagnosis_on_admission | https://hl7.org/fhir/R4/valueset-ex-diagnosis-on-admission.html |
-| coverage_type and self_pay | https://hl7.org/fhir/R4/valueset-coverage-type.html |
-| benefit_classification | https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html |
-| place_of_service | https://hl7.org/fhir/R4/valueset-service-place.html |
-| benefit_category | https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html |
+| core_race | [detailed-race](http://hl7.org/fhir/us/core/ValueSet-detailed-race.html) |
+| ethnicity | [detailed-ethnicity](http://hl7.org/fhir/us/core/ValueSet-detailed-ethnicity.html) |
+| relationship | [subscriber-relationship](https://hl7.org/fhir/R4/valueset-subscriber-relationship.html) |
+| language | [BCP-47 language codes](https://appmakers.dev/bcp-47-language-codes-list/) |
+| currency | [currencies](https://hl7.org/fhir/R4/valueset-currencies.html) |
+| adjudication_category | [adjudication](https://terminology.hl7.org/2.1.0/CodeSystem-adjudication.html) |
+| marital_status | [marital-status](https://hl7.org/fhir/R4/valueset-marital-status.html) |
+| location_role | [ServiceDeliveryLocationRoleType](https://www.hl7.org/fhir/R4/v3/ServiceDeliveryLocationRoleType/vs.html) |
+| qualification | [provider-qualification](https://hl7.org/fhir/R4/valueset-provider-qualification.html) |
+| diagnosis_on_admission | [ex-diagnosis-on-admission](https://hl7.org/fhir/R4/valueset-ex-diagnosis-on-admission.html) |
+| coverage_type and self_pay | [coverage-type](https://hl7.org/fhir/R4/valueset-coverage-type.html) |
+| benefit_classification | [ex-benefitcategory](https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html) |
+| place_of_service | [service-place](https://hl7.org/fhir/R4/valueset-service-place.html) |
+| benefit_category | [ex-benefitcategory](https://hl7.org/fhir/R4/valueset-ex-benefitcategory.html) |
 {: .heatMap}
 
-**NOTE:** Language code will be set to en-US by default unless specified otherwise.
+**NOTE:** Language code will be set to `en-US` by default unless specified otherwise.
 
 <h2 id="appendix-b-architecture" style="color:#E60073">Appendix B – Architecture</h2>
 
-This implementation guide is based on the CARIN Blue Button Implementation Guide (v1.1.0: STU 1), which builds upon FHIR R4, a standard for health care data exchange published by HL7®. For more information, visit their website at:
+This implementation guide is based on the [CARIN Blue Button Implementation Guide](https://hl7.org/fhir/us/carin-bb/STU1.1/) (v1.1.0: STU 1), which builds upon [FHIR R4](https://www.hl7.org/fhir/R4/), a standard for health care data exchange published by HL7®. For more information, visit their website at:
 
-https://hl7.org/fhir/us/carin-bb/STU1.1/
+[CARIN Blue Button IG (STU 1.1)](https://hl7.org/fhir/us/carin-bb/STU1.1/)
 
 <h2 id="appendix-c-benefit-balances" style="color:#E60073">Appendix C – Benefit Balances</h2>
 
-Version 1.0.0 STU of the CARIN BB provides for the optional expression of benefit_balance within an EOB, such as deductible met to date or number of used/remaining for a particular type of benefit. While optional, such information may be useful to members.
+Version 1.0.0 STU of the [CARIN Blue Button IG](https://hl7.org/fhir/us/carin-bb/STU1.1/) provides for the optional expression of `benefit_balance` within an EOB, such as deductible met to date or number of used/remaining for a particular type of benefit. While optional, such information may be useful to members.
 
 <h3 style="color:#E60073">Principal Concepts for Expressing benefit_balance Information</h3>
 
-For a given benefit_balance, these are the key fields:
+For a given `benefit_balance`, these are the key fields:
 
 - `benefit.balance.category` is required. This details the general category of benefit being described (such as medical, dental, or vision).
 - Assuming one or more financials are provided, then `financial_type` is also required. This describes concepts such as deductible, visit, etc.
 - This element is allowed and used to convey concepts regarding the full extent of benefit as well as how much benefit has been consumed. These concepts may be expressed as money (e.g., a deductible), or allowable number of visits (integer).
-- This element allows for the expression of concepts such as "For this Health Benefit Plan Coverage (a benefit_balance.category), $2500 (financial type of used_money) of a $4000 deductible (a financial.type used_money) has been met as of the date of the EOB," or, similarly, "For this vision coverage (a benefit_balance category), the one exam (financial type of vision-exam, allowed_unsigned_int of 1) is all that is allowed for the year (used_unsigned_int of 1)."
+- This element allows for the expression of concepts such as "For this Health Benefit Plan Coverage (a `benefit_balance.category`), $2500 (`financial_type` of `used_money`) of a $4000 deductible (a `financial.type` `used_money`) has been met as of the date of the EOB," or, similarly, "For this vision coverage (a `benefit_balance` category), the one exam (`financial_type` of `vision-exam`, `allowed_unsigned_int` of 1) is all that is allowed for the year (`used_unsigned_int` of 1)."
 
 <h3 style="color:#E60073">Example Use of Benefit Balance</h3>
 
@@ -1157,13 +1157,13 @@ Conceptually, the XML would be as on the following page:
 
 <h2 id="appendix-d-representing-totals" style="color:#E60073">Appendix D – Representing Totals</h2>
 
-When representing totals in a CARIN for Blue Button (C4BB) v.1.0.0 ExplanationOfBenefit (EOB) the total amounts must be provided within the EOB.
+When representing totals in a [CARIN for Blue Button (C4BB)](https://hl7.org/fhir/us/carin-bb/STU1.1/) v.1.0.0 `ExplanationOfBenefit` (EOB) the total amounts must be provided within the EOB.
 
 <img src="assets/appendix_d_1.png" alt="Totals element within an EOB" class="overall-implementation-diagram" />
 
-Within the totals element, each total expresses a category and an amount.
+Within the `totals` element, each total expresses a category and an amount.
 
-The list of allowable values for category may be found under the definition for the adjudication_category type:
+The list of allowable values for category may be found under the definition for the `adjudication_category` type:
 
 <img src="assets/appendix_d_2.png" alt="adjudication_category allowable values" class="overall-implementation-diagram" />
 
@@ -1181,9 +1181,9 @@ To clarify the meaning of these codes, here are the definitions* (also see Notes
 | coinsurance | The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%. | Usually after a deductible is met, the member will typically be responsible for a percentage of the eligible amount. This is a coinsurance amount. |
 | noncovered | The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract. | An amount considered to be outside the benefits, limits, or rules of plan. That is, amounts that are simply not considered for payment. |
 | paidbypatient | The amount paid by the patient at the point of service. | An amount paid by the patient at the time of service, to offset an anticipated outstanding balance due. |
-| paidtopatient | Paid to patient | A benefit amount paid to the patient (not typical). The eligible amount - the member liability is the payment amount to the provider (paidtoprovider) or the subscriber (paidtopatient). |
-| paidtoprovider | The amount paid to the provider. | A benefit amount paid to the provider (typical). The eligible amount - the member liability is the payment amount to the provider (paidtoprovider) or the subscriber (paidtopatient). |
-| memberliability | The amount of the member's liability. | Member liability = deductible + coinsurance + copay + noncovered. Part of the member liability may have already been paid to the provider as paidbypatient |
+| paidtopatient | Paid to patient | A benefit amount paid to the patient (not typical). The eligible amount - the member liability is the payment amount to the provider (`paidtoprovider`) or the subscriber (`paidtopatient`). |
+| paidtoprovider | The amount paid to the provider. | A benefit amount paid to the provider (typical). The eligible amount - the member liability is the payment amount to the provider (`paidtoprovider`) or the subscriber (`paidtopatient`). |
+| memberliability | The amount of the member's liability. | Member liability = deductible + coinsurance + copay + noncovered. Part of the member liability may have already been paid to the provider as `paidbypatient` |
 | discount | The amount of the discount | Discount is the amount used to reduce the submitted amount to the amount allowed by contractual agreement. |
 {: .heatMap}
 

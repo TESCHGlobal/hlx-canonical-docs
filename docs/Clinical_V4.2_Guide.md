@@ -11,7 +11,7 @@ title: "Clinical_V4.2 Implementation Guide"
 
 **Version 4.0**
 
-**May 28, 2026**
+**May 29, 2026**
 
 **Table of Contents**
 
@@ -63,7 +63,7 @@ For more information regarding these underlying standards, please visit:
 
 <h2 id="supported-profiles" style="color:#E60073">Supported Profiles</h2>
 
-Although there are twenty-seven US Core clinical profiles, HealthLX currently supports only the most common clinical data types likely to be held by payers. Those profiles are listed below...
+Although there are twenty-seven [US Core](https://hl7.org/fhir/us/core/) clinical profiles, HealthLX currently supports only the most common clinical data types likely to be held by payers. Those profiles are listed below...
 
 - US Core Patient Profile
 - US Core Laboratory Result Observation Profile
@@ -93,15 +93,15 @@ Although there are twenty-seven US Core clinical profiles, HealthLX currently su
 
 <img src="assets/Clinical_Option2.png" alt="Option 2 arbitrary format" class="clinical-option-diagram" />
 
-This Implementation Guide defines the required/allowable format for clinical data as it is ingested into the HealthLX platform, whether the source data is transformed into this format by the customer or with the assistance of other parties, such as HealthLX.
+This **Implementation Guide** defines the required/allowable format for clinical data as it is ingested into the HealthLX platform, whether the source data is transformed into this format by the customer or with the assistance of other parties, such as HealthLX.
 
-The only requirement is that the source data and mapping must ultimately provide, at a minimum, all fields marked as required within this Implementation Guide.
+The only requirement is that the source data and mapping must ultimately provide, at a minimum, all fields marked as **required** within this Implementation Guide.
 
 <h2 id="general-structure-clinical-xsd" style="color:#E60073">General Structure for Clinical XSD</h2>
 
 <img src="assets/General_Structure.png" alt="General Structure for Clinical XSD" class="clinical-option-diagram" />
 
-We can accept one XSD schema file as the vehicle for submission of all clinical data types. The XSD begins with information required to describe a US Core Patient, which will always be required. Information for a given patient is then followed by definitions for all supported types of Clinical data, at least one of which must be provided.
+We can accept one XSD schema file as the vehicle for submission of all clinical data types. The XSD begins with information required to describe a **US Core Patient**, which will always be required. Information for a given patient is then followed by definitions for all supported types of Clinical data, at least one of which must be provided.
 
 **NOTE:** It is permissible to submit more than one type of clinical data for a given Patient within the same file, if desired.
 
@@ -113,7 +113,7 @@ This field requires a date and a time (including time zone). The `date_time_repo
 
 <h2 id="date-time-reported-historical" style="color:#E60073">date_time_reported (Historical Record Submittals)</h2>
 
-The Interoperability and Patient Access Rule requires all HealthLX customers to submit EOB data for all historical members who had active coverage at any time from January 01, 2016 to the present.
+The **Interoperability and Patient Access Rule** requires all HealthLX customers to submit EOB data for all historical members who had active coverage at any time from January 01, 2016 to the present.
 
 In addition, HealthLX customers who maintain clinical data are required to submit all clinical records from January 01, 2016 forward for any/all members with active coverage at any time from January 01, 2017 to the present.
 
@@ -123,7 +123,7 @@ When submitting a historical Clinical or EOB file, submission processes must be 
 
 To ensure historical data does not overwrite current data, the recommended approach requires a payer to send chronologically defined batches with the appropriate `date_time_reported` value corresponding to the batch endpoint (time).
 
-All historical Roster, EOB and Clinical files must contain "Historical" in the file name.
+All historical Roster, EOB and Clinical files must contain `"Historical"` in the file name.
 
 **Example:**
 
@@ -135,16 +135,16 @@ Batch groupings may be for an arbitrary time period, as long as each file submit
 
 <h2 id="clinical-file-data-elements" style="color:#E60073">Clinical File Data Elements & Requirements</h2>
 
-XML is a markup language similar to HTML, allowing users to describe data with tags. Utilizing an XML file enables richer data provisioning for multiple elements of the same type. This feature is called "Cardinality" and is defined as the lower and upper bounds of instances an element may be allowed to appear in a resource. If the cardinality begins with a "0", then that element is not required.
+XML is a markup language similar to HTML, allowing users to describe data with tags. Utilizing an XML file enables richer data provisioning for multiple elements of the same type. This feature is called **Cardinality** and is defined as the lower and upper bounds of instances an element may be allowed to appear in a resource. If the cardinality begins with a `"0"`, then that element is not required.
 
-Each schema contains sections with tables noting all parent and child elements within that element. If a parent exists, the hierarchy is noted in the "Parent Elements" column.
+Each schema contains sections with tables noting all parent and child elements within that element. If a parent exists, the hierarchy is noted in the **Parent Elements** column.
 
 **Examples:**
 
-- The `address.geolocations.geolocation` parent elements are noted as "address>geolocations".
+- The `address.geolocations.geolocation` parent elements are noted as `address>geolocations`.
 - Longitude for the geolocation (`address.geolocations.geolocation.longitude`) has the parent elements of `address>geolocations>geolocation`.
 
-Elements and values required for compliance with HL7.FHIR standards are noted. All other elements and values listed within the tables are also supported. For maximum value and functionality, all elements in all tables are recommended. For details about data types and their requirements, please refer to Appendix B.
+Elements and values required for compliance with [HL7 FHIR](https://www.hl7.org/fhir/R4/) standards are noted. All other elements and values listed within the tables are also supported. For maximum value and functionality, all elements in all tables are recommended. For details about data types and their requirements, please refer to Appendix B.
 
 **NOTE:** In addition to the patient profile, at least one secondary profile must be present within the clinical document when provided by payers.
 
@@ -152,7 +152,7 @@ Elements and values required for compliance with HL7.FHIR standards are noted. A
 
 | Version | Date |
 |---------|------|
-| manual | May 28, 2026 |
+| manual | May 29, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -2191,11 +2191,11 @@ An empty tag occurs when an optional field is supplied but no child fields have 
 
 <h2 id="adds-updates-and-deletes" style="color:#E60073">Adds, Updates, and Deletes</h2>
 
-The `clinicals/clinical/patient/.../record_type` elements indicating that a submission is an "Add" or an "Update" are "required" according to the Schema version 4.0, but HealthLX does not use this information to distinguish "Adds" and "Updates".
+The `clinicals/clinical/patient/.../record_type` elements indicating that a submission is an `"Add"` or an `"Update"` are **required** according to the Schema version 4.0, but HealthLX does not use this information to distinguish **Adds** and **Updates**.
 
 **Adds**
 
-New submissions are added to the repository. Each clinical record (lab_observation, allergy_intolerance, etc) has a `unique_identifier` that must be unique to the given record. It must be present within the document when it is initially submitted.
+New submissions are added to the repository. Each clinical record (`lab_observation`, `allergy_intolerance`, etc.) has a `unique_identifier` that must be unique to the given record. It must be present within the document when it is initially submitted.
 
 **Updates**
 
