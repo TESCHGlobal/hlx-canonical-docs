@@ -1,8 +1,8 @@
-The `clinicals/clinical/patient/.../record_type` elements indicating that a submission is an "Add" or an "Update" are "required" according to the Schema version 4.0, but HealthLX does not use this information to distinguish "Adds" and "Updates".
+The `clinicals/clinical/patient/.../record_type` elements indicating that a submission is an `"Add"` or an `"Update"` are **required** according to the Schema version 4.0, but HealthLX does not use this information to distinguish **Adds** and **Updates**.
 
 **Adds**
 
-New submissions are added to the repository. Each clinical record (lab_observation, allergy_intolerance, etc) has a `unique_identifier` that must be unique to the given record. It must be present within the document when it is initially submitted.
+New submissions are added to the repository. Each clinical record (`lab_observation`, `allergy_intolerance`, etc.) has a `unique_identifier` that must be unique to the given record. It must be present within the document when it is initially submitted.
 
 **Updates**
 

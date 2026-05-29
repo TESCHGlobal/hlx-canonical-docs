@@ -1,4 +1,4 @@
-The Interoperability and Patient Access Rule requires all HealthLX customers to submit EOB data for all historical members who had active coverage at any time from January 01, 2016 to the present.
+The **Interoperability and Patient Access Rule** requires all HealthLX customers to submit EOB data for all historical members who had active coverage at any time from January 01, 2016 to the present.
 
 In addition, HealthLX customers who maintain clinical data are required to submit all clinical records from January 01, 2016 forward for any/all members with active coverage at any time from January 01, 2017 to the present.
 
@@ -8,7 +8,7 @@ When submitting a historical Clinical or EOB file, submission processes must be 
 
 To ensure historical data does not overwrite current data, the recommended approach requires a payer to send chronologically defined batches with the appropriate `date_time_reported` value corresponding to the batch endpoint (time).
 
-All historical Roster, EOB and Clinical files must contain "Historical" in the file name.
+All historical Roster, EOB and Clinical files must contain `"Historical"` in the file name.
 
 **Example:**
 

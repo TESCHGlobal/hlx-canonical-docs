@@ -2,7 +2,7 @@ Refer to the Type/Sub-Type Dependencies table below for the required data elemen
 
 Profiles include:
 
-- Inpatient-Institutional
-- Outpatient-Institutional
-- Professional
-- Pharmacy
+- **Inpatient-Institutional**
+- **Outpatient-Institutional**
+- **Professional**
+- **Pharmacy**

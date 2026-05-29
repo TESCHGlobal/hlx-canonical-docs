@@ -1,8 +1,8 @@
-The following table provides a summary of second level type/sub_type element dependencies and requirements for an EOB file.
+The following table provides a summary of second level `type`/`sub_type` element dependencies and requirements for an EOB file.
 
-- "X" required field / "o" field must NOT be present
+- `"X"` required field / `"o"` field must NOT be present
 
-**NOTE:** In the United States, vision claims bill using the "professional" type so the "vision" eob/type code should not be used. Additionally, the CARIN Blue Button IG does not currently provide a profile for "oral" (dental) claims, so that eob/type is not currently supported.
+**NOTE:** In the United States, vision claims bill using the `"professional"` type so the `"vision"` `eob/type` code should not be used. Additionally, the [CARIN Blue Button IG](https://hl7.org/fhir/us/carin-bb/STU1.1/) does not currently provide a profile for `"oral"` (dental) claims, so that `eob/type` is not currently supported.
 
 | Element | Parent | institutional / inpatient | institutional / outpatient | pharmacy | professional |
 | --- | --- | --- | --- | --- | --- |

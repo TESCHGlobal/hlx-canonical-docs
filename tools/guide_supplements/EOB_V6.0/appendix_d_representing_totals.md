@@ -1,10 +1,10 @@
-When representing totals in a CARIN for Blue Button (C4BB) v.1.0.0 ExplanationOfBenefit (EOB) the total amounts must be provided within the EOB.
+When representing totals in a [CARIN for Blue Button (C4BB)](https://hl7.org/fhir/us/carin-bb/STU1.1/) v.1.0.0 `ExplanationOfBenefit` (EOB) the total amounts must be provided within the EOB.
 
 <img src="assets/appendix_d_1.png" alt="Totals element within an EOB" class="overall-implementation-diagram" />
 
-Within the totals element, each total expresses a category and an amount.
+Within the `totals` element, each total expresses a category and an amount.
 
-The list of allowable values for category may be found under the definition for the adjudication_category type:
+The list of allowable values for category may be found under the definition for the `adjudication_category` type:
 
 <img src="assets/appendix_d_2.png" alt="adjudication_category allowable values" class="overall-implementation-diagram" />
 
@@ -22,9 +22,9 @@ To clarify the meaning of these codes, here are the definitions* (also see Notes
 | coinsurance | The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%. | Usually after a deductible is met, the member will typically be responsible for a percentage of the eligible amount. This is a coinsurance amount. |
 | noncovered | The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract. | An amount considered to be outside the benefits, limits, or rules of plan. That is, amounts that are simply not considered for payment. |
 | paidbypatient | The amount paid by the patient at the point of service. | An amount paid by the patient at the time of service, to offset an anticipated outstanding balance due. |
-| paidtopatient | Paid to patient | A benefit amount paid to the patient (not typical). The eligible amount - the member liability is the payment amount to the provider (paidtoprovider) or the subscriber (paidtopatient). |
-| paidtoprovider | The amount paid to the provider. | A benefit amount paid to the provider (typical). The eligible amount - the member liability is the payment amount to the provider (paidtoprovider) or the subscriber (paidtopatient). |
-| memberliability | The amount of the member's liability. | Member liability = deductible + coinsurance + copay + noncovered. Part of the member liability may have already been paid to the provider as paidbypatient |
+| paidtopatient | Paid to patient | A benefit amount paid to the patient (not typical). The eligible amount - the member liability is the payment amount to the provider (`paidtoprovider`) or the subscriber (`paidtopatient`). |
+| paidtoprovider | The amount paid to the provider. | A benefit amount paid to the provider (typical). The eligible amount - the member liability is the payment amount to the provider (`paidtoprovider`) or the subscriber (`paidtopatient`). |
+| memberliability | The amount of the member's liability. | Member liability = deductible + coinsurance + copay + noncovered. Part of the member liability may have already been paid to the provider as `paidbypatient` |
 | discount | The amount of the discount | Discount is the amount used to reduce the submitted amount to the amount allowed by contractual agreement. |
 {: .heatMap}
 

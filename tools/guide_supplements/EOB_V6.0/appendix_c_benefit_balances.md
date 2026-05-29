@@ -1,13 +1,13 @@
-Version 1.0.0 STU of the CARIN BB provides for the optional expression of benefit_balance within an EOB, such as deductible met to date or number of used/remaining for a particular type of benefit. While optional, such information may be useful to members.
+Version 1.0.0 STU of the [CARIN Blue Button IG](https://hl7.org/fhir/us/carin-bb/STU1.1/) provides for the optional expression of `benefit_balance` within an EOB, such as deductible met to date or number of used/remaining for a particular type of benefit. While optional, such information may be useful to members.
 
 <h3 style="color:#E60073">Principal Concepts for Expressing benefit_balance Information</h3>
 
-For a given benefit_balance, these are the key fields:
+For a given `benefit_balance`, these are the key fields:
 
 - `benefit.balance.category` is required. This details the general category of benefit being described (such as medical, dental, or vision).
 - Assuming one or more financials are provided, then `financial_type` is also required. This describes concepts such as deductible, visit, etc.
 - This element is allowed and used to convey concepts regarding the full extent of benefit as well as how much benefit has been consumed. These concepts may be expressed as money (e.g., a deductible), or allowable number of visits (integer).
-- This element allows for the expression of concepts such as "For this Health Benefit Plan Coverage (a benefit_balance.category), $2500 (financial type of used_money) of a $4000 deductible (a financial.type used_money) has been met as of the date of the EOB," or, similarly, "For this vision coverage (a benefit_balance category), the one exam (financial type of vision-exam, allowed_unsigned_int of 1) is all that is allowed for the year (used_unsigned_int of 1)."
+- This element allows for the expression of concepts such as "For this Health Benefit Plan Coverage (a `benefit_balance.category`), $2500 (`financial_type` of `used_money`) of a $4000 deductible (a `financial.type` `used_money`) has been met as of the date of the EOB," or, similarly, "For this vision coverage (a `benefit_balance` category), the one exam (`financial_type` of `vision-exam`, `allowed_unsigned_int` of 1) is all that is allowed for the year (`used_unsigned_int` of 1)."
 
 <h3 style="color:#E60073">Example Use of Benefit Balance</h3>
 

@@ -1,6 +1,6 @@
-- The size of the XML file must not exceed 100MB
+- The size of the XML file must not exceed **100MB**
 - Customers must send an EOB only once in any file
-- The `eob_identifier` must be unique for each eob record.
+- The `eob_identifier` must be unique for each EOB record.
 - Do not send empty tags.
 - If there is no data within child fields of optional tags, do not send the optional tags.
-- An Institutional "inpatient" or "outpatient" EOB must have adjudication at the item OR header level, but not both.
+- An Institutional `"inpatient"` or `"outpatient"` EOB must have adjudication at the **item** OR **header** level, but not both.

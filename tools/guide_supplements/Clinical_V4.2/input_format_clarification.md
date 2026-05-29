@@ -6,6 +6,6 @@
 
 <img src="assets/Clinical_Option2.png" alt="Option 2 arbitrary format" class="clinical-option-diagram" />
 
-This Implementation Guide defines the required/allowable format for clinical data as it is ingested into the HealthLX platform, whether the source data is transformed into this format by the customer or with the assistance of other parties, such as HealthLX.
+This **Implementation Guide** defines the required/allowable format for clinical data as it is ingested into the HealthLX platform, whether the source data is transformed into this format by the customer or with the assistance of other parties, such as HealthLX.
 
-The only requirement is that the source data and mapping must ultimately provide, at a minimum, all fields marked as required within this Implementation Guide.
+The only requirement is that the source data and mapping must ultimately provide, at a minimum, all fields marked as **required** within this Implementation Guide.
