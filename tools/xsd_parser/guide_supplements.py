@@ -69,6 +69,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "after_member_identification_sections": [],
             "after_submission_frequency_sections": [],
             "after_required_elements_sections": [],
+            "after_overview_sections": [],
         }
 
     with manifest_path.open("r", encoding="utf-8") as f:
@@ -97,6 +98,7 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
     after_member_identification_sections: List[GuideSupplementSection] = []
     after_submission_frequency_sections: List[GuideSupplementSection] = []
     after_required_elements_sections: List[GuideSupplementSection] = []
+    after_overview_sections: List[GuideSupplementSection] = []
     toc_subsections_by_parent: dict[str, list[dict]] = {}
 
     for sec in sections_cfg:
@@ -137,6 +139,8 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             adds_updates_and_deletes_override = section
         elif section.after == "interoperability":
             after_interoperability_sections.append(section)
+        elif section.after == "overview":
+            after_overview_sections.append(section)
         elif section.after == "member-identification":
             after_member_identification_sections.append(section)
         elif section.after == "submission-frequency":
@@ -166,6 +170,12 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
             "title": section.title,
             "anchor": section.id,
             "before": "change-log",
+        })
+    for section in after_overview_sections:
+        toc_extras_out.append({
+            "title": section.title,
+            "anchor": section.id,
+            "after": "overview",
         })
     for section in before_required_sections:
         toc_extras_out.append({
@@ -208,5 +218,6 @@ def load_guide_supplements(schema_stem: str) -> Dict[str, Any]:
         "after_member_identification_sections": after_member_identification_sections,
         "after_submission_frequency_sections": after_submission_frequency_sections,
         "after_required_elements_sections": after_required_elements_sections,
+        "after_overview_sections": after_overview_sections,
     }
 

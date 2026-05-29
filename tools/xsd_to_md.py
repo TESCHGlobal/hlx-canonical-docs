@@ -84,6 +84,7 @@ def generate_markdown(xsd_path, release_tag=None):
         after_member_identification_sections = supplements.get("after_member_identification_sections", [])
         after_submission_frequency_sections = supplements.get("after_submission_frequency_sections", [])
         after_required_elements_sections = supplements.get("after_required_elements_sections", [])
+        after_overview_sections = supplements.get("after_overview_sections", [])
 
         # Detect core model import and parse core types if present
         core_model_path = None
@@ -125,6 +126,13 @@ def generate_markdown(xsd_path, release_tag=None):
             
             # Overview
             output += generate_overview(schema_info)
+
+            for section in after_overview_sections:
+                section_id = getattr(section, "id", None)
+                section_title = getattr(section, "title", None) or section_id
+                section_body = getattr(section, "body", None) or ""
+                if section_id:
+                    output += generate_supplement_section(section_id, section_title, section_body)
             
             # Encoding
             output += generate_encoding(schema_info)

@@ -109,7 +109,26 @@ Formulary_V6.2:
 
 ProviderDirectory_V4.3:
   sections:
+    - id: data-dependencies
+      title: Data Dependencies
+      after: overview
+      file: ProviderDirectory_V4.3/important_note_on_insurance_data.md
     - id: adds-updates-and-deletes
       title: Adds, Updates, and Deletes
       replace: adds-updates-and-deletes
       file: ProviderDirectory_V4.3/adds_updates_deletes.md
+    - id: appendix-a-element-values
+      title: Appendix A – Element Values
+      after: member-identification
+      file: ProviderDirectory_V4.3/appendix_a_element_values.md
+
+Insurance_V4.1:
+  sections:
+    - id: data-dependencies
+      title: Data Dependencies
+      after: overview
+      file: Insurance_V4.1/important_note_on_provider_data.md
+    - id: appendix-a-element-values
+      title: Appendix A – Element Values
+      after: member-identification
+      file: Insurance_V4.1/appendix_a_element_values.md

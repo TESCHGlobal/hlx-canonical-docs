@@ -11,22 +11,24 @@ title: "Provider Directory_V4.3 Implementation Guide"
 
 **Version 4.1.1**
 
-**May 28, 2026**
+**May 29, 2026**
 
 **Table of Contents**
 
 1. [Overview](#overview)
-2. [Encoding](#encoding)
-3. [Interoperability](#interoperability)
-4. [Change Log](#change-log)
-5. [Simple Types](#simple-types)
-6. [Complex Types](#complex-types)
-7. [Required Elements of Provider Directory_V4.3 XSD](#required-elements-of-provider-directory_v4.3-xsd)
-8. [All Elements of Provider Directory_V4.3 XSD](#all-elements-of-provider-directory_v4.3-xsd)
-9. [Submission Frequency](#submission-frequency)
-10. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
-11. [Member Identification](#member-identification)
-12. [Appendix Overall Implementation](#appendix-overall-implementation)
+2. [Data Dependencies](#data-dependencies)
+3. [Encoding](#encoding)
+4. [Interoperability](#interoperability)
+5. [Change Log](#change-log)
+6. [Simple Types](#simple-types)
+7. [Complex Types](#complex-types)
+8. [Required Elements of Provider Directory_V4.3 XSD](#required-elements-of-provider-directory_v4.3-xsd)
+9. [All Elements of Provider Directory_V4.3 XSD](#all-elements-of-provider-directory_v4.3-xsd)
+10. [Submission Frequency](#submission-frequency)
+11. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
+12. [Member Identification](#member-identification)
+13. [Appendix A – Element Values](#appendix-a-element-values)
+14. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -35,6 +37,10 @@ This document is provided by HealthLX for informational purposes only. Informati
 <h2 id="overview" style="color:#E60073">Overview</h2>
 
 This implementation guide provides field mappings and requirements for HealthLX Provider Directory_V4.3 data submissions in XML format based on FHIR R4 standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
+
+<h2 id="data-dependencies" style="color:#E60073">Data Dependencies</h2>
+
+Due to the complexity and size of the reporting requirements, the complete schema has been divided into two distinct files. This guide strictly covers the requirements for practitioner and providing_organization records. Information regarding products, plans, and coverage areas must be submitted separately. Please refer to the Insurance Implementation Guide for those requirements. The two files are linked together using the networks element.
 
 <h2 id="encoding" style="color:#E60073">Encoding</h2>
 
@@ -58,7 +64,7 @@ For more information regarding these underlying standards, please visit:
 
 | Version | Date |
 |---------|------|
-| manual | May 28, 2026 |
+| manual | May 29, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -638,6 +644,80 @@ When data in a Provider Directory file is changed after ingestion/processing by 
 Each member must be uniquely identified using the appropriate identifier fields. Ensure consistency in member identifiers across all submissions to maintain data integrity.
 
 For more information on member identity, see the Member Identification section in the Roster documentation.
+
+<h2 id="appendix-a-element-values" style="color:#E60073">Appendix A – Element Values</h2>
+
+**Provider Directory**
+
+For the most recent values, see https://hl7.org/fhir/R4/terminologies-valuesets.html
+
+<h3 style="color:#E60073">ORGANIZATION_ROLE</h3>
+
+An updated list for this code/value set may be found at https://hl7.org/fhir/R4/valueset-organization-role.html
+
+<h3 style="color:#E60073">(PRACTITIONER)_CODE</h3>
+
+An updated list for this code/value set may be found at https://hl7.org/fhir/R4/valueset-practitioner-role.html
+
+<h3 style="color:#E60073">TYPE_OF_ORGANIZATION</h3>
+
+An updated list for this code/value set may be found at https://hl7.org/fhir/R4/valueset-organization-type.html
+
+<h3 style="color:#E60073">OPERATIONAL_STATUS</h3>
+
+An updated list of operational status codes may be found at https://www.hl7.org/fhir/R4/v2/0116/index.html
+
+<h3 style="color:#E60073">LANGUAGE</h3>
+
+The language list is too large to be included in this guide. The most recent version may be found at https://www.hl7.org/fhir/valueset-languages.html.
+
+<h3 style="color:#E60073">PROFICIENCY</h3>
+
+This element is correlated to language. An updated list for this code/value set may be found at https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-LanguageProficiencyVS.html
+
+<h3 style="color:#E60073">PHYSICAL_TYPE</h3>
+
+This element is correlated with location. An updated list for this code/value set may be found at https://hl7.org/fhir/R4/valueset-location-physical-type.html
+
+<h3 style="color:#E60073">LOCATION_TYPE</h3>
+
+An updated list for this code/value set may be found at https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html
+
+<h3 style="color:#E60073">ACCESSIBILITY</h3>
+
+An updated list for this code/value set may be found at http://hl7.org/fhir/uv/vhdir/2018Sep/ValueSet-valueset-accessibility.html
+
+<h3 style="color:#E60073">PRACTITIONER_SPECIALTIES</h3>
+
+Individual and Group Specialties from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy valueset. An updated list for this code/value set may be found at https://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/ValueSet-IndividualAndGroupSpecialtiesVS.html
+
+<h3 style="color:#E60073">PROVIDER_ORGANIZATION_SPECIALTIES</h3>
+
+Individual and Group Specialties from National Uniform Claim Committee (NUCC) Health Care Provider Taxonomy valueset. An updated list for this code/value set may be found at https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/ValueSet-SpecialtiesVS.html
+
+<h3 style="color:#E60073">HEALTHCARE_SERVICE.CATEGORY</h3>
+
+An updated list for this code/value set may be found at https://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/ValueSet-HealthcareServiceCategoryVS.html
+
+<h3 style="color:#E60073">HEALTHCARE_SERVICE.TYPE</h3>
+
+An updated list for this code/value set may be found at https://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/ValueSet-HealthcareServiceTypeVS.html
+
+<h3 style="color:#E60073">PROGRAM.CODE</h3>
+
+This value set defines an example set of codes that could be used to classify groupings of service-types/specialties. An updated list for this code/value set may be found at https://hl7.org/fhir/R4/valueset-program.html
+
+<h3 style="color:#E60073">CONTACT.PURPOSE</h3>
+
+The contact_purpose valueset is correlated with the contact element. An updated list for this code/value set may be found at https://hl7.org/fhir/R4/valueset-contactentity-type.html
+
+<h3 style="color:#E60073">REFERRAL_METHOD.CODES</h3>
+
+An updated list for this code/value set may be found at https://hl7.org/fhir/R4/valueset-service-referral-method.html
+
+<h3 style="color:#E60073">HUMAN_NAME</h3>
+
+An updated list of human_name value may be found at https://hl7.org/fhir/R4/valueset-name-use.html
 
 <h2 id="appendix-overall-implementation" style="color:#E60073">Appendix Overall Implementation</h2>
 

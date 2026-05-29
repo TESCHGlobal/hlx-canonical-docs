@@ -11,22 +11,24 @@ title: "Insurance_V4.1 Implementation Guide"
 
 **Version 4.1**
 
-**May 27, 2026**
+**May 29, 2026**
 
 **Table of Contents**
 
 1. [Overview](#overview)
-2. [Encoding](#encoding)
-3. [Interoperability](#interoperability)
-4. [Change Log](#change-log)
-5. [Simple Types](#simple-types)
-6. [Complex Types](#complex-types)
-7. [Required Elements of Insurance_V4.1 XSD](#required-elements-of-insurance_v4.1-xsd)
-8. [All Elements of Insurance_V4.1 XSD](#all-elements-of-insurance_v4.1-xsd)
-9. [Submission Frequency](#submission-frequency)
-10. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
-11. [Member Identification](#member-identification)
-12. [Appendix Overall Implementation](#appendix-overall-implementation)
+2. [Data Dependencies](#data-dependencies)
+3. [Encoding](#encoding)
+4. [Interoperability](#interoperability)
+5. [Change Log](#change-log)
+6. [Simple Types](#simple-types)
+7. [Complex Types](#complex-types)
+8. [Required Elements of Insurance_V4.1 XSD](#required-elements-of-insurance_v4.1-xsd)
+9. [All Elements of Insurance_V4.1 XSD](#all-elements-of-insurance_v4.1-xsd)
+10. [Submission Frequency](#submission-frequency)
+11. [Adds, Updates, and Deletes](#adds-updates-and-deletes)
+12. [Member Identification](#member-identification)
+13. [Appendix A – Element Values](#appendix-a-element-values)
+14. [Appendix Overall Implementation](#appendix-overall-implementation)
 
 <h2 style="color:#E60073">Disclaimer</h2>
 
@@ -35,6 +37,10 @@ This document is provided by HealthLX for informational purposes only. Informati
 <h2 id="overview" style="color:#E60073">Overview</h2>
 
 This implementation guide provides field mappings and requirements for HealthLX Insurance_V4.1 data submissions in XML format based on FHIR R4 standards. XML format enables structured data exchange with built-in validation against the provided XSD schema.
+
+<h2 id="data-dependencies" style="color:#E60073">Data Dependencies</h2>
+
+Due to the complexity and size of the reporting requirements, the complete schema has been divided into two distinct files. This guide strictly covers the requirements for health insurance offerings, covered benefits, and coverage areas. Information regarding the actual doctors, facilities, and organizations must be submitted separately. Please refer to the Provider Directory Implementation Guide for those requirements. The two files are linked together using the networks element.
 
 <h2 id="encoding" style="color:#E60073">Encoding</h2>
 
@@ -58,7 +64,7 @@ For more information regarding these underlying standards, please visit:
 
 | Version | Date |
 |---------|------|
-| manual | May 27, 2026 |
+| manual | May 29, 2026 |
 {: .heatMap}
 
 <h2 id="simple-types" style="color:#E60073"> Simple Types</h2>
@@ -348,6 +354,36 @@ Insurance_V4.1 files should be submitted according to the schedule agreed upon w
 Each member must be uniquely identified using the appropriate identifier fields. Ensure consistency in member identifiers across all submissions to maintain data integrity.
 
 For more information on member identity, see the Member Identification section in the Roster documentation.
+
+<h2 id="appendix-a-element-values" style="color:#E60073">Appendix A – Element Values</h2>
+
+**Insurance Plan**
+
+<h3 style="color:#E60073">LOCATION_ROLE_TYPE</h3>
+
+An updated list of location_role_type values may be found at https://terminology.hl7.org/1.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html
+
+<h3 style="color:#E60073">HUMAN_NAME</h3>
+
+An updated list of human_name values may be found at https://hl7.org/fhir/R4/valueset-name-use.html
+
+<h3 style="color:#E60073">TYPE_OF_ORGANIZATION</h3>
+
+An updated list of type_of_organization values may be found at https://hl7.org/fhir/R4/valueset-organization-type.html
+
+<h3 style="color:#E60073">PURPOSE</h3>
+
+The purpose value set is correlated with the contact element. An updated list of contact entity type codes may be found at https://hl7.org/fhir/R4/valueset-contactentity-type.html
+
+| Value | Display | Definition |
+| --- | --- | --- |
+| bill | Billing | Contact details for information for billing/general finance inquiries. |
+| admin | Administrative | Contact details for administrative enquiries. |
+| hr | Human Resource | Contact details for issues related to human resources, such as staff matters, OH&S, etc. |
+| payer | Payer | Contact details for handling issues related to insurance claims/adjudication/payment. |
+| patinf | Patient | Generic information contact for patients. |
+| press | Press | Dedicated contact point for matters relating to press inquiries. |
+{: .heatMap}
 
 <h2 id="appendix-overall-implementation" style="color:#E60073">Appendix Overall Implementation</h2>
 
