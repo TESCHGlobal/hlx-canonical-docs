@@ -23,6 +23,8 @@
   --shadow-sm:  0 1px 4px rgba(0,0,0,0.06);
   --shadow-md:  0 4px 16px rgba(0,0,0,0.08);
   --shadow-lg:  0 8px 32px rgba(0,0,0,0.12);
+  --site-header-height: 62px;
+  --scroll-anchor-offset: calc(var(--site-header-height) + 1rem);
 }
 
 /* ============================================================
@@ -37,6 +39,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-anchor-offset);
 }
 
 body {
@@ -424,6 +427,12 @@ body {
 }
 
 /* Typography */
+.page-content h1,
+.page-content h2,
+.page-content h3 {
+  scroll-margin-top: var(--scroll-anchor-offset);
+}
+
 .page-content h1 {
   font-size: 1.85rem;
   font-weight: 800;
@@ -590,7 +599,7 @@ body {
 
 .heatMap thead {
   position: sticky;
-  top: 62px; /* exact height of our fixed site nav */
+  top: var(--site-header-height);
   z-index: 5;
 }
 
